@@ -22,6 +22,8 @@ namespace ReactiveUI.Samples.Commands
         public MainWindow()
         {
             InitializeComponent();
+            mvvmLightContainer.DataContext = new MVVMLight.MainViewModel();
+            reactiveUIContainer.DataContext = new RxUI.MainViewModel();	
         }
     }
 }

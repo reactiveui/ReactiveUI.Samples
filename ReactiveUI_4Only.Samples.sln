@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{849E3F90-EE14-4C0C-8FD7-F11FAA116CF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{11ACF8EE-30F0-4842-996C-9AB636C07CEA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Commands", "ReactiveUI.Samples.Commands\ReactiveUI.Samples.Commands.csproj", "{0E9F6644-7625-49F7-88C6-333292003E6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E9F6644-7625-49F7-88C6-333292003E6E} = {849E3F90-EE14-4C0C-8FD7-F11FAA116CF4}
+	EndGlobalSection
+EndGlobal

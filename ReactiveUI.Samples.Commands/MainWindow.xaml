@@ -3,6 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="MVVM Light" x:Name="mvvmLightContainer">
+            <StackPanel>
+                <Expander Header="Simple Command">
+                    <StackPanel>
+                        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Command="{Binding DisplayCommand}" Content="Display"/>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+
+        </GroupBox>
+        <GroupBox Header="ReactiveUI" Grid.Column="1" x:Name="reactiveUIContainer">
+            <StackPanel>
+                <Expander Header="Simple Command">
+                    <StackPanel>
+                        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Command="{Binding DisplayCommand}" Content="Display"/>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </GroupBox>
+
     </Grid>
 </Window>

@@ -111,7 +111,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Caliburn\CaliburnBootstrapper.cs" />
     <Compile Include="Caliburn\MainViewModel.cs" />
     <Compile Include="MVVMLight\MainViewModel.cs" />
     <Compile Include="RxUI\MainVIewModel.cs" />

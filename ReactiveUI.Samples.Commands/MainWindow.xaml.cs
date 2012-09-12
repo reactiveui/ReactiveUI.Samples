@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Caliburn.Micro;
 
 namespace ReactiveUI.Samples.Commands
 {
@@ -23,7 +24,8 @@ namespace ReactiveUI.Samples.Commands
         {
             InitializeComponent();
             mvvmLightContainer.DataContext = new MVVMLight.MainViewModel();
-            reactiveUIContainer.DataContext = new RxUI.MainViewModel();	
+            reactiveUIContainer.DataContext = new RxUI.MainViewModel();            
+            ViewModelBinder.Bind(new CaliburnMicro.MainViewModel(), caliburnMicroContainer, null);            
         }
     }
 }

@@ -26,6 +26,14 @@
                             Command="{Binding DisplayCommand}" Content="Display" />
                     </StackPanel>
                 </Expander>
+                <Expander
+                    IsExpanded="True"
+                    Header="Async Command">
+                    <StackPanel>
+                        <Button Command="{Binding StartAsyncCommand}" Content="Start" />
+                        <ProgressBar Value="{Binding Progress}" Height="20"/>
+                    </StackPanel>
+                </Expander>
             </StackPanel>
         </GroupBox>
         <GroupBox 
@@ -59,6 +67,14 @@
                         <Button
                             Command="{Binding DisplayCommand}"
                             Content="Display" />
+                    </StackPanel>
+                </Expander>
+                <Expander
+                    IsExpanded="True"
+                    Header="Async Command">
+                    <StackPanel>
+                        <Button Command="{Binding StartAsyncCommand}" Content="Start" />
+                        <ProgressBar Value="{Binding Progress}" Height="20"/>
                     </StackPanel>
                 </Expander>
             </StackPanel>

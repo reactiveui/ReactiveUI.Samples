@@ -57,7 +57,7 @@ namespace ReactiveUI.Samples.Routing.Views
         }
     }
 
-    // XXX: Ignore the man behind this curtain.
+    // XXX: Ignore the man behind this curtain. This will soon be in ReactiveUI itself
     public static class ViewForMixins
     {
         public static IDisposable WhenNavigatedTo<TView, TViewModel>(this TView This, TViewModel viewModel, Func<IDisposable> onNavigatedTo)

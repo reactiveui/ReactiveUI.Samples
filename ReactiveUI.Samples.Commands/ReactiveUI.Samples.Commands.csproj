@@ -111,7 +111,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Caliburn\MainViewModel.cs" />
+    <Compile Include="CaliburnMicro\BackgroundWork.cs" />
+    <Compile Include="CaliburnMicro\MainViewModel.cs" />
     <Compile Include="MVVMLight\MainViewModel.cs" />
     <Compile Include="RxUI\MainVIewModel.cs" />
     <Page Include="MainWindow.xaml">

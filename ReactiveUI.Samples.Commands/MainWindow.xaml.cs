@@ -26,10 +26,10 @@ namespace ReactiveUI.Samples.Commands
             mvvmLightContainer.DataContext = new MVVMLight.MainViewModel();
             reactiveUIContainer.DataContext = new RxUI.MainViewModel();
 
-            //binding the view to the VM manually, since we are not using the CaliburnBootstrapper   
-            Caliburn.Micro.Bootstrapper b = new Bootstrapper(false);
+            //self creating Caliburn bootstrapper inorder to setup all the boilerplate  
+            var boot = new Bootstrapper(false);
             caliburnMicroContainer.DataContext = new CaliburnMicro.MainViewModel();
-            //ViewModelBinder.Bind(new CaliburnMicro.MainViewModel(), caliburnMicroContainer, null);            
+                        
         }
     }
 }

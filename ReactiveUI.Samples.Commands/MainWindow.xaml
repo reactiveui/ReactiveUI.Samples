@@ -8,61 +8,41 @@
     Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition
-                Width="1*" />
-            <ColumnDefinition
-                Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition
-                Height="*" />
-            <RowDefinition
-                Height="*" />
-
-
-        </Grid.RowDefinitions>
         <GroupBox
             Header="MVVM Light"
             x:Name="mvvmLightContainer">
             <StackPanel>
                 <Expander
+                    IsExpanded="True"
                     Header="Simple Command">
                     <StackPanel>
                         <TextBox
                             Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
                         <Button
-                            Command="{Binding DisplayCommand}"
-                            Content="Display" />
+                            Command="{Binding DisplayCommand}" Content="Display" />
                     </StackPanel>
                 </Expander>
-            </StackPanel>
-
-        </GroupBox>
-        <GroupBox
-            Header="ReactiveUI"
-            Grid.Column="1"
-            x:Name="reactiveUIContainer">
-            <StackPanel>
                 <Expander
-                    Header="Simple Command">
+                    IsExpanded="True"
+                    Header="Async Command">
                     <StackPanel>
-                        <TextBox
-                            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-                        <Button
-                            Command="{Binding DisplayCommand}"
-                            Content="Display" />
+                        <Button Command="{Binding StartAsyncCommand}" Content="Start" />
+                        <ProgressBar Value="{Binding Progress}" Height="20"/>
                     </StackPanel>
                 </Expander>
             </StackPanel>
         </GroupBox>
-
-
         <GroupBox 
             Header="Caliburn.Micro"
             x:Name="caliburnMicroContainer"
-            Grid.Row="1">
+            Grid.Column="1">
             <StackPanel>
                 <Expander 
+                    IsExpanded="True"
                     Header="Simple Command">
                     <StackPanel>
                         <TextBox
@@ -72,7 +52,33 @@
                     </StackPanel>
                 </Expander>
             </StackPanel>
-
         </GroupBox>
+        <GroupBox
+            Header="ReactiveUI" 
+            Grid.Column="2"
+            x:Name="reactiveUIContainer">
+            <StackPanel>
+                <Expander
+                    IsExpanded="True"
+                    Header="Simple Command">
+                    <StackPanel>
+                        <TextBox
+                            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                        <Button
+                            Command="{Binding DisplayCommand}"
+                            Content="Display" />
+                    </StackPanel>
+                </Expander>
+                <Expander
+                    IsExpanded="True"
+                    Header="Async Command">
+                    <StackPanel>
+                        <Button Command="{Binding StartAsyncCommand}" Content="Start" />
+                        <ProgressBar Value="{Binding Progress}" Height="20"/>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </GroupBox>
+
     </Grid>
 </Window>

@@ -38,7 +38,7 @@
         </GroupBox>
         <GroupBox 
             Header="Caliburn.Micro"
-            x:Name="caliburnMicroContainer"
+            x:Name="caliburnMicroContainer" cal:Bind.Model="{Binding}"
             Grid.Column="1">
             <StackPanel>
                 <Expander 
@@ -49,6 +49,18 @@
                             x:Name="Name" />
                         <Button x:Name="Display"                            
                             Content="Display" />
+                    </StackPanel>
+                </Expander>
+<Expander
+                    IsExpanded="True"
+                    Header="Async Command">
+                    <StackPanel>
+                        <Button
+                            x:Name="StartAsyncWork"
+                            Content="Start" />
+                        <ProgressBar
+                            Value="{Binding Progress}"
+                            Height="20" />
                     </StackPanel>
                 </Expander>
             </StackPanel>

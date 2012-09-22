@@ -31,19 +31,14 @@ namespace ReactiveUI.Samples.Basics.ViewModels
             //Throttling the updates for the SlowProgress, Actually we can accomplish it with a few ways
             //@xpaulbettsx is there a better way?
             // 1:
-            this.ObservableForProperty(vm => vm.Progress).Throttle(TimeSpan.FromSeconds(1)).Subscribe(
-                            Observer.Create<IObservedChange<MainViewModel, int>>(c =>
+            this.ObservableForProperty(vm => vm.Progress).Throttle(TimeSpan.FromSeconds(1)).Subscribe(c =>
                 {
                     SlowProgress = Progress;
 
-                }));
+                });
             // 2:
-            this.WhenAny(vm => vm.Progress, model => true).Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler).Subscribe(
-                Observer.Create<bool>(c =>
-                {
-                    SlowProgress2 = Progress;
-
-                }));
+            this.WhenAny(vm => vm.Progress, model => true).Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler).
+                Subscribe(c => SlowProgress2 = Progress);
 
             Person = new PersonViewModel();
             Calculator = new CalculatorViewModel();

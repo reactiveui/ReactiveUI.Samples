@@ -1,4 +1,5 @@
-﻿using System.Reactive;
+﻿using System;
+using System.Reactive;
 using ReactiveUI;
 
 namespace ReactiveUI.Samples.Basics.ViewModels
@@ -8,12 +9,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
 
         public PersonViewModel()
         {
-            ValidationObservable.Subscribe(Observer.Create<IObservedChange<object, bool>>(x =>
-            {
-                IsValid = this.IsObjectValid();
-
-
-            }));
+            ValidationObservable.Subscribe(x => IsValid = this.IsObjectValid());
         }
         private int _Age;
 

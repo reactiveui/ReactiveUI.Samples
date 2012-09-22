@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Messaging", "ReactiveUI.Samples.Messaging\ReactiveUI.Samples.Messaging.csproj", "{5D7912ED-ABF3-457F-A94B-8D757BF81803}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basics", "Basics", "{92E8B736-DC28-4B8A-965B-9048F95A000A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Basics", "ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj", "{80D3460E-5DE4-40A2-B02C-659F4B3C8856}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,10 @@ Global
 		{5D7912ED-ABF3-457F-A94B-8D757BF81803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D7912ED-ABF3-457F-A94B-8D757BF81803}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D7912ED-ABF3-457F-A94B-8D757BF81803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +54,6 @@ Global
 		{0E9F6644-7625-49F7-88C6-333292003E6E} = {849E3F90-EE14-4C0C-8FD7-F11FAA116CF4}
 		{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063} = {13BD54E4-DDDB-4279-93B8-D5B45F84B792}
 		{5D7912ED-ABF3-457F-A94B-8D757BF81803} = {9DDA9D55-A8FF-4DD7-AD25-ADBA4CDACE16}
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856} = {92E8B736-DC28-4B8A-965B-9048F95A000A}
 	EndGlobalSection
 EndGlobal

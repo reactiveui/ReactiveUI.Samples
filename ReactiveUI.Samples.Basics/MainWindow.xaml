@@ -1,0 +1,14 @@
+﻿<Window x:Class="ReactiveUI.Samples.Basics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Expander Header="Simple Notification" IsExpanded="True">
+            <StackPanel>
+                <TextBlock Text="Ever changing property"/>
+                <ProgressBar Value="{Binding Progress}" Height="50"/>
+            </StackPanel>
+           
+        </Expander>
+    </StackPanel>
+</Window>

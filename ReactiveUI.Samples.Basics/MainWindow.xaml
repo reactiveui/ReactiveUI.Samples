@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ReactiveUI.Samples.Basics.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="525">
     <StackPanel>
         <Expander Header="Simple Notification" IsExpanded="True">
             <StackPanel>
@@ -11,6 +11,25 @@
                 <ProgressBar Value="{Binding SlowProgress}" Height="50"/>
                 <TextBlock Text="Another Slow changing property"/>
                 <ProgressBar Value="{Binding SlowProgress2}" Height="50"/>
+            </StackPanel>
+        </Expander>
+        <Expander Header="Validation" IsExpanded="True">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Age: "/>
+                    <TextBox Text="{Binding Person.Age, ValidatesOnExceptions=True, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="30"/>
+                </StackPanel>
+                <CheckBox Content="Is Valid Age?" IsChecked="{Binding Person.IsValid}" IsEnabled="False"/>
+            </StackPanel>
+        </Expander>
+        <Expander Header="Memoizing MRU" IsExpanded="True">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Calculate (x) => (x * 10): "/>
+                    <TextBox Text="{Binding Calculator.Number, ValidatesOnExceptions=True, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="30"/>
+                </StackPanel>
+                <Button Content="Calculate" Command="{Binding Calculator.CalculateCommand}"/>
+                <TextBlock Text="{Binding Calculator.Result}"/>
             </StackPanel>
         </Expander>
     </StackPanel>

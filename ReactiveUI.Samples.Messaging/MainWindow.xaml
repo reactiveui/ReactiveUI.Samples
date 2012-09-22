@@ -1,53 +1,82 @@
-﻿<Window x:Class="ReactiveUI.Samples.Messaging.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
-            <GroupBox
+﻿<Window
+    x:Class="ReactiveUI.Samples.Messaging.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:cal="http://www.caliburnproject.org"
+    Title="MainWindow"
+    Height="350"
+    Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="1*" />
+            <ColumnDefinition
+                Width="1*" />
+            <ColumnDefinition
+                Width="1*" />
+        </Grid.ColumnDefinitions>
+        <GroupBox
             Header="MVVM Light"
             x:Name="mvvmLightContainer">
-                <StackPanel>
-                    <Expander
+            <StackPanel>
+                <Expander
                     IsExpanded="True"
                     Header="Simple Message">
-                        <StackPanel>
-                        <Button DataContext="{Binding Publisher}"
+                    <StackPanel>
+                        <Button
+                            DataContext="{Binding Publisher}"
                             Command="{Binding PublishCommand}"
                             Content="Publish" />
-                        <TextBlock DataContext="{Binding Subscriber}" Text="{Binding Value, StringFormat=Subscriber:{0}}"/>
+                        <TextBlock
+                            DataContext="{Binding Subscriber}"
+                            Text="{Binding Value, StringFormat=Subscriber:{0}}" />
                     </StackPanel>
-                    </Expander>
-                
-                </StackPanel>
-            </GroupBox>
-            <GroupBox 
+                </Expander>
+
+            </StackPanel>
+        </GroupBox>
+        <GroupBox
             Header="Caliburn.Micro"
-            x:Name="caliburnMicroContainer" 
+            x:Name="caliburnMicroContainer"
+            cal:Bind.Model="{Binding}"
             Grid.Column="1">
-            </GroupBox>
-            <GroupBox
-            Header="ReactiveUI" 
+            <StackPanel>
+                <Expander
+                    IsExpanded="True"
+                    Header="Simple Message">
+                    <StackPanel>
+                        <Button
+                            DataContext="{Binding Publisher}"
+                            cal:Bind.Model="{Binding}"
+                            x:Name="Publish"
+                            Content="Publish" />
+                        <TextBlock
+                            DataContext="{Binding Subscriber}"
+                            Text="{Binding Value, StringFormat=Subscriber:{0}}" />
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox
+            Header="ReactiveUI"
             Grid.Column="2"
             x:Name="reactiveUIContainer">
-                <StackPanel>
-                    <Expander
+            <StackPanel>
+                <Expander
                     IsExpanded="True"
                     Header="Simple Message">
-                        <StackPanel>
-                            <Button DataContext="{Binding Publisher}"
+                    <StackPanel>
+                        <Button
+                            DataContext="{Binding Publisher}"
                             Command="{Binding PublishCommand}"
                             Content="Publish" />
-                            <TextBlock DataContext="{Binding Subscriber}" Text="{Binding Value, StringFormat=Subscriber:{0}}"/>
+                        <TextBlock
+                            DataContext="{Binding Subscriber}"
+                            Text="{Binding Value, StringFormat=Subscriber:{0}}" />
                     </StackPanel>
-                    </Expander>
-                 
-                </StackPanel>
-            </GroupBox>
+                </Expander>
 
-        </Grid>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
 </Window>

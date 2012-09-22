@@ -7,8 +7,11 @@
             <StackPanel>
                 <TextBlock Text="Ever changing property"/>
                 <ProgressBar Value="{Binding Progress}" Height="50"/>
+                <TextBlock Text="Slow changing property"/>
+                <ProgressBar Value="{Binding SlowProgress}" Height="50"/>
+                <TextBlock Text="Another Slow changing property"/>
+                <ProgressBar Value="{Binding SlowProgress2}" Height="50"/>
             </StackPanel>
-           
         </Expander>
     </StackPanel>
 </Window>

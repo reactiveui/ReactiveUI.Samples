@@ -44,6 +44,9 @@ namespace ReactiveUI.Samples.Basics.ViewModels
                     SlowProgress2 = Progress;
 
                 }));
+
+            Person = new PersonViewModel();
+            Calculator = new CalculatorViewModel();
         }
 
         private int _Progress;
@@ -69,6 +72,24 @@ namespace ReactiveUI.Samples.Basics.ViewModels
             get { return _SlowProgress2; }
             set { this.RaiseAndSetIfChanged(x => x.SlowProgress2, value); }
         }
+
+        private PersonViewModel _Person;
+
+        public PersonViewModel Person
+        {
+            get { return _Person; }
+            set { this.RaiseAndSetIfChanged(x => x.Person, value); }
+        }
+
+        private CalculatorViewModel _Calculator;
+
+        public CalculatorViewModel Calculator
+        {
+            get { return _Calculator; }
+            set { this.RaiseAndSetIfChanged(x => x.Calculator, value); }
+        }
+
+        
 
          
     }

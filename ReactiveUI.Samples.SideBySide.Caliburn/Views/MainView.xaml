@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="ReactiveUI.Samples.SideBySide.CaliburnMicro.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="600" Width="525">
+    <StackPanel>
+        <Expander
+            Header="Simple Notification"
+            IsExpanded="True">
+            <StackPanel>
+                <TextBlock
+                    Text="Ever changing property" />
+                <ProgressBar
+                    x:Name="Progress"
+                    Height="50" />
+                <TextBlock
+                    Text="Slow changing property" />
+                <ProgressBar
+                    x:Name="SlowProgress"
+                    Height="50" />
+                <TextBlock
+                    Text="Another Slow changing property" />
+                <ProgressBar
+                    x:Name="SlowProgress2"
+                    Height="50" />
+            </StackPanel>
+        </Expander>
+       <ContentControl
+            x:Name="Person" />
+        <ContentControl
+            x:Name="Calculator" />
+    </StackPanel>
+</UserControl>

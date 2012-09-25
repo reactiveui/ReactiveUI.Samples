@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basics", "Basics", "{92E8B7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Basics", "ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj", "{80D3460E-5DE4-40A2-B02C-659F4B3C8856}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SideBySide", "SideBySide", "{66A413B1-2CE1-493B-87C1-CFBF7AFF2B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.SideBySide.CaliburnMicro", "ReactiveUI.Samples.SideBySide.Caliburn\ReactiveUI.Samples.SideBySide.CaliburnMicro.csproj", "{A14C98B5-3480-4BBC-A69A-68C239BE156E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,10 @@ Global
 		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +63,6 @@ Global
 		{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063} = {13BD54E4-DDDB-4279-93B8-D5B45F84B792}
 		{5D7912ED-ABF3-457F-A94B-8D757BF81803} = {9DDA9D55-A8FF-4DD7-AD25-ADBA4CDACE16}
 		{80D3460E-5DE4-40A2-B02C-659F4B3C8856} = {92E8B736-DC28-4B8A-965B-9048F95A000A}
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E} = {66A413B1-2CE1-493B-87C1-CFBF7AFF2B1A}
 	EndGlobalSection
 EndGlobal

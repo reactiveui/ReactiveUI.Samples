@@ -41,16 +41,16 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
                 }
 
             });
-            //Throttling the updates for the SlowProgress, Actually we can accomplish it with a few ways
-            //@xpaulbettsx is there a better way?
+            
+            //Throttling the Progress property updates for the SlowProgress. 
+            //Two ways to observe the changes on the Progress property
             // 1:
-            this.ObservableForProperty(vm => vm.Progress).Throttle(TimeSpan.FromSeconds(1)).Subscribe(c =>
-                {
-                    SlowProgress = Progress;
-
-                });
+            this.ObservableForProperty(vm => vm.Progress)
+                .Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler)
+                .Subscribe(c => SlowProgress = Progress);
             // 2:
-            this.WhenAny(vm => vm.Progress, model => true).Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler).
+            this.WhenAny(vm => vm.Progress, model => true)
+                .Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler).
                 Subscribe(c => SlowProgress2 = Progress);
 
             Person = new PersonViewModel();
@@ -61,7 +61,6 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
 
 
         private int _Progress;
-
         public int Progress
         {
             get { return _Progress; }
@@ -74,7 +73,6 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
         }
 
         private int _SlowProgress;
-
         public int SlowProgress
         {
             get { return _SlowProgress; }
@@ -87,7 +85,6 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
         }
 
         private int _SlowProgress2;
-
         public int SlowProgress2
         {
             get { return _SlowProgress2; }
@@ -100,7 +97,6 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
         }
 
         private PersonViewModel _Person;
-
         public PersonViewModel Person
         {
             get { return _Person; }
@@ -113,7 +109,6 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
         }
 
         private CalculatorViewModel _Calculator;
-
         public CalculatorViewModel Calculator
         {
             get { return _Calculator; }

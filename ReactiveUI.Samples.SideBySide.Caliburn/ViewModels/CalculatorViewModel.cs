@@ -14,11 +14,9 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
         private MemoizingMRUCache<int, int> _cache;
         private MakeObjectReactiveHelper _reactiveHelper;
 
-
         public CalculatorViewModel()
         {
             _reactiveHelper = new MakeObjectReactiveHelper(this);
-
             _cache = new MemoizingMRUCache<int, int>((x, ctx) =>
             {
                 Thread.Sleep(1000);
@@ -26,11 +24,9 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
                 return x*10;
             }, 5);
 
-
             CalculateCommand = new ReactiveAsyncCommand(this.WhenAny(x => x.Number, x => x.Value > 0));
             (CalculateCommand as ReactiveAsyncCommand).RegisterAsyncTask<object>(o =>
             {
-                
                 return Task.Factory.StartNew(() =>
                 {
                     int top;
@@ -49,19 +45,12 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
                             Result = i;
                             Thread.Sleep(100);
                         }
-
                     }
-
-
                 });
-
             });
-
         }
 
         private int _Number;
-
-        
         public int Number
         {
             get { return _Number; }
@@ -76,7 +65,6 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
         public ICommand CalculateCommand { get; set; }
 
         private int _Result;
-
         public int Result
         {
             get { return _Result; }

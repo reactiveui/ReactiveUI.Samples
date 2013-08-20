@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ninject;
-using ReactiveUI.Routing;
 using ReactiveUI.Samples.Routing.Views;
 
 namespace ReactiveUI.Samples.Routing.ViewModels
@@ -27,49 +26,32 @@ namespace ReactiveUI.Samples.Routing.ViewModels
      * you should configure your IoC container. And finally, it's the place 
      * which decides which View to Navigate to when the application starts.
      */
+
     public class AppBootstrapper : ReactiveObject, IScreen
     {
         public IRoutingState Router { get; private set; }
 
-        public AppBootstrapper(IKernel testKernel = null, IRoutingState testRouter = null)
+        public AppBootstrapper(IMutableDependencyResolver dependencyResolver = null, IRoutingState testRouter = null)
         {
             Router = testRouter ?? new RoutingState();
-            var kernel = testKernel ?? CreateStandardKernel();
+            dependencyResolver = dependencyResolver ?? RxApp.MutableResolver;
 
-            // AppBootstrapper is a global variable, so bind up 
-            kernel.Bind(typeof (IScreen), typeof(AppBootstrapper)).ToConstant(this);
-
-            // Set up NInject to do DI
-            RxApp.ConfigureServiceLocator(
-                (iface, contract) => {
-                    if (contract != null) return kernel.Get(iface, contract);
-                    return kernel.Get(iface);
-                },
-                (iface, contract) => {
-                    if (contract != null) return kernel.GetAll(iface, contract);
-                    return kernel.GetAll(iface);
-                },
-                (realClass, iface, contract) => {
-                    var binding = kernel.Bind(iface).To(realClass);
-                    if (contract != null) binding.Named(contract);
-                });
+            // Bind 
+            RegisterParts(dependencyResolver);
 
             // TODO: This is a good place to set up any other app 
             // startup tasks, like setting the logging level
             LogHost.Default.Level = LogLevel.Debug;
 
             // Navigate to the opening page of the application
-            var welcomeVm = RxApp.GetService<IWelcomeViewModel>();
-            Router.Navigate.Execute(welcomeVm);
+            Router.Navigate.Execute(new WelcomeViewModel(this));
         }
 
-        IKernel CreateStandardKernel()
+        private void RegisterParts(IMutableDependencyResolver dependencyResolver)
         {
-            var ret = new StandardKernel();
+            dependencyResolver.RegisterConstant(this, typeof(IScreen));
 
-            ret.Bind<IWelcomeViewModel>().To<WelcomeViewModel>();
-            ret.Bind<IViewFor<IWelcomeViewModel>>().To<WelcomeView>();
-            return ret;
+            dependencyResolver.Register(() => new WelcomeView(), typeof(IViewFor<WelcomeViewModel>));
         }
     }
 }

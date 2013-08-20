@@ -11,7 +11,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ReactiveUI.Routing;
 using ReactiveUI.Samples.Routing.ViewModels;
 
 namespace ReactiveUI.Samples.Routing
@@ -21,14 +20,14 @@ namespace ReactiveUI.Samples.Routing
     /// </summary>
     public partial class MainWindow : Window
     {
+        public AppBootstrapper AppBootstrapper { get; protected set; }
+
         public MainWindow()
         {
             InitializeComponent();
 
-            // Since we only have one IScreen in the entire application, we can
-            // just fetch it via GetService. The concrete implementation of this
-            // class is the AppBootstrapper class.
-            viewHost.Router = RxApp.GetService<IScreen>().Router;
+            AppBootstrapper = new AppBootstrapper();
+            DataContext = AppBootstrapper;
         }
     }
 }

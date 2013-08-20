@@ -1,5 +1,5 @@
 ﻿using System;
-using ReactiveUI.Routing;
+using ReactiveUI;
 using ReactiveUI.Xaml;
 
 namespace ReactiveUI.Samples.Routing.ViewModels

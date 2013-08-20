@@ -2,8 +2,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using ReactiveUI.Legacy;
-using ReactiveUI.Xaml;
 
 namespace ReactiveUI.Samples.Basics.ViewModels
 {
@@ -21,10 +19,8 @@ namespace ReactiveUI.Samples.Basics.ViewModels
             }, 5);
             
 
-            CalculateCommand = new ReactiveAsyncCommand();
-            (CalculateCommand as ReactiveAsyncCommand).RegisterAsyncTask<object>(o =>
-            {
-                
+            CalculateCommand = new ReactiveCommand();
+            (CalculateCommand as ReactiveCommand).RegisterAsyncTask(o => {
                 return Task.Factory.StartNew(() =>
                 {
                     int top;
@@ -48,7 +44,6 @@ namespace ReactiveUI.Samples.Basics.ViewModels
 
 
                 });
-
             });
 
         }

@@ -42,7 +42,7 @@ namespace ReactiveUI.Samples.Messaging.RxUI
         public int Value
         {
             get { return _Value; }
-            set { this.RaiseAndSetIfChanged(x => x.Value, value); }
+            set { this.RaiseAndSetIfChanged(ref _Value, value); }
         }
 
     }

@@ -14,7 +14,7 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
             public int Age
             {
                 get { return _Age; }
-                set { this.RaiseAndSetIfChanged(x => x.Age, value); }
+                set { this.RaiseAndSetIfChanged(ref _Age, value); }
             }
 
             public bool IsAgeValid(int age)

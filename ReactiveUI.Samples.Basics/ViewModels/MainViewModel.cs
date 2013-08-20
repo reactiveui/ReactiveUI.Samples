@@ -13,7 +13,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
 
         public MainViewModel()
         {
-            RxApp.DeferredScheduler = new DispatcherScheduler(Application.Current.Dispatcher);
+            RxApp.MainThreadScheduler = new DispatcherScheduler(Application.Current.Dispatcher);
             Task.Factory.StartNew(() =>
             {
                 while (true)
@@ -37,7 +37,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
 
                 });
             // 2:
-            this.WhenAny(vm => vm.Progress, model => true).Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler).
+            this.WhenAny(vm => vm.Progress, model => true).Throttle(TimeSpan.FromSeconds(1), RxApp.MainThreadScheduler).
                 Subscribe(c => SlowProgress2 = Progress);
 
             Person = new PersonViewModel();
@@ -49,7 +49,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public int Progress
         {
             get { return _Progress; }
-            set { this.RaiseAndSetIfChanged(x => x.Progress, value); }
+            set { this.RaiseAndSetIfChanged(ref _Progress, value); }
         }
 
         private int _SlowProgress;
@@ -57,7 +57,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public int SlowProgress
         {
             get { return _SlowProgress; }
-            set { this.RaiseAndSetIfChanged(x => x.SlowProgress, value); }
+            set { this.RaiseAndSetIfChanged(ref _SlowProgress, value); }
         }
 
         private int _SlowProgress2;
@@ -65,7 +65,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public int SlowProgress2
         {
             get { return _SlowProgress2; }
-            set { this.RaiseAndSetIfChanged(x => x.SlowProgress2, value); }
+            set { this.RaiseAndSetIfChanged(ref _SlowProgress2, value); }
         }
 
         private PersonViewModel _Person;
@@ -73,7 +73,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public PersonViewModel Person
         {
             get { return _Person; }
-            set { this.RaiseAndSetIfChanged(x => x.Person, value); }
+            set { this.RaiseAndSetIfChanged(ref _Person, value); }
         }
 
         private CalculatorViewModel _Calculator;
@@ -81,7 +81,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public CalculatorViewModel Calculator
         {
             get { return _Calculator; }
-            set { this.RaiseAndSetIfChanged(x => x.Calculator, value); }
+            set { this.RaiseAndSetIfChanged(ref _Calculator, value); }
         }
 
         

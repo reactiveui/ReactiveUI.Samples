@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using ReactiveUI.Legacy;
 using ReactiveUI.Xaml;
 
 namespace ReactiveUI.Samples.Basics.ViewModels
@@ -58,7 +59,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public int Number
         {
             get { return _Number; }
-            set { this.RaiseAndSetIfChanged(x => x.Number, value); }
+            set { this.RaiseAndSetIfChanged(ref _Number, value); }
         }
 
         public ICommand CalculateCommand { get; set; }
@@ -68,7 +69,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public int Result
         {
             get { return _Result; }
-            set { this.RaiseAndSetIfChanged(x => x.Result, value); }
+            set { this.RaiseAndSetIfChanged(ref _Result, value); }
         }
     }
 }

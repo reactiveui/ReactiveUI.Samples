@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
-using ReactiveUI.Xaml;
 
 namespace ReactiveUI.Samples.Commands.RxUI
 {
@@ -13,7 +12,7 @@ namespace ReactiveUI.Samples.Commands.RxUI
             DisplayCommand = new ReactiveCommand(this.WhenAny(x => x.Name, x => !string.IsNullOrEmpty(x.Value)));
             DisplayCommand.Subscribe(_ => MessageBox.Show("You clicked on DisplayCommand: Name is " + Name));
 
-            StartAsyncCommand = new ReactiveAsyncCommand();
+            StartAsyncCommand = new ReactiveCommand();
             StartAsyncCommand.RegisterAsyncAction(_ =>
             {
                 Progress = 0;
@@ -30,7 +29,7 @@ namespace ReactiveUI.Samples.Commands.RxUI
         public string Name
         {
             get { return _Name; }
-            set { this.RaiseAndSetIfChanged(x => x.Name, value); }
+            set { this.RaiseAndSetIfChanged(ref _Name, value); }
         }
 
         public IReactiveCommand DisplayCommand { get; protected set; }
@@ -40,10 +39,10 @@ namespace ReactiveUI.Samples.Commands.RxUI
         public int Progress
         {
             get { return _Progress; }
-            set { this.RaiseAndSetIfChanged(x => x.Progress, value); }
+            set { this.RaiseAndSetIfChanged(ref _Progress, value); }
         }
 
-        public ReactiveAsyncCommand StartAsyncCommand { get; protected set; }
+        public ReactiveCommand StartAsyncCommand { get; protected set; }
 
 
 

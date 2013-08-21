@@ -9,14 +9,12 @@ using ReactiveUI.Xaml;
 
 namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
 {
-    public class CalculatorViewModel : Screen, IReactiveNotifyPropertyChanged
+    public class CalculatorViewModel : Screen
     {
         private MemoizingMRUCache<int, int> _cache;
-        private MakeObjectReactiveHelper _reactiveHelper;
 
         public CalculatorViewModel()
         {
-            _reactiveHelper = new MakeObjectReactiveHelper(this);
             _cache = new MemoizingMRUCache<int, int>((x, ctx) =>
             {
                 Thread.Sleep(1000);
@@ -24,8 +22,8 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
                 return x*10;
             }, 5);
 
-            CalculateCommand = new ReactiveAsyncCommand(this.WhenAny(x => x.Number, x => x.Value > 0));
-            (CalculateCommand as ReactiveAsyncCommand).RegisterAsyncTask<object>(o =>
+            CalculateCommand = new ReactiveCommand(this.WhenAny(x => x.Number, x => x.Value > 0));
+            (CalculateCommand as ReactiveCommand).RegisterAsyncTask(o =>
             {
                 return Task.Factory.StartNew(() =>
                 {
@@ -75,19 +73,5 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
                 NotifyOfPropertyChange(() => Result);
             }
         }
-
-        public IObservable<IObservedChange<object, object>> Changed
-        {
-            get { return _reactiveHelper.Changed; }
-        }
-        public IObservable<IObservedChange<object, object>> Changing
-        {
-            get { return _reactiveHelper.Changing; }
-        }
-        public IDisposable SuppressChangeNotifications()
-        {
-            return _reactiveHelper.SuppressChangeNotifications();
-        }
-        public event PropertyChangingEventHandler PropertyChanging;
     }
 }

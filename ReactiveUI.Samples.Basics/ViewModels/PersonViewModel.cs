@@ -17,7 +17,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public int Age
         {
             get { return _Age; }
-            set { this.RaiseAndSetIfChanged(x => x.Age, value); }
+            set { this.RaiseAndSetIfChanged(ref _Age, value); }
         }
 
         public bool IsAgeValid(int age)
@@ -30,7 +30,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
         public bool IsValid
         {
             get { return _IsValid; }
-            set { this.RaiseAndSetIfChanged(x => x.IsValid, value); }
+            set { this.RaiseAndSetIfChanged(ref _IsValid, value); }
         }
  
     }

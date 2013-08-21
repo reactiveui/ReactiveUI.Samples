@@ -13,6 +13,5 @@ namespace ReactiveUI.Samples.Routing
     /// </summary>
     public partial class App : Application
     {
-        public AppBootstrapper Bootstrapper = new AppBootstrapper();
     }
 }

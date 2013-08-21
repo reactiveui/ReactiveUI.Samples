@@ -10,23 +10,18 @@ using Caliburn.Micro;
 namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
 {
     /// <summary>
-    /// in order to make any ViewModel part of ReactiveUI we need to
-    /// 1. implement the IReactiveNotifyPropertyChanged interface
-    /// 2. make use of MakeObjectReactiveHelper class that provided by ReactiveUI
-    /// 3. Enjoy the Awsomeness of ReactiveUI
+    /// In order to make any ViewModel part of ReactiveUI we need to
+    /// 1. Enjoy the Awesomeness of ReactiveUI
+    /// That's it, with version 5 of ReactiveUI it Just Works
     /// </summary>
-    public class MainViewModel : Screen,IReactiveNotifyPropertyChanged
+    public class MainViewModel : Screen
     {
-
-        private MakeObjectReactiveHelper _reactiveHelper;
 
         public MainViewModel()
         {
-           
-            _reactiveHelper = new MakeObjectReactiveHelper(this);
             DisplayName = "Caliburn.Micro works side-by-side with ReactiveUI";
 
-            RxApp.DeferredScheduler = new DispatcherScheduler(Application.Current.Dispatcher);
+            RxApp.MainThreadScheduler = new DispatcherScheduler(Application.Current.Dispatcher);
             Task.Factory.StartNew(() =>
             {
                 while (true)
@@ -46,11 +41,11 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
             //Two ways to observe the changes on the Progress property
             // 1:
             this.ObservableForProperty(vm => vm.Progress)
-                .Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler)
+                .Throttle(TimeSpan.FromSeconds(1), RxApp.MainThreadScheduler)
                 .Subscribe(c => SlowProgress = Progress);
             // 2:
             this.WhenAny(vm => vm.Progress, model => true)
-                .Throttle(TimeSpan.FromSeconds(1), RxApp.DeferredScheduler).
+                .Throttle(TimeSpan.FromSeconds(1), RxApp.MainThreadScheduler).
                 Subscribe(c => SlowProgress2 = Progress);
 
             Person = new PersonViewModel();
@@ -119,20 +114,5 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
                 NotifyOfPropertyChange(() => Calculator);
             }
         }
-
-
-        public IObservable<IObservedChange<object, object>> Changed
-        {
-            get { return _reactiveHelper.Changed; }
-        }
-        public IObservable<IObservedChange<object, object>> Changing
-        {
-            get { return _reactiveHelper.Changing; }
-        }
-        public IDisposable SuppressChangeNotifications()
-        {
-            return _reactiveHelper.SuppressChangeNotifications();
-        }
-        public event PropertyChangingEventHandler PropertyChanging;
     }
 }

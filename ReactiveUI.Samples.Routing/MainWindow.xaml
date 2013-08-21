@@ -1,7 +1,8 @@
 ﻿<Window x:Class="ReactiveUI.Samples.Routing.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Routing="clr-namespace:ReactiveUI.Routing;assembly=ReactiveUI.Routing" Title="MainWindow" Height="350" Width="525">
+        xmlns:Xaml="clr-namespace:ReactiveUI.Xaml;assembly=ReactiveUI.Xaml"
+        Title="MainWindow" Height="350" Width="525">
     <Grid UseLayoutRounding="True">
         <!--
             COOLSTUFF: RoutedViewHost
@@ -9,6 +10,6 @@
             RoutedViewHost will take a Router and display whatever ViewModel 
             is at the front of the route stack.
         -->
-        <Routing:RoutedViewHost x:Name="viewHost" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+        <Xaml:RoutedViewHost Router="{Binding Router}"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
     </Grid>
 </Window>

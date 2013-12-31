@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reactive.Linq;
+﻿using System.Reactive.Linq;
 
 namespace ReactiveUI.Samples.SimpleViewModels
 {
@@ -14,17 +13,17 @@ namespace ReactiveUI.Samples.SimpleViewModels
     /// </summary>
     public class CalculatorViewModel : ReactiveObject
     {
-        string _InputText;
         public string InputText
         {
             get { return _InputText; }
             set { this.RaiseAndSetIfChanged(ref _InputText, value); }
         }
+        string _InputText;
 
-        public string ErrorText { get; private set; }
+        public string ErrorText { get { return _ErrorTextOAPH.Value; } }
         private ObservableAsPropertyHelper<string> _ErrorTextOAPH;
 
-        public string ResultText { get; private set; }
+        public string ResultText { get { return _ResultTextOAPH.Value; } }
         private ObservableAsPropertyHelper<string> _ResultTextOAPH;
 
         public CalculatorViewModel()
@@ -43,14 +42,12 @@ namespace ReactiveUI.Samples.SimpleViewModels
             // Now, the error text
             parsedIntegers
                 .Select(x => x.HasValue ? "" : "Error")
-                .Subscribe(x => { ErrorText = x; });
+                .ToProperty(this, x => x.ErrorText, out _ErrorTextOAPH);
 
             // And the result, which is *2 of the input.
             parsedIntegers
                 .Select(x => x.HasValue ? (x.Value * 2).ToString() : "")
-                .Subscribe(x => { ResultText = x; });
-            // Woudd like be using the following line instead of above, but it doesn't work:
-            // ToProperty(this, x => x.ResultText, out _ResultTextOAPH);
+                .ToProperty(this, x => x.ResultText, out _ResultTextOAPH);
         }
     }
 }

@@ -6,6 +6,12 @@ using System.Reactive.Linq;
 
 namespace ReactiveUI.Samples.SimpleViewModelsUnitTests
 {
+    /// <summary>
+    /// The web call ViewModel is time dependent. There is the webservice time and there
+    /// is the time that one waits for the user to stop typing. We could wait 800 ms, and test
+    /// that way. Or we can time travel with some nifty tools from the System.Reactive.Testing
+    /// namespace.
+    /// </summary>
     [TestClass]
     public class WebCallViewModelTest
     {
@@ -58,7 +64,8 @@ namespace ReactiveUI.Samples.SimpleViewModelsUnitTests
         }
 
         /// <summary>
-        /// This dummy webservice takes zero time.
+        /// This dummy webservice takes zero time so we can isolate the timing tests for
+        /// the typing above.
         /// </summary>
         class immediateWebService : IWebCaller
         {

@@ -18,7 +18,7 @@ namespace ReactiveUI.Samples.SimpleViewModels
             set { this.RaiseAndSetIfChanged(ref _InputText, value); }
         }
 
-        public string ResultText { get; private set; }
+        public string ResultText { get { return _ResultTextOAPH.Value; } }
         private ObservableAsPropertyHelper<string> _ResultTextOAPH;
 
         ReactiveCommand _doWebCall;
@@ -29,8 +29,6 @@ namespace ReactiveUI.Samples.SimpleViewModels
         /// <param name="caller"></param>
         public WebCallViewModel(IWebCaller caller)
         {
-            ResultText = "";
-
             // Do a search when nothing new has been entered for 800 ms and it isn't
             // an empty string... and don't search for the same thing twice.
 
@@ -45,9 +43,12 @@ namespace ReactiveUI.Samples.SimpleViewModels
             // Run the web call and save the results back to the UI when done.
             var webResults = _doWebCall.RegisterAsync(x => caller.GetResult(x as string));
 
+            // The results are stuffed into the property, on the proper thread
+            // (ToProperty takes care of that) when done. StartWith just makes sure
+            // the initial value of the property isn't null.
             webResults
-                .Subscribe(x => { ResultText = x; });
-            //.ToProperty(this, x => x.ResultText, out _ResultTextOAPH);
+                .StartWith("")
+                .ToProperty(this, x => x.ResultText, out _ResultTextOAPH);
         }
     }
 }

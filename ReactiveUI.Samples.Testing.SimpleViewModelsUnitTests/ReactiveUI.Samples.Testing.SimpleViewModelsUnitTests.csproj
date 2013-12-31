@@ -6,8 +6,8 @@
     <ProjectGuid>{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReactiveUI.Samples.SimpleViewModelsUnitTests</RootNamespace>
-    <AssemblyName>ReactiveUI.Samples.SimpleViewModelsUnitTests</AssemblyName>
+    <RootNamespace>ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests</RootNamespace>
+    <AssemblyName>ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -78,9 +78,9 @@
     <Compile Include="WebCallViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ReactiveUI.Samples.SimpleViewModels\ReactiveUI.Samples.SimpleViewModels.csproj">
+    <ProjectReference Include="..\ReactiveUI.Samples.Testing.SimpleViewModels\ReactiveUI.Samples.Testing.SimpleViewModels.csproj">
       <Project>{3bd3e9a3-bdf2-4f8f-a635-76b125cccd9b}</Project>
-      <Name>ReactiveUI.Samples.SimpleViewModels</Name>
+      <Name>ReactiveUI.Samples.Testing.SimpleViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

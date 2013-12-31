@@ -30,9 +30,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.SideBySi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{D1178E87-A64C-4392-943B-040F28039FAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.SimpleViewModels", "ReactiveUI.Samples.SimpleViewModels\ReactiveUI.Samples.SimpleViewModels.csproj", "{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModels", "ReactiveUI.Samples.Testing.SimpleViewModels\ReactiveUI.Samples.Testing.SimpleViewModels.csproj", "{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.SimpleViewModelsUnitTests", "ReactiveUI.Samples.SimpleViewModelsUnitTests\ReactiveUI.Samples.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests", "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests\ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ReactiveUI.Samples.SimpleViewModels;
+using ReactiveUI.Samples.Testing.SimpleViewModels;
 
-namespace ReactiveUI.Samples.SimpleViewModelsUnitTests
+namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
 {
     /// <summary>
     /// A few sample unit tests. Note how simple they are: since the concept of time

@@ -1,10 +1,10 @@
 ﻿using Microsoft.Reactive.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ReactiveUI.Samples.SimpleViewModels;
+using ReactiveUI.Samples.Testing.SimpleViewModels;
 using ReactiveUI.Testing;
 using System.Reactive.Linq;
 
-namespace ReactiveUI.Samples.SimpleViewModelsUnitTests
+namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
 {
     /// <summary>
     /// The web call ViewModel is time dependent. There is the webservice time and there

@@ -7,8 +7,8 @@
     <ProjectGuid>{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReactiveUI.Samples.SimpleViewModels</RootNamespace>
-    <AssemblyName>ReactiveUI.Samples.SimpleViewModels</AssemblyName>
+    <RootNamespace>ReactiveUI.Samples.Testing.SimpleViewModels</RootNamespace>
+    <AssemblyName>ReactiveUI.Samples.Testing.SimpleViewModels</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>

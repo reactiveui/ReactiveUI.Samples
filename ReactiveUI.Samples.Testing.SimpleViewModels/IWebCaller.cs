@@ -1,6 +1,6 @@
 ﻿
 using System;
-namespace ReactiveUI.Samples.SimpleViewModels
+namespace ReactiveUI.Samples.Testing.SimpleViewModels
 {
     public interface IWebCaller
     {

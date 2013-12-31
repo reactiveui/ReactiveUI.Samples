@@ -1,6 +1,6 @@
 ﻿using System.Reactive.Linq;
 
-namespace ReactiveUI.Samples.SimpleViewModels
+namespace ReactiveUI.Samples.Testing.SimpleViewModels
 {
     /// <summary>
     /// A view model with some straight forward calculations. There are no

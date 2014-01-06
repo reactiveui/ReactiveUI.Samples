@@ -1,8 +1,8 @@
 ﻿using Microsoft.Reactive.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ReactiveUI.Samples.Testing.SimpleViewModels;
 using ReactiveUI.Testing;
 using System.Reactive.Linq;
+using Xunit;
 
 namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
 {
@@ -12,13 +12,12 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
     /// that way. Or we can time travel with some nifty tools from the System.Reactive.Testing
     /// namespace.
     /// </summary>
-    [TestClass]
     public class WebCallViewModelTest
     {
         /// <summary>
         /// Make sure no webservice call is send off until 800 ms have passed.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void TestNothingTill800ms()
         {
             // Run a test scheduler to put time under our control.
@@ -29,18 +28,18 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
 
                 // Run the clock forward to 800 ms. At that point, nothing should have happened.
                 s.AdvanceToMs(799);
-                Assert.AreEqual("", fixture.ResultText, "Result at 799");
+                Assert.Equal("", fixture.ResultText);
 
                 // Run the clock 1 tick past and the result should show up.
                 s.AdvanceToMs(801);
-                Assert.AreEqual("result hi", fixture.ResultText, "Result at 800");
+                Assert.Equal("result hi", fixture.ResultText);
             });
         }
 
         /// <summary>
         /// User types something, pauses, then types something again.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void TestDelayAfterUpdate()
         {
             // Run a test scheduler to put time under our control.
@@ -55,11 +54,11 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
 
                 // Now, at 801, there should be nothing!
                 s.AdvanceToMs(801);
-                Assert.AreEqual("", fixture.ResultText, "result text at 801");
+                Assert.Equal("", fixture.ResultText);
 
                 // But, at 800+300+1, our result shoudl appear!
                 s.AdvanceToMs(800 + 300 + 1);
-                Assert.AreEqual("result there", fixture.ResultText, "result text at 1101");
+                Assert.Equal("result there", fixture.ResultText);
             });
         }
 

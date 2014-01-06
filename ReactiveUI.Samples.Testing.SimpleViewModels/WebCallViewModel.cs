@@ -44,11 +44,10 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModels
             var webResults = _doWebCall.RegisterAsync(x => caller.GetResult(x as string));
 
             // The results are stuffed into the property, on the proper thread
-            // (ToProperty takes care of that) when done. StartWith just makes sure
-            // the initial value of the property isn't null.
+            // (ToProperty takes care of that) when done. We never want the property to
+            // be null, so we give it an initial value of "".
             webResults
-                .StartWith("")
-                .ToProperty(this, x => x.ResultText, out _ResultTextOAPH);
+                .ToProperty(this, x => x.ResultText, out _ResultTextOAPH, "");
         }
     }
 }

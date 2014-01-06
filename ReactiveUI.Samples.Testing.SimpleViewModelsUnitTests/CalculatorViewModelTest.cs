@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ReactiveUI.Samples.Testing.SimpleViewModels;
+﻿using ReactiveUI.Samples.Testing.SimpleViewModels;
+using Xunit;
 
 namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
 {
@@ -8,25 +8,24 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
     /// is not involved we do not have to model it in our unit tests. We test these almost
     /// as if they were a non ReactiveUI object.
     /// </summary>
-    [TestClass]
     public class CalculatorViewModelTest
     {
-        [TestMethod]
+        [Fact]
         public void TestTypingStringGetsError()
         {
             var fixture = new CalculatorViewModel();
             fixture.InputText = "hi";
-            Assert.AreEqual("Error", fixture.ErrorText, "ErrorText");
-            Assert.AreEqual("", fixture.ResultText, "ResultText");
+            Assert.Equal("Error", fixture.ErrorText);
+            Assert.Equal("", fixture.ResultText);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestTypingInteger()
         {
             var fixture = new CalculatorViewModel();
             fixture.InputText = "50";
-            Assert.AreEqual("", fixture.ErrorText, "ErrorText");
-            Assert.AreEqual("100", fixture.ResultText, "ResultText");
+            Assert.Equal("", fixture.ErrorText);
+            Assert.Equal("100", fixture.ResultText);
         }
     }
 }

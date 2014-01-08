@@ -20,11 +20,11 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModels
         }
         string _InputText;
 
-        public string ErrorText { get { return _ErrorTextOAPH.Value; } }
-        private ObservableAsPropertyHelper<string> _ErrorTextOAPH;
+        public string ErrorText { get { return _ErrorText.Value; } }
+        private ObservableAsPropertyHelper<string> _ErrorText;
 
-        public string ResultText { get { return _ResultTextOAPH.Value; } }
-        private ObservableAsPropertyHelper<string> _ResultTextOAPH;
+        public string ResultText { get { return _ResultText.Value; } }
+        private ObservableAsPropertyHelper<string> _ResultText;
 
         public CalculatorViewModel()
         {
@@ -42,12 +42,12 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModels
             // Now, the error text
             parsedIntegers
                 .Select(x => x.HasValue ? "" : "Error")
-                .ToProperty(this, x => x.ErrorText, out _ErrorTextOAPH);
+                .ToProperty(this, x => x.ErrorText, out _ErrorText);
 
             // And the result, which is *2 of the input.
             parsedIntegers
                 .Select(x => x.HasValue ? (x.Value * 2).ToString() : "")
-                .ToProperty(this, x => x.ResultText, out _ResultTextOAPH);
+                .ToProperty(this, x => x.ResultText, out _ResultText);
         }
     }
 }

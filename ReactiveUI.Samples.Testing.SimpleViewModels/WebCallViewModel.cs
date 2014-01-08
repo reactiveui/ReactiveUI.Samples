@@ -38,7 +38,7 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModels
                 .Where(x => !string.IsNullOrWhiteSpace(x));
 
             _doWebCall = new ReactiveCommand();
-            newSearchNeeded.Subscribe(x => _doWebCall.Execute(x));
+            newSearchNeeded.InvokeCommand(_doWebCall);
 
             // Run the web call and save the results back to the UI when done.
             var webResults = _doWebCall.RegisterAsync(x => caller.GetResult(x as string));

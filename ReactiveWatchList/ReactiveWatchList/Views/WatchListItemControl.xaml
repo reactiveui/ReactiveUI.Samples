@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="ReactiveWatchList.Views.WatchListItemControl">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Label Text="{Binding Symbol}" Grid.Column="0" />
+    <Label Text="{Binding Price, StringFormat='{0:0.00}'}" Grid.Column="1" />
+    <Label Text="{Binding LastChange, StringFormat='{0:0.00}'}" Grid.Column="2" />
+    <Label Text="{Binding PercentChange, StringFormat='{0:P2}'}" Grid.Column="3" />
+    <Label Text="{Binding DayOpen, StringFormat='{0:0.00}'}" Grid.Column="4" />
+    <Label Text="{Binding DayHigh, StringFormat='{0:0.00}'}" Grid.Column="5" />
+    <Label Text="{Binding DayLow, StringFormat='{0:0.00}'}" Grid.Column="6" />
+  </Grid>
+</ContentView>

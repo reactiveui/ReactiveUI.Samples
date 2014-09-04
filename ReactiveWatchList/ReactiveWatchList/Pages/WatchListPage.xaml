@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:ReactiveWatchList.Views;assembly=ReactiveWatchList"
 					   x:Class="ReactiveWatchList.Pages.WatchListPage">
   <StackLayout>
     <StackLayout Orientation="Horizontal">
@@ -9,7 +10,15 @@
       <Button Text="Reset" Command="{Binding ResetCommand}" />
     </StackLayout>
     <ListView ItemsSource="{Binding Stocks}">
-      
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <view:WatchListItemControl />
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
     </ListView>
   </StackLayout>
 </ContentPage>

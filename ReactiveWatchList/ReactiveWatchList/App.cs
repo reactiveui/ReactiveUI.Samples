@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using ReactiveWatchList.Pages;
 using Xamarin.Forms;
 
 namespace ReactiveWatchList
@@ -11,15 +11,7 @@ namespace ReactiveWatchList
     {
         public static Page GetMainPage()
         {
-            return new ContentPage
-            {
-                Content = new Label
-                {
-                    Text = "Hello, Forms !",
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                },
-            };
+            return new WatchListPage();
         }
     }
 }

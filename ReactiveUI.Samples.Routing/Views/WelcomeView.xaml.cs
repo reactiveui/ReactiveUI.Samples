@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ReactiveUI.Samples.Routing.ViewModels;
+using System.Threading.Tasks;
 
 namespace ReactiveUI.Samples.Routing.Views
 {
@@ -28,15 +29,19 @@ namespace ReactiveUI.Samples.Routing.Views
 
             this.WhenAnyValue(x => x.ViewModel).BindTo(this, x => x.DataContext);
 
-            Observable.FromEventPattern<DependencyPropertyChangedEventHandler, DependencyPropertyChangedEventArgs>(
-                x => DataContextChanged += x,
-                x => DataContextChanged -= x)
-                .Subscribe((e) => {
-                    IWelcomeViewModel vm = e.EventArgs.NewValue as IWelcomeViewModel;
 
-                    if (vm != null)
-                        vm.HelloWorld.Subscribe(param => MessageBox.Show("It worked!!!"));
+            UserError.RegisterHandler(async error =>
+            {
+                RxApp.MainThreadScheduler.Schedule<UserError>(error,
+                (scheduler, userError)=>
+                {
+                    // NOTE: this code really shouldnt throw away the MessageBoxResult
+                    var result = MessageBox.Show(userError.ErrorMessage);
+                    return Disposable.Empty;
                 });
+
+                return await Task.Run<RecoveryOptionResult>(() => { return RecoveryOptionResult.CancelOperation; });
+            });
         }
 
         public IWelcomeViewModel ViewModel {

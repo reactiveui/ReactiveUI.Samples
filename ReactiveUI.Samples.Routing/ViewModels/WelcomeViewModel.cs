@@ -52,6 +52,8 @@ namespace ReactiveUI.Samples.Routing.ViewModels
              */
 
             HelloWorld = new ReactiveCommand();
+
+            HelloWorld.Subscribe(param => UserError.Throw(new UserError("It works!!!")));
         }
     }
 }

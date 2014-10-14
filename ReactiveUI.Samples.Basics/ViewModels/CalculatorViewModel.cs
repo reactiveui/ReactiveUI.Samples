@@ -18,10 +18,9 @@ namespace ReactiveUI.Samples.Basics.ViewModels
                 // Pretend this calculation isn’t cheap
                 return x*10;
             }, 5);
-            
 
-            CalculateCommand = new ReactiveCommand();
-            (CalculateCommand as ReactiveCommand).RegisterAsyncTask(o => {
+
+            CalculateCommand = ReactiveCommand.CreateAsyncTask(o => {
                 return Task.Factory.StartNew(() =>
                 {
                     int top;

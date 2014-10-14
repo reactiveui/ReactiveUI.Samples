@@ -67,7 +67,7 @@ namespace ReactiveUI.Samples.Basics
 
                 _validationCache[columnName] = ret;
 
-                _ValidationObservable.OnNext(new ObservedChange<object, bool>()
+                _ValidationObservable.OnNext(new ObservedChange<object, bool>(this, this.Error)
                 {
                     Sender = this,
                     PropertyName = columnName,
@@ -151,8 +151,8 @@ namespace ReactiveUI.Samples.Basics
                 try
                 {
                     var ctx = new ValidationContext(this, null, null) { MemberName = propName };
-                    var getter = Reflection.GetValueFetcherForProperty(pei.Type, propName);
-                    v.Validate(getter(this), ctx);
+                    var getter = Reflection.GetValueFetcherForProperty(pei.Type.GetProperty(propName));
+                    v.Validate(getter(this, new object[]{}), ctx);
                 }
                 catch (Exception ex)
                 {

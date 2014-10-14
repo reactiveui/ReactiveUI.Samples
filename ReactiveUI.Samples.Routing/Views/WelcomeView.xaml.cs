@@ -35,7 +35,7 @@ namespace ReactiveUI.Samples.Routing.Views
                 RxApp.MainThreadScheduler.Schedule<UserError>(error,
                 (scheduler, userError)=>
                 {
-                    // NOTE: this code really shouldnt throw away the MessageBoxResult
+                    // NOTE: this code really shouldn't throw away the MessageBoxResult
                     var result = MessageBox.Show(userError.ErrorMessage);
                     return Disposable.Empty;
                 });

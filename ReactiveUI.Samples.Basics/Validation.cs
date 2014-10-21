@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Splat;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reactive.Subjects;
 using System.Reflection;
 using System.Runtime.Serialization;
@@ -66,12 +68,12 @@ namespace ReactiveUI.Samples.Basics
 
                 _validationCache[columnName] = ret;
 
-                _ValidationObservable.OnNext(new ObservedChange<object, bool>()
-                {
-                    Sender = this,
-                    PropertyName = columnName,
-                    Value = (ret != null)
-                });
+                Expression<Func<ReactiveValidatedObject, string>> expression = x => x.Error;
+
+                _ValidationObservable
+                    .OnNext(
+                        new ObservedChange<object, bool>(this, expression.Body, ret != null));
+
                 return ret;
             }
         }
@@ -150,8 +152,8 @@ namespace ReactiveUI.Samples.Basics
                 try
                 {
                     var ctx = new ValidationContext(this, null, null) { MemberName = propName };
-                    var getter = Reflection.GetValueFetcherForProperty(pei.Type, propName);
-                    v.Validate(getter(this), ctx);
+                    var getter = Reflection.GetValueFetcherForProperty(pei.Type.GetProperty(propName));
+                    v.Validate(getter(this, new object[]{}), ctx);
                 }
                 catch (Exception ex)
                 {

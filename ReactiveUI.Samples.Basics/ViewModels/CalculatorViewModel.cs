@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Splat;
+using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -17,10 +18,9 @@ namespace ReactiveUI.Samples.Basics.ViewModels
                 // Pretend this calculation isn’t cheap
                 return x*10;
             }, 5);
-            
 
-            CalculateCommand = new ReactiveCommand();
-            (CalculateCommand as ReactiveCommand).RegisterAsyncTask(o => {
+
+            CalculateCommand = ReactiveCommand.CreateAsyncTask(o => {
                 return Task.Factory.StartNew(() =>
                 {
                     int top;

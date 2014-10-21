@@ -67,11 +67,5 @@ namespace ReactiveUI.Samples.Commands.CaliburnMicro
                
             }
         }
-
-        #region INotifyPropertyChanging Members
-
-        public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
-
-        #endregion
     }
 }

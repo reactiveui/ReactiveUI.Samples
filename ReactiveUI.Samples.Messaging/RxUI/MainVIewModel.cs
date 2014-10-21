@@ -1,9 +1,5 @@
 ﻿using System;
-<<<<<<< HEAD
-using ReactiveUI.Xaml;
-=======
 using ReactiveUI;
->>>>>>> origin/sampling-latest-rx
 
 namespace ReactiveUI.Samples.Messaging.RxUI
 {
@@ -23,19 +19,11 @@ namespace ReactiveUI.Samples.Messaging.RxUI
     {
         public PublisherViewModel()
         {
-<<<<<<< HEAD
-            PublishCommand = new ReactiveCommand();
-            MessageBus.Current.RegisterMessageSource(PublishCommand);
-        }
-
-        public IReactiveCommand PublishCommand { get; protected set; }
-=======
             PublishCommand = ReactiveCommand.Create();
             MessageBus.Current.RegisterMessageSource(PublishCommand);
         }
 
         public IReactiveCommand<object> PublishCommand { get; protected set; }
->>>>>>> origin/sampling-latest-rx
     }
 
     public class SubscriberViewModel : ReactiveObject

@@ -21,7 +21,7 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModels
         public string ResultText { get { return _ResultTextOAPH.Value; } }
         private ObservableAsPropertyHelper<string> _ResultTextOAPH;
 
-        ReactiveCommand _doWebCall;
+        IReactiveCommand<string> _doWebCall;
 
         /// <summary>
         /// Setup the lookup logic, and use the interface to do the web call.
@@ -37,11 +37,13 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModels
                 .DistinctUntilChanged()
                 .Where(x => !string.IsNullOrWhiteSpace(x));
 
-            _doWebCall = new ReactiveCommand();
+            _doWebCall = ReactiveCommand.CreateAsyncObservable(x => caller.GetResult(x as string));
+
             newSearchNeeded.InvokeCommand(_doWebCall);
 
             // Run the web call and save the results back to the UI when done.
-            var webResults = _doWebCall.RegisterAsync(x => caller.GetResult(x as string));
+            var webResults =
+                _doWebCall.ExecuteAsync();
 
             // The results are stuffed into the property, on the proper thread
             // (ToProperty takes care of that) when done. We never want the property to

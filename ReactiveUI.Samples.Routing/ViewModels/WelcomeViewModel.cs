@@ -1,6 +1,5 @@
 ﻿using System;
 using ReactiveUI;
-using ReactiveUI.Xaml;
 
 namespace ReactiveUI.Samples.Routing.ViewModels
 {
@@ -9,7 +8,7 @@ namespace ReactiveUI.Samples.Routing.ViewModels
     // versions or design-time versions of ViewModels much easier.
     public interface IWelcomeViewModel : IRoutableViewModel
     {
-        ReactiveCommand HelloWorld { get; }
+        IReactiveCommand HelloWorld { get; }
     }
 
     public class WelcomeViewModel : ReactiveObject, IWelcomeViewModel
@@ -27,7 +26,10 @@ namespace ReactiveUI.Samples.Routing.ViewModels
         }
 
         public IScreen HostScreen { get; protected set; }
-        public ReactiveCommand HelloWorld { get; protected set; }
+
+        public ReactiveCommand<object> HelloWorld { get; protected set; }
+
+        IReactiveCommand IWelcomeViewModel.HelloWorld { get { return HelloWorld; } }
 
         /* COOLSTUFF: Why the Screen here?
          *
@@ -51,7 +53,9 @@ namespace ReactiveUI.Samples.Routing.ViewModels
              * normally,
              */
 
-            HelloWorld = new ReactiveCommand();
+            HelloWorld = ReactiveCommand.Create();
+
+            HelloWorld.Subscribe(param => UserError.Throw(new UserError("It works!!!")));
         }
     }
 }

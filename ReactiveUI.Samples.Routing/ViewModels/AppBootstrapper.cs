@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Ninject;
 using ReactiveUI.Samples.Routing.Views;
+using Splat;
 
 namespace ReactiveUI.Samples.Routing.ViewModels
 {
@@ -29,12 +30,12 @@ namespace ReactiveUI.Samples.Routing.ViewModels
 
     public class AppBootstrapper : ReactiveObject, IScreen
     {
-        public IRoutingState Router { get; private set; }
+        public RoutingState Router { get; private set; }
 
-        public AppBootstrapper(IMutableDependencyResolver dependencyResolver = null, IRoutingState testRouter = null)
+        public AppBootstrapper(IMutableDependencyResolver dependencyResolver = null, RoutingState testRouter = null)
         {
             Router = testRouter ?? new RoutingState();
-            dependencyResolver = dependencyResolver ?? RxApp.MutableResolver;
+            dependencyResolver = dependencyResolver ?? Locator.CurrentMutable;
 
             // Bind 
             RegisterParts(dependencyResolver);

@@ -8,6 +8,9 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Splat;
+using System.Windows;
+using System.Linq.Expressions;
 
 namespace ReactiveUI.Samples.SideBySide.CaliburnMicro
 {
@@ -60,18 +63,18 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro
                     return ret;
                 }
 
+                
                 this.Log().Debug("Checking {0:X}.{1}...", this.GetHashCode(), columnName);
                 ret = getPropertyValidationError(columnName);
                 this.Log().Debug("Validation result: {0}", ret);
 
                 _validationCache[columnName] = ret;
 
-                _ValidationObservable.OnNext(new ObservedChange<object, bool>()
-                {
-                    Sender = this,
-                    PropertyName = columnName,
-                    Value = (ret != null)
-                });
+                Expression<Func<string>> expression = () => columnName;
+
+                _ValidationObservable.OnNext(new ObservedChange<object, bool>(this,
+                    expression.Body, ret != null));
+
                 return ret;
             }
         }
@@ -145,13 +148,17 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro
                 }
             }
 
+            object[] parameters = new object[0];
+
             foreach (var v in pei.ValidationAttributes)
             {
                 try
                 {
                     var ctx = new ValidationContext(this, null, null) { MemberName = propName };
-                    var getter = Reflection.GetValueFetcherForProperty(pei.Type, propName);
-                    v.Validate(getter(this), ctx);
+                    var getter = Reflection
+                        .GetValueFetcherForProperty(pei.Property);
+
+                    v.Validate(getter(this, parameters), ctx);
                 }
                 catch (Exception ex)
                 {
@@ -167,6 +174,9 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro
 
     internal class PropertyExtraInfo : IComparable
     {
+        private PropertyExtraInfo() {
+        }
+
         string _typeFullName;
         Type _Type;
         public Type Type
@@ -175,21 +185,25 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro
             set { _Type = value; _typeFullName = value.FullName; }
         }
 
-        public string PropertyName { get; set; }
+        public string PropertyName { get { return Property.Name; } }
+
+        public PropertyInfo Property { get; set; }
+
         public ValidationAttribute[] ValidationAttributes { get; set; }
 
         public static PropertyExtraInfo CreateFromTypeAndName(Type type, string propertyName, bool nullOnEmptyValidationAttrs = false)
         {
-            object[] attrs;
-            var pi = type.GetProperty(propertyName, BindingFlags.Public | BindingFlags.FlattenHierarchy | BindingFlags.Instance);
+            var pi= type.GetProperty(propertyName, BindingFlags.Public | BindingFlags.FlattenHierarchy | BindingFlags.Instance);
 
             if (pi == null)
             {
                 throw new ArgumentException("Property not found on type");
             }
 
-            attrs = pi.GetCustomAttributes(typeof(ValidationAttribute), true) ?? new ValidationAttribute[0];
-            if (nullOnEmptyValidationAttrs && attrs.Length == 0)
+            IEnumerable<ValidationAttribute> attrs = pi.GetCustomAttributes<ValidationAttribute>();
+
+
+            if (nullOnEmptyValidationAttrs && !attrs.Any())
             {
                 return null;
             }
@@ -197,8 +211,8 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro
             return new PropertyExtraInfo()
             {
                 Type = type,
-                PropertyName = propertyName,
-                ValidationAttributes = attrs.Cast<ValidationAttribute>().ToArray(),
+                Property = pi,
+                ValidationAttributes = attrs.ToArray(),
             };
         }
 

@@ -47,7 +47,8 @@
                     <StackPanel>
                         <TextBox
                             x:Name="Name" />
-                        <Button x:Name="Display"                            
+                        <Button
+                            x:Name="Display"                            
                             Content="Display" />
                     </StackPanel>
                 </Expander>

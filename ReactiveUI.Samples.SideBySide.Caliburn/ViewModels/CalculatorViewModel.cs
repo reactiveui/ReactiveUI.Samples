@@ -5,7 +5,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Caliburn.Micro;
-using ReactiveUI.Xaml;
+using ReactiveUI;
+using Splat;
+using System.Reactive;
 
 namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
 {
@@ -22,30 +24,37 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
                 return x*10;
             }, 5);
 
-            CalculateCommand = new ReactiveCommand(this.WhenAny(x => x.Number, x => x.Value > 0));
-            (CalculateCommand as ReactiveCommand).RegisterAsyncTask(o =>
-            {
-                return Task.Factory.StartNew(() =>
-                {
-                    int top;
-                    bool cached = _cache.TryGet(    Number, out top);
-                    if (cached)
+
+             CalculateCommand = 
+                ReactiveCommand.CreateAsyncTask<object>(
+                    this.WhenAnyValue(x => x.Number, x => x > 0),
+                    o =>
                     {
-                        Result = 0;
-                        Thread.Sleep(1000);
-                        Result = top;
-                    }
-                    else
-                    {
-                        top = _cache.Get(Number);
-                        for (int i = 0; i <= top; i++)
+                        return Task<object>.Factory.StartNew(() =>
                         {
-                            Result = i;
-                            Thread.Sleep(100);
-                        }
-                    }
-                });
-            });
+                            int top;
+                            bool cached = _cache.TryGet(    Number, out top);
+                            if (cached)
+                            {
+                                Result = 0;
+                                Thread.Sleep(1000);
+                                Result = top;
+                            }
+                            else
+                            {
+                                top = _cache.Get(Number);
+                                for (int i = 0; i <= top; i++)
+                                {
+                                    Result = i;
+                                    Thread.Sleep(100);
+                                }
+                            }
+
+                            return null;
+                        });
+                    },
+                    RxApp.MainThreadScheduler);
+
         }
 
         private int _Number;
@@ -60,7 +69,7 @@ namespace ReactiveUI.Samples.SideBySide.CaliburnMicro.ViewModels
             }
         }
 
-        public ICommand CalculateCommand { get; set; }
+        public IReactiveCommand<object> CalculateCommand { get; set; }
 
         private int _Result;
         public int Result

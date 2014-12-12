@@ -26,7 +26,7 @@ namespace ReactiveUI.Samples.Messaging
             mvvmLightContainer.DataContext = new MVVMLight.MainViewModel();
             reactiveUIContainer.DataContext = new RxUI.MainViewModel();
 
-            var bootstrapper = new Bootstrapper();
+            var bootstrapper = new CaliburnMicro.CaliburnBootstrapper();
             caliburnMicroContainer.DataContext = new CaliburnMicro.MainViewModel();
         }
     }

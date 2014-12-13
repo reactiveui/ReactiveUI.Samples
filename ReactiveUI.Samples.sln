@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{849E3F90-EE14-4C0C-8FD7-F11FAA116CF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{11ACF8EE-30F0-4842-996C-9AB636C07CEA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Commands", "ReactiveUI.Samples.Commands\ReactiveUI.Samples.Commands.csproj", "{0E9F6644-7625-49F7-88C6-333292003E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Routing101", "ReactiveUI.Samples.Routing\ReactiveUI.Samples.Routing101.csproj", "{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Routing", "Routing", "{13BD54E4-DDDB-4279-93B8-D5B45F84B792}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messaging", "Messaging", "{9DDA9D55-A8FF-4DD7-AD25-ADBA4CDACE16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Messaging", "ReactiveUI.Samples.Messaging\ReactiveUI.Samples.Messaging.csproj", "{5D7912ED-ABF3-457F-A94B-8D757BF81803}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basics", "Basics", "{92E8B736-DC28-4B8A-965B-9048F95A000A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Basics", "ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj", "{80D3460E-5DE4-40A2-B02C-659F4B3C8856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SideBySide", "SideBySide", "{66A413B1-2CE1-493B-87C1-CFBF7AFF2B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.SideBySide.CaliburnMicro", "ReactiveUI.Samples.SideBySide.Caliburn\ReactiveUI.Samples.SideBySide.CaliburnMicro.csproj", "{A14C98B5-3480-4BBC-A69A-68C239BE156E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{D1178E87-A64C-4392-943B-040F28039FAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModels", "ReactiveUI.Samples.Testing.SimpleViewModels\ReactiveUI.Samples.Testing.SimpleViewModels.csproj", "{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests", "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests\ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9F6644-7625-49F7-88C6-333292003E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7912ED-ABF3-457F-A94B-8D757BF81803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7912ED-ABF3-457F-A94B-8D757BF81803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7912ED-ABF3-457F-A94B-8D757BF81803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7912ED-ABF3-457F-A94B-8D757BF81803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E9F6644-7625-49F7-88C6-333292003E6E} = {849E3F90-EE14-4C0C-8FD7-F11FAA116CF4}
+		{39A83DF9-B1DB-4036-BAFE-9D23F2B3E063} = {13BD54E4-DDDB-4279-93B8-D5B45F84B792}
+		{5D7912ED-ABF3-457F-A94B-8D757BF81803} = {9DDA9D55-A8FF-4DD7-AD25-ADBA4CDACE16}
+		{80D3460E-5DE4-40A2-B02C-659F4B3C8856} = {92E8B736-DC28-4B8A-965B-9048F95A000A}
+		{A14C98B5-3480-4BBC-A69A-68C239BE156E} = {66A413B1-2CE1-493B-87C1-CFBF7AFF2B1A}
+		{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B} = {D1178E87-A64C-4392-943B-040F28039FAF}
+		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598} = {D1178E87-A64C-4392-943B-040F28039FAF}
+	EndGlobalSection
+EndGlobal

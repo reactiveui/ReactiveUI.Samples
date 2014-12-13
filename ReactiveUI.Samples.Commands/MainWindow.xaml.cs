@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Caliburn.Micro;
+using System.ComponentModel;
 
 namespace ReactiveUI.Samples.Commands
 {
@@ -23,13 +24,16 @@ namespace ReactiveUI.Samples.Commands
         public MainWindow()
         {
             InitializeComponent();
-            mvvmLightContainer.DataContext = new MVVMLight.MainViewModel();
-            reactiveUIContainer.DataContext = new RxUI.MainViewModel();
 
-            //self creating Caliburn bootstrapper inorder to setup all the boilerplate  
-            var boot = new Bootstrapper(false);
-            caliburnMicroContainer.DataContext = new CaliburnMicro.MainViewModel();
-                        
+            if (!DesignerProperties.GetIsInDesignMode(this))
+            {
+                mvvmLightContainer.DataContext = new MVVMLight.MainViewModel();
+                reactiveUIContainer.DataContext = new RxUI.MainViewModel();
+
+                //NOTE: Caliburn bootstrapper is created as part of 
+                //      App resource dictionary (see App.xaml)
+                caliburnMicroContainer.DataContext = new CaliburnMicro.MainViewModel();
+            }
         }
     }
 }

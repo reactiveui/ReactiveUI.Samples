@@ -27,7 +27,7 @@ namespace ReactiveUI.Samples.Commands.CaliburnMicro
 
         #region Implementation of IResult
 
-        public void Execute(ActionExecutionContext context)
+        public void Execute(CoroutineExecutionContext context)
         {
             Exception error = null;
             var worker = new BackgroundWorker();

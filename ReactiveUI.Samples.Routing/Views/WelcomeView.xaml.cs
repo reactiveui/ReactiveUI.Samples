@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ReactiveUI.Samples.Routing.ViewModels;
+using System.Threading.Tasks;
 
 namespace ReactiveUI.Samples.Routing.Views
 {
@@ -26,20 +27,20 @@ namespace ReactiveUI.Samples.Routing.Views
         {
             InitializeComponent();
 
-            this.WhenNavigatedTo(ViewModel, () => {
-                /* COOLSTUFF: Setting up the View
-                 * 
-                 * Whenever we're Navigated to, we want to set up some bindings.
-                 * In particular, we want to Subscribe to the HelloWorld command
-                 * and whenever the ViewModel invokes it, we will pop up a 
-                 * Message Box.
-                 */
+            this.WhenAnyValue(x => x.ViewModel).BindTo(this, x => x.DataContext);
 
-                // Make XAML Bindings be relative to our ViewModel
-                DataContext = ViewModel;
 
-                return ViewModel.HelloWorld.Subscribe(param => 
-                    MessageBox.Show("It worked!"));
+            UserError.RegisterHandler(async error =>
+            {
+                RxApp.MainThreadScheduler.Schedule<UserError>(error,
+                (scheduler, userError)=>
+                {
+                    // NOTE: this code really shouldn't throw away the MessageBoxResult
+                    var result = MessageBox.Show(userError.ErrorMessage);
+                    return Disposable.Empty;
+                });
+
+                return await Task.Run<RecoveryOptionResult>(() => { return RecoveryOptionResult.CancelOperation; });
             });
         }
 
@@ -53,28 +54,6 @@ namespace ReactiveUI.Samples.Routing.Views
         object IViewFor.ViewModel {
             get { return ViewModel; }
             set { ViewModel = (IWelcomeViewModel)value; }
-        }
-    }
-
-    // XXX: Ignore the man behind this curtain. This will soon be in ReactiveUI itself
-    public static class ViewForMixins
-    {
-        public static IDisposable WhenNavigatedTo<TView, TViewModel>(this TView This, TViewModel viewModel, Func<IDisposable> onNavigatedTo)
-                where TView : IViewFor<TViewModel>
-                where TViewModel : class, IRoutableViewModel
-        {
-            var disp = Disposable.Empty;
-            var inner = This.WhenAny(x => x.ViewModel, x => x.Value)
-                .Where(x => x != null && x.HostScreen.Router.GetCurrentViewModel() == x)
-                .Subscribe(x => {
-                    if (disp != null) disp.Dispose();
-                    disp = onNavigatedTo();
-                });
-
-            return Disposable.Create(() => {
-                inner.Dispose();
-                disp.Dispose();
-            });
         }
     }
 }

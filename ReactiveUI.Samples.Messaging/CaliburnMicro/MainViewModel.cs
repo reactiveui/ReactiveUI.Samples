@@ -34,7 +34,7 @@ namespace ReactiveUI.Samples.Messaging.CaliburnMicro
 
             public void Publish()
             {
-                _eventAggregator.Publish(new object());
+                _eventAggregator.PublishOnCurrentThread(new object());
             }
 
             

@@ -1,5 +1,4 @@
 ﻿using System;
-using ReactiveUI;
 using ReactiveUI.Samples.UniversalAppDemo.ViewModels;
 
 namespace ReactiveUI.Samples.UniversalAppDemo
@@ -16,8 +15,7 @@ namespace ReactiveUI.Samples.UniversalAppDemo
             this.WhenAnyValue(x => x.ViewModel)
                 .Subscribe(x => DataContext = x);
 
-            this.WhenAnyObservable(x => x.ViewModel.GoBackCommand)
-                .Subscribe(x => ViewModel.HostScreen.Router.NavigateBack.Execute(null));
+            this.BindCommand(ViewModel, x => x.HostScreen.Router.NavigateBack, x => x.GoBackButton);
         }
         
         object IViewFor.ViewModel

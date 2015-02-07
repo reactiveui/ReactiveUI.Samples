@@ -28,10 +28,10 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Margin="39,59,39,0" 
+            <Button x:Name="GoBackButton"
+                    Margin="39,59,39,0" 
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
-                    VerticalAlignment="Top"
-                    Command="{Binding GoBackCommand}" />
+                    VerticalAlignment="Top" />
             <TextBlock Text="{Binding Item.Title}" 
                        Style="{StaticResource HeaderTextBlockStyle}" 
                        Grid.Column="1" 

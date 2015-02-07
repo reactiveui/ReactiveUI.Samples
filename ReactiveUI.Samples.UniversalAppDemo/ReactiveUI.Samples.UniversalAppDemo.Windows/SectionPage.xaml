@@ -92,10 +92,10 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Margin="39,59,39,0" 
+            <Button x:Name="GoBackButton"
+                    Margin="39,59,39,0" 
                     Style="{StaticResource NavigationBackButtonNormalStyle}"
-                    VerticalAlignment="Top" 
-                    Command="{Binding GoBackCommand}" />
+                    VerticalAlignment="Top" />
             <TextBlock x:Uid="Section3Header.Text" 
                        Text="Section 3" 
                        Style="{StaticResource HeaderTextBlockStyle}" 

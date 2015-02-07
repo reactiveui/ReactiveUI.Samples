@@ -15,7 +15,6 @@ namespace ReactiveUI.Samples.UniversalAppDemo.ViewModels
             HostScreen = screen;
             NavigateToSectionCommand = ReactiveCommand.Create();
             NavigateToItemCommand = ReactiveCommand.Create();
-            GoBackCommand = ReactiveCommand.Create();
 
             this.WhenAnyValue(x => x.GroupToNavigate)
                 .Where(x => x != null)
@@ -34,7 +33,6 @@ namespace ReactiveUI.Samples.UniversalAppDemo.ViewModels
 
         public ReactiveCommand<object> NavigateToSectionCommand { get; private set; }
         public ReactiveCommand<object> NavigateToItemCommand { get; private set; }
-        public ReactiveCommand<object> GoBackCommand { get; private set; }
 
         public SampleDataGroup[] Groups { get; private set; }
 

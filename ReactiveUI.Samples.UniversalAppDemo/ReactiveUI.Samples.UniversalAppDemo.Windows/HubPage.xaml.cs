@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reactive.Linq;
 using Windows.UI.Xaml.Controls;
 using ReactiveUI.Samples.UniversalAppDemo.Data;
 using ReactiveUI.Samples.UniversalAppDemo.ViewModels;
@@ -18,25 +19,17 @@ namespace ReactiveUI.Samples.UniversalAppDemo
                 .Subscribe(x => DataContext = x);
 
             this.WhenAnyObservable(x => x.ViewModel.NavigateToSectionCommand)
-                .Subscribe(x =>
-                    {
-                        var args = (HubSectionHeaderClickEventArgs)x;
-
-                        var viewModel = (HubViewModel)args.Section.DataContext;
-                        ViewModel.HostScreen.Router.Navigate.Execute(new SectionViewModel(ViewModel.HostScreen, viewModel.Groups[2]));
-                    });
+                .Cast<HubSectionHeaderClickEventArgs>()
+                .Select(x => x.Section.DataContext)
+                .Cast<HubViewModel>()
+                .Select(x => x.Groups[2])
+                .BindTo(this, x => x.ViewModel.GroupToNavigate);
 
             this.WhenAnyObservable(x => x.ViewModel.NavigateToItemCommand)
-                .Subscribe(x =>
-                {
-                    var args = (ItemClickEventArgs)x;
-
-                    var sampleDataItem = (SampleDataItem)args.ClickedItem;
-                    ViewModel.HostScreen.Router.Navigate.Execute(new ItemViewModel(ViewModel.HostScreen, sampleDataItem));
-                });
-
-            this.WhenAnyObservable(x => x.ViewModel.GoBackCommand)
-                .Subscribe(x => ViewModel.HostScreen.Router.NavigateBack.Execute(null));
+                .Cast<ItemClickEventArgs>()
+                .Select(x => x.ClickedItem)
+                .Cast<SampleDataItem>()
+                .BindTo(this, x => x.ViewModel.ItemToNavigate);
         }
 
         object IViewFor.ViewModel

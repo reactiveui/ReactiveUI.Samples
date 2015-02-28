@@ -122,7 +122,7 @@
     <Compile Include="CommandsBootstrapper.cs" />
     <Compile Include="MVVMLight\MainViewModel.cs" />
     <Compile Include="RxUI\AsyncVoid.cs" />
-    <Compile Include="RxUI\MainVIewModel.cs" />
+    <Compile Include="RxUI\MainViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

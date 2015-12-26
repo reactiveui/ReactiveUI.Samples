@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{849E3F90-EE14-4C0C-8FD7-F11FAA116CF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{11ACF8EE-30F0-4842-996C-9AB636C07CEA}"
@@ -33,6 +35,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModels", "ReactiveUI.Samples.Testing.SimpleViewModels\ReactiveUI.Samples.Testing.SimpleViewModels.csproj", "{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests", "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests\ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReactiveUI.Samples.Basics.FSharp", "ReactiveUI.Samples.Basics.FSharp\ReactiveUI.Samples.Basics.FSharp\ReactiveUI.Samples.Basics.FSharp.fsproj", "{DADA3217-BA6F-470C-97C3-B6B79288AA08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +72,10 @@ Global
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +88,6 @@ Global
 		{A14C98B5-3480-4BBC-A69A-68C239BE156E} = {66A413B1-2CE1-493B-87C1-CFBF7AFF2B1A}
 		{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B} = {D1178E87-A64C-4392-943B-040F28039FAF}
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598} = {D1178E87-A64C-4392-943B-040F28039FAF}
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08} = {92E8B736-DC28-4B8A-965B-9048F95A000A}
 	EndGlobalSection
 EndGlobal

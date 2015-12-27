@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests", "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests\ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReactiveUI.Samples.Basics.FSharp", "ReactiveUI.Samples.Basics.FSharp\ReactiveUI.Samples.Basics.FSharp\ReactiveUI.Samples.Basics.FSharp.fsproj", "{DADA3217-BA6F-470C-97C3-B6B79288AA08}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReactiveUI.Samples.Basics.FSharp", "ReactiveUI.Samples.Basics.FSharp\ReactiveUI.Samples.Basics.FSharp.fsproj", "{DADA3217-BA6F-470C-97C3-B6B79288AA08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

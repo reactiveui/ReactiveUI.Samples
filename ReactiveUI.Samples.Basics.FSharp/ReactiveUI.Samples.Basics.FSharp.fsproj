@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Resource Include="MainWindow.xaml" />
-    <Compile Include="MainWindow.xaml.fs" />
+    <Compile Include="ViewModels.fs" />
     <Resource Include="App.xaml" />
     <Compile Include="App.fs" />
     <Content Include="App.config" />
@@ -46,10 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="FSharp.ViewModule.Core.Wpf">
-      <HintPath>..\..\packages\FSharp.ViewModule.Core.0.9.9.1\lib\net45\FSharp.ViewModule.Core.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="FsXaml.Wpf">
       <HintPath>..\..\packages\FsXaml.Wpf.0.9.9\lib\net45\FsXaml.Wpf.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +74,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -111,6 +108,13 @@
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj">
+      <Name>ReactiveUI.Samples.Basics</Name>
+      <Project>{80d3460e-5de4-40a2-b02c-659f4b3c8856}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

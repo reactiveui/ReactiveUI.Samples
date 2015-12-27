@@ -32,8 +32,8 @@ module Utility =
 type PersonViewModel() as this =
     inherit ReactiveValidatedObject()
 
-    let age = ref Unchecked.defaultof<int>
-    let isValid = ref false
+    let mutable age = Unchecked.defaultof<int>
+    let mutable isValid = false
 
     do
         this.ValidationObservable.Subscribe(fun _ -> this.IsValid <- this.IsObjectValid()) |> ignore
@@ -42,18 +42,18 @@ type PersonViewModel() as this =
 
     [<ValidatesViaMethod(AllowBlanks = false, AllowNull = false, Name = "IsAgeValid", ErrorMessage = "Please enter a valid age 0..120")>]
     member __.Age
-        with get () = !age
-        and set value = this.RaiseAndSetIfChanged(age, value, "Age") |> ignore
+        with get () = age
+        and set value = this.RaiseAndSetIfChanged(&age, value, "Age") |> ignore
 
     member __.IsValid
-        with get () = !isValid
-        and set value = this.RaiseAndSetIfChanged(isValid, value, "IsValid") |> ignore
+        with get () = isValid
+        and set value = this.RaiseAndSetIfChanged(&isValid, value, "IsValid") |> ignore
 
 type CalculatorViewModel() as this =
     inherit ReactiveValidatedObject()
 
-    let mutable number = ref Unchecked.defaultof<int>
-    let mutable result = ref Unchecked.defaultof<int>
+    let mutable number = Unchecked.defaultof<int>
+    let mutable result = Unchecked.defaultof<int>
 
     let cache = new MemoizingMRUCache<_, _>((fun x ctx -> Thread.Sleep 1000; x * 10), 5)
 
@@ -73,12 +73,12 @@ type CalculatorViewModel() as this =
 
     [<Required>]
     member __.Number
-        with get () = !number
-        and set value = this.RaiseAndSetIfChanged(number, value, "Number") |> ignore
+        with get () = number
+        and set value = this.RaiseAndSetIfChanged(&number, value, "Number") |> ignore
     
     member __.Result
-        with get () = !result
-        and set value = this.RaiseAndSetIfChanged(result, value, "Result") |> ignore
+        with get () = result
+        and set value = this.RaiseAndSetIfChanged(&result, value, "Result") |> ignore
     
     member __.CalculateCommand = calculateCommand :> ICommand
 
@@ -86,12 +86,12 @@ type MainViewModel() as this =
     inherit ReactiveObject()
 
 
-    let progress = ref Unchecked.defaultof<int>
-    let slowProgress = ref Unchecked.defaultof<int>
-    let slowProgress2 = ref Unchecked.defaultof<int>
+    let mutable progress = Unchecked.defaultof<int>
+    let mutable slowProgress = Unchecked.defaultof<int>
+    let mutable slowProgress2 = Unchecked.defaultof<int>
 
-    let person = ref (PersonViewModel())
-    let calculator = ref (CalculatorViewModel())
+    let mutable person = PersonViewModel()
+    let mutable calculator = CalculatorViewModel()
 
     do
         RxApp.MainThreadScheduler <- DispatcherScheduler(Application.Current.Dispatcher)
@@ -117,21 +117,21 @@ type MainViewModel() as this =
         |> ignore
 
     member __.Progress
-        with get () = !progress
-        and set (value : int) = this.RaiseAndSetIfChanged(progress, value, "Progress") |> ignore
+        with get () = progress
+        and set (value : int) = this.RaiseAndSetIfChanged(&progress, value, "Progress") |> ignore
 
     member __.SlowProgress
-        with get () = !slowProgress
-        and set (value : int) = this.RaiseAndSetIfChanged(slowProgress, value, "SlowProgress") |> ignore
+        with get () = slowProgress
+        and set (value : int) = this.RaiseAndSetIfChanged(&slowProgress, value, "SlowProgress") |> ignore
 
     member __.SlowProgress2
-        with get () = !slowProgress2
-        and set (value : int) = this.RaiseAndSetIfChanged(slowProgress2, value, "SlowProgress2") |> ignore
+        with get () = slowProgress2
+        and set (value : int) = this.RaiseAndSetIfChanged(&slowProgress2, value, "SlowProgress2") |> ignore
 
     member __.Person
-        with get () = !person
-        and set value = this.RaiseAndSetIfChanged(person, value, "Person") |> ignore
+        with get () = person
+        and set value = this.RaiseAndSetIfChanged(&person, value, "Person") |> ignore
 
     member __.Calculator
-        with get () = !calculator
-        and set value = this.RaiseAndSetIfChanged(calculator, value, "Calculator") |> ignore
+        with get () = calculator
+        and set value = this.RaiseAndSetIfChanged(&calculator, value, "Calculator") |> ignore

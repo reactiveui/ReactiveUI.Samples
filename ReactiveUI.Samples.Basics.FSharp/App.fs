@@ -1,4 +1,4 @@
-﻿module main
+﻿module Main
 
 open System
 open FsXaml

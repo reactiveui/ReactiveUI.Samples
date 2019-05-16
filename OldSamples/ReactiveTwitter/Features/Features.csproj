@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="reactiveui">
+      <Version>8.0.0-alpha0110</Version>
+    </PackageReference>
+    <PackageReference Include="reactiveui.xamforms" Version="8.0.0-alpha0110" />
+    <PackageReference Include="xamarin.forms" Version="2.4.0.38779" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Services\Services.csproj" />
+    <ProjectReference Include="..\Utility\Utility.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Update="Serilog" Version="2.5.0" />
+    <PackageReference Update="SerilogAnalyzer" Version="0.12.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Profile\" />
+  </ItemGroup>
+
+</Project>

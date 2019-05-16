@@ -1,0 +1,1 @@
+*.{png,mp4,exe,dll} filter=lfs diff=lfs merge=lfs -text

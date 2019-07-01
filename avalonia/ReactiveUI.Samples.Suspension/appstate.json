@@ -1,0 +1,15 @@
+{
+  "$type": "ReactiveUI.Samples.Suspension.ViewModels.MainViewModel, ReactiveUI.Samples.Suspension",
+  "Router": {
+    "$type": "ReactiveUI.RoutingState, ReactiveUI",
+    "_navigationStack": {
+      "$type": "System.Collections.ObjectModel.ObservableCollection`1[[ReactiveUI.IRoutableViewModel, ReactiveUI]], System.ObjectModel",
+      "$values": [
+        {
+          "$type": "ReactiveUI.Samples.Suspension.ViewModels.SearchViewModel, ReactiveUI.Samples.Suspension",
+          "SearchQuery": "Hello, wold."
+        }
+      ]
+    }
+  }
+}

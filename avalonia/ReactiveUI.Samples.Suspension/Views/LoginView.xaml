@@ -1,0 +1,25 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignInstance viewModels:LoginViewModel, IsDesignTimeCreatable=True}"
+    xmlns:viewModels="clr-namespace:ReactiveUI.Samples.Suspension.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="ReactiveUI.Samples.Suspension.Views.LoginView"
+    xmlns:reactiveUi="http://reactiveui.net"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="48" />
+            <RowDefinition Height="48" />
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Login view" Margin="5" />
+        <TextBox Grid.Row="1" Text="{Binding Username, Mode=TwoWay}" />
+        <TextBox Grid.Row="2" PasswordChar="*" 
+                 Text="{Binding Password, Mode=TwoWay}" />
+        <Button Grid.Row="3" Content="Login" Command="{Binding Login}" />
+    </Grid>
+</UserControl>

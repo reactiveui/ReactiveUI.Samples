@@ -41,14 +41,6 @@ new TestScheduler().With(scheduler =>
     scheduler.AdvanceToMs(801);
     Assert.Equal("result hi", fixture.ResultText);
 });
-
-class ImmediateWebService : IWebCaller
-{
-    public IObservable<string> GetResult(string term)
-    {
-        return Observable.Return("result " + term);
-    }
-}
 ```
 
 ## Avalonia
@@ -58,7 +50,7 @@ class ImmediateWebService : IWebCaller
 To read [navigation stack](https://reactiveui.net/docs/handbook/routing/) from disk, a suspension driver is required to support deserializing `IRoutableViewModel` interface implementations into more specific view model types, for `Newtonsoft.Json` this can be achieved by using `TypeNameHandling.All` json serialization setting. 
 In the `App.OnFrameworkInitializationCompleted` method we initialize suspension stuff specific to our app. Don't forget to add `.UseReactiveUI()` and `.StartWithClassicDesktopLifetime()` to your app builder inside the `Program.cs` file.
 
-Providers examples about:
+Provides examples about:
 
 1. [Suspension and Data Persistence](https://reactiveui.net/docs/handbook/data-persistence/)
 2. [ViewModel first routing](https://reactiveui.net/docs/handbook/routing/)

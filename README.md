@@ -56,7 +56,7 @@ Provides examples about:
 2. [ViewModel first routing](https://reactiveui.net/docs/handbook/routing/)
 3. [ReactiveCommands](https://reactiveui.net/docs/handbook/commands/)
 
-<img width="300" src="https://hsto.org/webt/c2/pp/88/c2pp88h397pwscpwn-i8vnke6sw.gif">
+<img width="400" src="https://hsto.org/webt/c2/pp/88/c2pp88h397pwscpwn-i8vnke6sw.gif">
 
 ## Razor
 

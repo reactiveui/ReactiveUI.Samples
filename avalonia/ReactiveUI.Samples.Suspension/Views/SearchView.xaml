@@ -1,0 +1,22 @@
+<UserControl 
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignInstance viewModels:SearchViewModel}"
+    xmlns:viewModels="clr-namespace:ReactiveUI.Samples.Suspension.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="ReactiveUI.Samples.Suspension.Views.SearchView"
+    xmlns:reactiveUi="http://reactiveui.net"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="48" />
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Search view" Margin="5" />
+        <TextBox Grid.Row="1" Text="{Binding SearchQuery, Mode=TwoWay}" />
+        <Button Grid.Row="2" Content="Search" Command="{Binding Search}" />
+    </Grid>
+</UserControl>

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModels", "src\ReactiveUI.Samples.Testing.SimpleViewModels\ReactiveUI.Samples.Testing.SimpleViewModels.csproj", "{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModels", "ReactiveUI.Samples.Testing.SimpleViewModels\ReactiveUI.Samples.Testing.SimpleViewModels.csproj", "{3BD3E9A3-BDF2-4F8F-A635-76B125CCCD9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests", "src\ReactiveUI.Samples.Testing.SimpleViewModels.Tests\ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests", "ReactiveUI.Samples.Testing.SimpleViewModels.Tests\ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

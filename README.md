@@ -1,5 +1,8 @@
-ReactiveUI.Samples
-==================
+<a href="https://github.com/reactiveui/reactiveui">
+  <img width="160" heigth="160" src="https://raw.githubusercontent.com/reactiveui/styleguide/master/logo/main.png">
+</a>
+
+# ReactiveUI.Samples
 
 This repository will contain all of ReactiveUI samples.
 

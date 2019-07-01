@@ -20,6 +20,37 @@ Provides examples about:
 4. [ReactiveCommands](https://reactiveui.net/docs/handbook/commands/)
 5. [ObservableAsPropertyHelper](https://reactiveui.net/docs/handbook/observable-as-property-helper/)
 
+## Testing
+
+#### ReactiveUI.Samples.Testing.SimpleViewModels
+
+Illustrates how to write testable and maintainable [view models](https://reactiveui.net/docs/handbook/view-models/) using `ReactiveUI.Testing`, `XUnit` and `Microsoft.Reactive.Testing` libraries. See [related documentation](https://reactiveui.net/docs/handbook/testing/). Contains immediate scheduling examples to make the tests run even faster by mocking long-running operations.
+
+```cs
+new TestScheduler().With(scheduler =>
+{
+    var fixture = new WebCallViewModel(new ImmediateWebService());
+    fixture.InputText = "hi";
+
+    // Run the clock forward to 800 ms. 
+    // At that point, nothing should have happened.
+    scheduler.AdvanceToMs(799);
+    Assert.Equal(string.Empty, fixture.ResultText);
+
+    // Run the clock 1 tick past and the result should show up.
+    scheduler.AdvanceToMs(801);
+    Assert.Equal("result hi", fixture.ResultText);
+});
+
+class ImmediateWebService : IWebCaller
+{
+    public IObservable<string> GetResult(string term)
+    {
+        return Observable.Return("result " + term);
+    }
+}
+```
+
 ## Avalonia
 
 #### ReactiveUI.Samples.Suspension

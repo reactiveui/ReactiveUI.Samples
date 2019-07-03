@@ -33,6 +33,8 @@ Provides examples about:
 2. [ViewModel first routing](https://reactiveui.net/docs/handbook/routing/)
 3. [ReactiveCommands](https://reactiveui.net/docs/handbook/commands/)
 
+Note: Avalonia produce and support the ReactiveUI plugin. You can get support on their [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AvaloniaUI/Avalonia?utm_campaign=pr-badge&utm_content=badge&utm_medium=badge&utm_source=badge)
+
 <img width="350" src="https://hsto.org/webt/c2/pp/88/c2pp88h397pwscpwn-i8vnke6sw.gif">
 
 ## Testing

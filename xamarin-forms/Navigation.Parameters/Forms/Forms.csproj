@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+        <AssemblyName>Navigation.Parameters</AssemblyName>
+        <RootNamespace>Navigation.Parameters</RootNamespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>pdbonly</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="ReactiveUI.Validation" Version="1.2.1" />
+        <PackageReference Include="Xamarin.Forms" Version="3.6.*" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+        <PackageReference Include="ReactiveUI.XamForms" Version="9.17.11" />
+        <PackageReference Include="Sextant.XamForms" Version="1.7.22" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Pass\" />
+        <Folder Include="Receive\" />
+    </ItemGroup>
+</Project>

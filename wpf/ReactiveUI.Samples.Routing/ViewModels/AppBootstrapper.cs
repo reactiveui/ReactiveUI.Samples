@@ -39,10 +39,8 @@ namespace ReactiveUI.Samples.Routing.ViewModels
             // Bind 
             RegisterParts(dependencyResolver);
 
-            // TODO: This is a good place to set up any other app 
-            // startup tasks, like setting the logging level
-            LogHost.Default.Level = LogLevel.Debug;
-
+            // TODO: This is a good place to set up any other app startup tasks
+            
             // Navigate to the opening page of the application
             Router.Navigate.Execute(new WelcomeViewModel(this));
         }

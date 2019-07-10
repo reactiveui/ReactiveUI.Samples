@@ -93,7 +93,7 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.*" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="28.*" />
     <PackageReference Include="System.Threading.Tasks.Extensions">
-      <Version>4.5.2</Version>
+      <Version>4.5.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

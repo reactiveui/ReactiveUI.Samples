@@ -164,7 +164,7 @@
       <Version>6.2.8</Version>
     </PackageReference>
     <PackageReference Include="ReactiveUI">
-      <Version>9.18.2</Version>
+      <Version>9.19.3</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

@@ -1,0 +1,46 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SextantSample", "SextantSample.csproj", "{AB35E5EE-24AE-479A-909E-1FD941E152EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SextantSample.Android", "..\SextantSample.Android\SextantSample.Android.csproj", "{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sextant", "..\..\src\Sextant\Sextant.csproj", "{4CF5E8D0-BB2C-4790-9AD5-03AEC069C3C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Sample Release|Any CPU = Sample Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB35E5EE-24AE-479A-909E-1FD941E152EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB35E5EE-24AE-479A-909E-1FD941E152EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB35E5EE-24AE-479A-909E-1FD941E152EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB35E5EE-24AE-479A-909E-1FD941E152EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB35E5EE-24AE-479A-909E-1FD941E152EF}.Sample Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB35E5EE-24AE-479A-909E-1FD941E152EF}.Sample Release|Any CPU.Build.0 = Release|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Sample Release|Any CPU.ActiveCfg = Sample Release|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Sample Release|Any CPU.Build.0 = Sample Release|Any CPU
+		{4A684BB2-2CB4-4B04-8541-FF0FA677DD49}.Sample Release|Any CPU.Deploy.0 = Sample Release|Any CPU
+		{4CF5E8D0-BB2C-4790-9AD5-03AEC069C3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF5E8D0-BB2C-4790-9AD5-03AEC069C3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF5E8D0-BB2C-4790-9AD5-03AEC069C3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF5E8D0-BB2C-4790-9AD5-03AEC069C3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF5E8D0-BB2C-4790-9AD5-03AEC069C3C3}.Sample Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF5E8D0-BB2C-4790-9AD5-03AEC069C3C3}.Sample Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9AB7F21-AD32-47C9-A787-767DD85B40CB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<parameters:ContentPageBase x:TypeArguments="parameters:PassViewModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:parameters="clr-namespace:Navigation.Parameters;assembly=Navigation.Parameters" x:Class="Navigation.Parameters.PassPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="ParameterErrorLabel" />
+            <Entry x:Name="ParameterEntry" />
+            <Button x:Name="NavigateButton" Text="Navigate" />
+        </StackLayout>
+    </ContentPage.Content>
+</parameters:ContentPageBase>

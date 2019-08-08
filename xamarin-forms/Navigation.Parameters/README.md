@@ -1,4 +1,4 @@
-# Sextant Navigation Parameters Sample
+# Sextant Navigation Parameters
 
 This sample shows how to use the [Sextant 2.0 Release](https://github.com/reactiveui/Sextant/releases/tag/2.0.1)
 

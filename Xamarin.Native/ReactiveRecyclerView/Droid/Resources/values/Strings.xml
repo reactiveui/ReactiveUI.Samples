@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Click Me!</string>
+    <string name="app_name">TestApp</string>
+    <string name="tab1">Browse</string>
+    <string name="tab2">About</string>
+    <string name="signin">Sign In</string>
+    <string name="notnow">Not Now</string>
+    <string name="signing_in">Signing in...</string>
+    <string name="version_number">Version 1.0</string>
+    <string name="login">Login</string>
+    <string name="learn_more">Learn More</string>
+    <string name="description">Description:</string>
+    <string name="title">Title:</string>
+    <string name="text">Text:</string>
+    <string name="quantity">Quantity:</string>
+    <string name="hint_name">Name</string>
+    <string name="info">Information</string>
+    <string name="hint_description">Description</string>
+    <string name="app_description">This app is written in C# and native APIs using the Xamarin Platform. It shares code with its iOS, Android, &amp; Windows versions.</string>
+    <string name="sign_in_text">Sign in with your account to save and sync items</string>
+</resources>

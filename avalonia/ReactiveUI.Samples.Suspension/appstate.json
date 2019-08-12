@@ -7,7 +7,7 @@
       "$values": [
         {
           "$type": "ReactiveUI.Samples.Suspension.ViewModels.SearchViewModel, ReactiveUI.Samples.Suspension",
-          "SearchQuery": "Hello, wold."
+          "SearchQuery": "Hello, world."
         }
       ]
     }

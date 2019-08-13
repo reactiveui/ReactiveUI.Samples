@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Server" Version="3.0.0-preview3-19153-02" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview5-19227-01" />
-    <PackageReference Include="ReactiveUI" Version="9.18.2" />
+    <PackageReference Include="ReactiveUI" Version="9.20.1" />
     <PackageReference Include="ReactiveUI.Fody" Version="9.18.2" />
   </ItemGroup>
 

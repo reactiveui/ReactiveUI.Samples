@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{702CB6D2-A9E0-40A4-A64D-BAACC63893A8}</ProjectGuid>
+    <ProjectGuid>{C390DC24-D7DC-4384-8344-6A2B03A8BD34}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ReactiveUI.UwpRouting</RootNamespace>

@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ReactiveUI" Version="10.*" />
-    <PackageReference Include="Xamarin.Forms" Version="4.1.*" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.*" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.*" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.*" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.*" />

@@ -10,7 +10,7 @@ pr:
       - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'windows-2019'
 
 variables:
   solution: '**/*.csproj'

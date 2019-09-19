@@ -13,7 +13,7 @@ pool:
   vmImage: 'windows-2019'
 
 variables:
-  solution: '**/*.csproj'
+  solution: 'xamarin-forms/**/*.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   dotNetVersion: '2.2.300'

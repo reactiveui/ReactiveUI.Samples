@@ -13,7 +13,7 @@ pool:
   vmImage: 'windows-2019'
 
 jobs:
-- job: Xamarin Forms Samples
+- job: XamarinForms
   pool:
     vmImage: 'macOS-10.13'
   steps:

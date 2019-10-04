@@ -12,35 +12,13 @@ pr:
 pool:
   vmImage: 'windows-2019'
 
-variables:
-  solution: 'xamarin-forms/**/*.csproj'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-  dotNetVersion: '2.2.300'
-
-steps:
-- task: NuGetToolInstaller@0
-  inputs:
-    versionSpec: '5.1.0' 
-
-- task: DotNetCoreInstaller@0
-  displayName: Install Dot Net Core v$(dotNetVersion)
-  inputs:
-    version: $(dotNetVersion)
-  env:
-    COREHOST_TRACE: 0
-    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
-    DOTNET_CLI_TELEMETRY_OPTOUT: 1 
-
-- task: NuGetCommand@2
-  displayName: 'NuGet restore'
-  inputs:
-    restoreSolution: '$(solution)'
-
-- task: MSBuild@1
-  displayName: Build Solutions
-  inputs:
-    solution: '$(solution)'
-    msbuildArguments: /t:build;pack /p:NoPackageAnalysis=true /p:PackageOutputPath=$(Build.ArtifactStagingDirectory)\artifacts
-    configuration: $(BuildConfiguration)
-    maximumCpuCount: true
+jobs:
+- job: macOS
+  pool:
+    vmImage: 'macOS-10.13'
+  steps:
+  - template: ./netcore.yml
+    parameters:
+      Solution: 'xamarin-forms/**/*.csproj'
+      BuildConfiguration: 'Release'
+      DotNetVersion: '2.2.300'

@@ -1,0 +1,27 @@
+parameters:
+  Solution: ''
+  buildPlatform: 'Any CPU'
+  BuildConfiguration: 'Release'
+  DotNetVersion: '2.2.300'
+
+steps:
+- task: UseDotNet@2
+  displayName: Install dotnet v${{ parameters.DotNetVersion }}
+  inputs:
+    packageType: "sdk"
+    version: ${{ parameters.DotNetVersion }}
+
+- task: DotNetCoreCLI@
+  displayName: dotnet restore
+  inputs:
+    command: restore
+    projects: ${{ parameters.Solution }}
+    feedsToUse: config
+    nugetConfigPath: NuGet.config    # Relative to root of the repository
+
+- task: DotNetCoreCLI@2
+  displayName: dotnet build
+  inputs:
+    command: build
+    projects: ${{ parameters.Solution }}
+    arguments: '--configuration ${{ parameters.BuildConfiguration }}' # Update this to match your need

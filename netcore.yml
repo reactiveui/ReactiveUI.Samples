@@ -11,7 +11,7 @@ steps:
     packageType: "sdk"
     version: ${{ parameters.DotNetVersion }}
 
-- task: DotNetCoreCLI@
+- task: DotNetCoreCLI@2
   displayName: dotnet restore
   inputs:
     command: restore

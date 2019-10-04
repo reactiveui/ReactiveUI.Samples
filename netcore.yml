@@ -1,6 +1,6 @@
 parameters:
   Solution: ''
-  buildPlatform: 'Any CPU'
+  BuildPlatform: 'Any CPU'
   BuildConfiguration: 'Release'
   DotNetVersion: '2.2.300'
 

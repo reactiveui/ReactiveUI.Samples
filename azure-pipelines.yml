@@ -13,11 +13,11 @@ pool:
   vmImage: 'windows-2019'
 
 jobs:
-- job: macOS
+- job: Xamarin Forms Samples
   pool:
     vmImage: 'macOS-10.13'
   steps:
-  - template: ./netcore.yml
+  - template: ./netframework.yml
     parameters:
       Solution: 'xamarin-forms/**/*.csproj'
       BuildConfiguration: 'Release'

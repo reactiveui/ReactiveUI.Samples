@@ -173,7 +173,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.*" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.*" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\AppIcon-20x20%401x.png" />

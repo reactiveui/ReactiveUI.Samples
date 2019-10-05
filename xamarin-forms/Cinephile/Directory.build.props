@@ -8,12 +8,4 @@
   <PropertyGroup>
     <SolutionDir Condition="'$(SolutionDir)' == ''">$(MSBuildThisFileDirectory)</SolutionDir>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)../../../LICENSE" Pack="true" PackagePath="LICENSE" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="stylecop.analyzers" Version="1.1.118" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4" PrivateAssets="all" />
-    <PackageReference Include="Roslynator.Analyzers" Version="2.1.0" PrivateAssets="All" />
-  </ItemGroup>
 </Project>

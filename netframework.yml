@@ -17,6 +17,6 @@ steps:
   displayName: Build Solutions
   inputs:
     solution: ${{ parameters.Solution }}
-    msbuildArguments: /t:build;pack /p:NoPackageAnalysis=true /p:PackageOutputPath=$(Build.ArtifactStagingDirectory)\artifacts
+    msbuildArguments: /t:build /p:NoPackageAnalysis=true /p:PackageOutputPath=$(Build.ArtifactStagingDirectory)\artifacts
     configuration: $(BuildConfiguration)
     maximumCpuCount: true

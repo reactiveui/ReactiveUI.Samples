@@ -3,7 +3,6 @@
   <PropertyGroup>
     <NoWarn>$(NoWarn);1591;1701;1702;1705;VSX1000</NoWarn>
     <Platform>AnyCPU</Platform>
-    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)../../../src/analyzers.ruleset</CodeAnalysisRuleSet>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <PropertyGroup>

@@ -94,10 +94,5 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.1" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="28.0.0.1" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Threading.Tasks.Extensions">
-      <HintPath>$(UserProfile)\.nuget\packages\system.threading.tasks.extensions\4.4.0\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

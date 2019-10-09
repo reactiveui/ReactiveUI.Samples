@@ -11,7 +11,9 @@ steps:
 - task: NuGetCommand@2
   displayName: 'NuGet restore'
   inputs:
+    command: 'restore'
     restoreSolution: ${{ parameters.Solution }}
+    verbosityRestore: detailed
 
 - task: MSBuild@1
   displayName: Build Solutions

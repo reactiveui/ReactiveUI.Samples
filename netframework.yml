@@ -1,7 +1,7 @@
 parameters:
   Solution: ''
   BuildPlatform: 'Any CPU'
-  BuildConfiguration: 'Release'
+  BuildConfiguration: 'Debug'
 
 steps:
 - task: NuGetToolInstaller@0

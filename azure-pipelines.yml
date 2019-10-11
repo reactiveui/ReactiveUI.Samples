@@ -15,7 +15,7 @@ pool:
 jobs:
 - job: XamarinForms
   pool:
-    vmImage: 'macOS-10.13'
+    vmImage: 'macOS-10.14'
   steps:
   - template: ./netframework.yml
     parameters:

@@ -6,13 +6,13 @@
 
 This repository will contain all of ReactiveUI samples.
 
-## Xamarin Forms 
+## Xamarin Forms
 
 #### [Cinephile](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/xamarin-forms/Cinephile)
 
 Example in Xamarin Forms (Android and iOS) shows you the upcoming movies from [the movie api](https://api.themoviedb.org/3)
 
-Provides examples about: 
+Provides examples about:
 
 1. App's bootstrapping
 2. [ViewModel first routing](https://reactiveui.net/docs/handbook/routing/)
@@ -23,6 +23,7 @@ Provides examples about:
 ## Xamarin Native
 
 Examples provided:
+
 1. Reactive Recycler View
 
 ## Avalonia
@@ -82,3 +83,36 @@ Building a web app with ReactiveUI and Razor Components.
 <img width="500" src="https://i.gyazo.com/8bd953c633601e61c8a869631ba1d48e.gif">
 
 Follow the [Razor Components tutorial](https://docs.microsoft.com/en-us/aspnet/core/razor-components/get-started?view=aspnetcore-3.0&tabs=visual-studio) on MSDN to get started. Heavily based on [@akourbat's work](https://github.com/akourbat/SampleRazorComponentsApp).
+
+## More Avalonia samples
+
+Self-contained multiplatform samples to help understanding: [ReactiveX](http://reactivex.io), [ReactiveUI](https://reactiveui.net), [Avalonia UI](https://avaloniaui.net). Featuring links to original reference material for each fresh chunk of code, e.g.
+
+```cs
+// https://reactiveui.net/docs/handbook/events/#how-do-i-convert-my-own-c-events-into-observables
+Observable
+    .FromEventPattern(wndMain, nameof(wndMain.Closing))
+    .Subscribe(_ => Console.WriteLine("Main window closing..."))
+    .DisposeWith(disposables);
+```
+
+#### [Hello World](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/reactive-avalonia/HelloWorld)
+
+Uses a finite observable stream of timer ticks. At each tick a new
+greeting is displayed. The sample can be a template for ReactiveUI + Avalonia
+applications.
+
+Topics: View, ViewModel, (de)activation, reactive property, type-safe bindings,
+WhenAnyValue, observable timer, UI thread and schedulers, window event.
+
+<img  width="200" src="https://www.dropbox.com/s/ykhs4f322fwi7sx/HelloReactiveWorld_Trailer.gif?raw=1" />
+
+#### [Random Buddy Stalker](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/reactive-avalonia/RandomBuddyStalker)
+
+Shows how to use async/await in a ReactiveUI context. It calls a
+dummy [(but real)](https://reqres.in) RESTful API.
+
+Topics: command binding, ReactiveUI.Fody, Rx event pattern, async/await,
+timeout, json, Flurl.
+
+<img  width="200" src="https://www.dropbox.com/s/bzt56v87b6hzpai/RandomBuddyStalker_Trailer.gif?raw=1" />

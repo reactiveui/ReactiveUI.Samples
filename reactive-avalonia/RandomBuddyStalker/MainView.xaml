@@ -1,0 +1,59 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="ReactiveAvalonia.RandomBuddyStalker.MainView"
+    Title="RandomBuddyStalker"
+    WindowStartupLocation="CenterOwner"
+    Width="256"
+    Height="300"
+    MinWidth="256"
+    MinHeight="300"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center">
+
+    <DockPanel>
+        <TextBlock
+            Name="tblBuddyName"
+            DockPanel.Dock="Top"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="24"
+            Margin="16, 16, 16, 16"
+            Text="Buddy name" />
+        <ProgressBar
+            Name="pbRemainingTime"
+            DockPanel.Dock="Bottom"
+            Orientation="Horizontal" />
+        <Grid DockPanel.Dock="Bottom">
+            <Button 
+                Name="btnStalk"
+                Width="192"
+                Height="64"
+                FontSize="20"
+                Margin="16"
+                Content="Stalk Buddy" />
+            <Button 
+                Name="btnContinue"
+                Width="192"
+                Height="64"
+                FontSize="20"
+                Margin="16"
+                Content="Continue" />
+        </Grid>
+        <DockPanel>
+            <Border
+                Name="brdAvatar"
+                DockPanel.Dock="Top"
+                Background="LightGray"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="16"
+                Width="128"
+                Height="128">
+                <Image Name="imgAvatar" />
+            </Border>
+        </DockPanel>
+    </DockPanel>
+</Window>

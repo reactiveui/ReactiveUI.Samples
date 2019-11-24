@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="ReactiveAvalonia.HelloWorld.MainView"
+        Title="HelloWorld"
+        Name="wndMain"
+        Width="320"
+        Height="200"
+        MinWidth="320"
+        MinHeight="200">
+    <!-- http://avaloniaui.net/docs/reactiveui/activation#activation-example - View.xaml -->
+    <!-- https://reactiveui.net/docs/handbook/data-binding/avalonia -->
+    <TextBlock
+        Name="tbGreetingLabel"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        FontSize="16" />
+</Window>

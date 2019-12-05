@@ -1,31 +1,37 @@
-﻿@page "/"
-@inject GreetingViewModel ViewModel
-
-<div class="container-fluid mt-5">
+﻿<div class="container-fluid mt-5">
     <h1>ReactiveUI + Razor = 💖</h1>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <label for="name">@ViewModel.Greeting</label>
                 <input id="name"
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter name"
-                        bind-value-oninput="@ViewModel.Name" />
+                       type="text"
+                       class="form-control"
+                       placeholder="Enter name"
+                       @bind-value="ViewModel.Name"
+                       @bind-value:event="oninput" />
                 <small id="emailHelp"
-                        class="form-text text-muted">
+                       class="form-text text-muted">
                     Please, enter your name.
                 </small>
-                <button class="btn btn-info"
-                        disabled="@(!ViewModel.CanClear)"
-                        onclick="@Clear">
-                    Clear
-                </button>
+                @{
+                    if (!ViewModel.CanClear)
+                    {
+                        <button class="btn btn-info"
+                                disabled
+                                @onclick="Clear">
+                            Clear
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-info"
+                                @onclick="Clear">
+                            Clear
+                        </button>
+                    }
+                }
             </div>
         </div>
     </div>
 </div>
-
-@functions {
-    void Clear() => ViewModel.Clear.Execute().Subscribe();
-}

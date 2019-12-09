@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI" Version="10.5.43" />
+    <PackageReference Include="ReactiveUI.Blazor" Version="10.5.43" />
+    <PackageReference Include="ReactiveUI.Fody" Version="10.5.43" />
+  </ItemGroup>
+
+</Project>

@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ReactiveUI.RazorExample.ViewModels;
 
-namespace ReactiveUI.RazorExample
+namespace ReactiveUI.BlazorExample
 {
     public class Startup
     {
@@ -22,7 +21,6 @@ namespace ReactiveUI.RazorExample
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<GreetingViewModel>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

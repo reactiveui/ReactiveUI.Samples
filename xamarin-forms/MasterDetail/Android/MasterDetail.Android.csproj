@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="10.*" />
+    <PackageReference Include="ReactiveUI" Version="11.*" />
     <PackageReference Include="Xamarin.Forms" Version="4.2.*" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.*" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.*" />

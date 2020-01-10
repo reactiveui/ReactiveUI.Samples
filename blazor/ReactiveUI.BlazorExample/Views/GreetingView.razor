@@ -15,23 +15,11 @@
                        class="form-text text-muted">
                     Please, enter your name.
                 </small>
-                @{
-                    if (!ViewModel.CanClear)
-                    {
-                        <button class="btn btn-info"
-                                disabled
-                                @onclick="Clear">
-                            Clear
-                        </button>
-                    }
-                    else
-                    {
-                        <button class="btn btn-info"
-                                @onclick="Clear">
-                            Clear
-                        </button>
-                    }
-                }
+                <button class="btn btn-info"
+                        disabled="@(!ViewModel.CanClear)"
+                        @onclick="Clear">
+                    Clear
+                </button>
             </div>
         </div>
     </div>

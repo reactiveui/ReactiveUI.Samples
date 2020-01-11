@@ -4,9 +4,9 @@ using ServerSideExample.ViewModels;
 
 namespace ServerSideExample.Views
 {
-    public partial class Counter : IViewFor<CounterViewModel>
+    public partial class CounterView : IViewFor<CounterViewModel>
     {
-        public Counter()
+        public CounterView()
         {
             ViewModel = new CounterViewModel();
         }
@@ -18,11 +18,10 @@ namespace ServerSideExample.Views
             set => ViewModel = (CounterViewModel)value;
         }
 
-
         private void IncrementCount()
-
         {
             ViewModel.Increment.Execute().Subscribe();
         }
+
     }
 }

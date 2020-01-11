@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ServerSideExample.Data;
+using ServerSideExample.ViewModels;
 
 namespace ServerSideExample
 {
@@ -29,6 +30,7 @@ namespace ServerSideExample
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<FetchDataViewModel>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -76,7 +76,7 @@ Provides examples about [ReactiveUI routing](https://reactiveui.net/docs/handboo
 
 ## Blazor
 
-#### [ReactiveUI.RazorExample](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor)
+#### [ReactiveUI Blazor Example](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor)
 
 Building a web app with ReactiveUI and Razor Components.
 

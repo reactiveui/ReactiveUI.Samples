@@ -64,7 +64,7 @@
       <Version>10.1.6</Version>
     </PackageReference>
     <PackageReference Include="Uno.UI">
-      <Version>1.45.0</Version>
+      <Version>2.0.530</Version>
     </PackageReference>
     <PackageReference Include="Uno.UniversalImageLoader" Version="1.9.32" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />

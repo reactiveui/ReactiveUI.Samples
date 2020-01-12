@@ -8,20 +8,21 @@ namespace ServerSideExample.ViewModels
     {
         private int _currentCount;
 
+        private readonly ObservableAsPropertyHelper<int> _count;
+
         public CounterViewModel()
         {
             Increment = ReactiveCommand.CreateFromTask(IncrementCount);
+
+            _count = Increment.ToProperty(this, x => x.CurrentCount, scheduler: RxApp.MainThreadScheduler);
         }
 
-        public int CurrentCount
-        {
-            get => _currentCount;
-            set => this.RaiseAndSetIfChanged(ref _currentCount, value);
-        }
+        public int CurrentCount => _count.Value;
         
-        public ReactiveCommand<Unit, Unit> Increment { get; }
+        
+        public ReactiveCommand<Unit, int> Increment { get; }
 
-        private Task IncrementCount()
+        private Task<int> IncrementCount()
         {
             _currentCount++;
             return Task.FromResult(_currentCount);

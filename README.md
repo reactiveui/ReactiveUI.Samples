@@ -76,13 +76,27 @@ Provides examples about [ReactiveUI routing](https://reactiveui.net/docs/handboo
 
 ## Blazor
 
-#### [ReactiveUI Blazor Example](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor)
+#### [ReactiveUI Blazor Examples](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor)
 
 Building a web app with ReactiveUI and Razor Components.
 
 <img width="500" src="https://i.gyazo.com/8bd953c633601e61c8a869631ba1d48e.gif">
 
-Follow the [Blazor tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-app?view=aspnetcore-3.1&tabs=visual-studio) on MSDN to get started. Heavily based on [@akourbat's work](https://github.com/akourbat/SampleRazorComponentsApp).
+There are three Blazor examples - 
+
+1. Server-Side(https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/ServerSideExample)
+
+Blazor on the Server uses SignalR maintain client connections and is fully supported by Microsoft.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
+
+2. Client-Side(https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/ClientSideExample)
+
+Blazor running in the browser via WASM is currently in Preview.  Release date is scheduled for May 2020.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
+
+3. AspNetCore Hosted (https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/HostedExample)
+
+This is Blazor running in the browser via WASM and as such is currently in Preview.  The wasm-based SPA is hosted by an AspNetCore site.  Release date for Blazor-wasm is scheduled for May 2020.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
+
+You can follow the [Blazor tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-app?view=aspnetcore-3.1&tabs=visual-studio) on MSDN to get started. Heavily based on [@akourbat's work](https://github.com/akourbat/SampleRazorComponentsApp).
 
 ## More Avalonia samples
 

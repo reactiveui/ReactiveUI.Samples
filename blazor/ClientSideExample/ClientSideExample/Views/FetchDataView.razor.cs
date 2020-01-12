@@ -1,4 +1,4 @@
-﻿using System.Reactive.Linq;
+﻿using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using ClientSideExample.ViewModels;
 using Microsoft.AspNetCore.Components;
@@ -21,7 +21,7 @@ namespace ClientSideExample.Views
 
         protected override async Task OnInitializedAsync()
         {
-           await ViewModel.LoadForecasts.Execute().SubscribeOn(RxApp.MainThreadScheduler);
+            await ViewModel.LoadForecasts.Execute().ToTask();
         }
     }
 }

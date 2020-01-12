@@ -1,4 +1,4 @@
-﻿using System.Reactive.Linq;
+﻿using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using ClientSideExample.ViewModels;
 using ReactiveUI;
@@ -21,7 +21,7 @@ namespace ClientSideExample.Views
 
         private async Task IncrementCount()
         {
-            await ViewModel.Increment.Execute().SubscribeOn(RxApp.MainThreadScheduler);
+            await ViewModel.Increment.Execute().ToTask();
         }
     }
 }

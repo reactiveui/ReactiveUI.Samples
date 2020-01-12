@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Reactive.Threading.Tasks;
+using System.Threading.Tasks;
 using ClientSideExample.ViewModels;
 using ReactiveUI;
 
@@ -18,9 +19,9 @@ namespace ClientSideExample.Views
             set => ViewModel = (GreetingViewModel)value;
         }
 
-        public void Clear()
+        public async Task Clear()
         {
-            ViewModel.Clear.Execute().Subscribe();
+            await ViewModel.Clear.Execute().ToTask();
         }
     }
 }

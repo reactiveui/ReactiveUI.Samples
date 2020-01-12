@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using System.Reactive;
+﻿using System.Reactive;
 using System.Reactive.Linq;
 using ReactiveUI;
-using ReactiveUI.Fody.Helpers;
 
 namespace ClientSideExample.ViewModels
 {

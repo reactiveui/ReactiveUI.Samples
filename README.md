@@ -84,15 +84,15 @@ Building a web app with ReactiveUI and Razor Components.
 
 There are three Blazor examples - 
 
-1. Server-Side(https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/ServerSideExample)
+1. [Server-Side](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/ServerSideExample)
 
 Blazor on the Server uses SignalR maintain client connections and is fully supported by Microsoft.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
 
-2. Client-Side(https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/ClientSideExample)
+2. [Client-Side](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/ClientSideExample)
 
 Blazor running in the browser via WASM is currently in Preview.  Release date is scheduled for May 2020.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
 
-3. AspNetCore Hosted (https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/HostedExample)
+3. [AspNetCore Hosted](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/HostedExample)
 
 This is Blazor running in the browser via WASM and as such is currently in Preview.  The wasm-based SPA is hosted by an AspNetCore site.  Release date for Blazor-wasm is scheduled for May 2020.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
 

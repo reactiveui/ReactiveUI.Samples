@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Reactive;
 using System.Threading.Tasks;
 using HostedExample.Shared;
@@ -10,26 +9,24 @@ namespace HostedExample.Client.ViewModels
 {
     public class FetchDataViewModel : ReactiveObject
     {
-        private List<WeatherForecast> _forecasts = new List<WeatherForecast>();
+        private readonly ObservableAsPropertyHelper<WeatherForecast[]> _forecasts;
+
         private readonly HttpClient _http;
         public FetchDataViewModel(HttpClient http)
         {
             _http = http;
             LoadForecasts = ReactiveCommand.CreateFromTask(LoadWeatherForecastsAsync);
+
+            _forecasts = LoadForecasts.ToProperty(this, x => x.Forecasts, scheduler: RxApp.MainThreadScheduler);
         }
 
-        public ReactiveCommand<Unit, Unit> LoadForecasts { get; }
+        public ReactiveCommand<Unit, WeatherForecast[]> LoadForecasts { get; }
 
-        public List<WeatherForecast> Forecasts
-        { 
-            get => _forecasts; 
-            set => this.RaiseAndSetIfChanged(ref _forecasts, value);
-            
-        }
+        public WeatherForecast[] Forecasts => _forecasts.Value;
 
-        private async Task LoadWeatherForecastsAsync()
+        private async Task<WeatherForecast[]> LoadWeatherForecastsAsync()
         {
-            Forecasts.AddRange(await _http.GetJsonAsync<WeatherForecast[]>("WeatherForecast"));
+            return await _http.GetJsonAsync<WeatherForecast[]>("WeatherForecast");
         }
 
     }

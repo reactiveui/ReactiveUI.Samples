@@ -1,7 +1,6 @@
 ﻿using System;
 using HostedExample.Client.ViewModels;
 using ReactiveUI;
-using ReactiveUI.Blazor;
 
 namespace HostedExample.Client.Views
 {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reactive.Linq;
+﻿using System.Reactive.Linq;
 using System.Threading.Tasks;
 using HostedExample.Client.ViewModels;
 using Microsoft.AspNetCore.Components;

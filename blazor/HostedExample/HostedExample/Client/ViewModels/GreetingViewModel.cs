@@ -1,43 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive;
+﻿using System.Reactive;
 using System.Reactive.Linq;
-using System.Threading.Tasks;
 using ReactiveUI;
-using ReactiveUI.Fody.Helpers;
+
 
 namespace HostedExample.Client.ViewModels
 {
     public class GreetingViewModel : ReactiveObject
     {
+        private string _name;
+
+        private readonly ObservableAsPropertyHelper<bool> _canClear;
+        private readonly ObservableAsPropertyHelper<string> _greeting;
+
         public ReactiveCommand<Unit, Unit> Clear { get; }
 
-        [ObservableAsProperty]
-        public bool CanClear { get; }
+        public bool CanClear => _canClear.Value;
+    
+        public string Greeting => _greeting.Value;
 
-        [ObservableAsProperty]
-        public string Greeting { get; }
-
-        [Reactive]
-        public string Name { get; set; } = string.Empty;
+        public string Name
+        {
+            get => _name;
+            set => this.RaiseAndSetIfChanged(ref _name, value);
+        }
 
         public GreetingViewModel()
         {
-            var canClear = this
-                .WhenAnyValue(x => x.Name)
-                .Select(name => !string.IsNullOrWhiteSpace(name));
+            var canClear = this.WhenAnyValue(x => x.Name)
+                .Select(name => !string.IsNullOrEmpty(name));
 
             Clear = ReactiveCommand.Create(
                 () => { Name = string.Empty; },
                 canClear);
 
-            Clear.CanExecute
-                .ToPropertyEx(this, x => x.CanClear);
+            _canClear = Clear.CanExecute
+                .ToProperty(this, x => x.CanClear);
 
-            this.WhenAnyValue(x => x.Name)
+            _greeting = this.WhenAnyValue(x => x.Name)
                 .Select(x => string.IsNullOrWhiteSpace(x) ? string.Empty : $"Hello, {x}!")
-                .ToPropertyEx(this, x => x.Greeting);
+                .ToProperty(this, x => x.Greeting);
         }
     }
 }

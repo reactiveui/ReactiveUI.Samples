@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{849E3F90-EE14-4C0C-8FD7-F11FAA116CF4}"
 EndProject
@@ -39,6 +37,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests", "ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests\ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests.csproj", "{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReactiveUI.Samples.Basics.FSharp", "ReactiveUI.Samples.Basics.FSharp\ReactiveUI.Samples.Basics.FSharp.fsproj", "{DADA3217-BA6F-470C-97C3-B6B79288AA08}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UniversalAppDemo", "UniversalAppDemo", "{55E22C53-16D6-4230-9AB3-A0D506F7D916}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ReactiveUI.Samples.UniversalAppDemo.Shared", "ReactiveUI.Samples.UniversalAppDemo\ReactiveUI.Samples.UniversalAppDemo.Shared\ReactiveUI.Samples.UniversalAppDemo.Shared.shproj", "{1C10B16F-6569-4009-B7A9-0D9DB2AB0222}"
@@ -49,9 +48,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFestApp.Windows", "Reac
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ReactiveUI.Samples.UniversalAppDemo\ReactiveUI.Samples.UniversalAppDemo.Shared\ReactiveUI.Samples.UniversalAppDemo.Shared.projitems*{1c10b16f-6569-4009-b7a9-0d9db2ab0222}*SharedItemsImports = 13
 		ReactiveUI.Samples.UniversalAppDemo\ReactiveUI.Samples.UniversalAppDemo.Shared\ReactiveUI.Samples.UniversalAppDemo.Shared.projitems*{861207c1-e4ee-41d1-bae8-e1d178217005}*SharedItemsImports = 4
 		ReactiveUI.Samples.UniversalAppDemo\ReactiveUI.Samples.UniversalAppDemo.Shared\ReactiveUI.Samples.UniversalAppDemo.Shared.projitems*{a24254b8-57c0-42ce-9874-a7257306fb25}*SharedItemsImports = 4
-		ReactiveUI.Samples.UniversalAppDemo\ReactiveUI.Samples.UniversalAppDemo.Shared\ReactiveUI.Samples.UniversalAppDemo.Shared.projitems*{1c10b16f-6569-4009-b7a9-0d9db2ab0222}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,13 +130,25 @@ Global
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|ARM.ActiveCfg = Release|Any CPU
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|x64.ActiveCfg = Release|Any CPU
 		{CECE0F04-2D7F-476E-8D0D-8EBC9FEAF598}.Release|x86.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|ARM.Build.0 = Debug|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|x64.Build.0 = Debug|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Debug|x86.Build.0 = Debug|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|ARM.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|ARM.Build.0 = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|x64.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|x64.Build.0 = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|x86.ActiveCfg = Release|Any CPU
+		{DADA3217-BA6F-470C-97C3-B6B79288AA08}.Release|x86.Build.0 = Release|Any CPU
 		{A24254B8-57C0-42CE-9874-A7257306FB25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A24254B8-57C0-42CE-9874-A7257306FB25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A24254B8-57C0-42CE-9874-A7257306FB25}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -198,5 +209,8 @@ Global
 		{1C10B16F-6569-4009-B7A9-0D9DB2AB0222} = {55E22C53-16D6-4230-9AB3-A0D506F7D916}
 		{A24254B8-57C0-42CE-9874-A7257306FB25} = {55E22C53-16D6-4230-9AB3-A0D506F7D916}
 		{861207C1-E4EE-41D1-BAE8-E1D178217005} = {55E22C53-16D6-4230-9AB3-A0D506F7D916}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0904AD47-678F-4F7E-91AC-26BC001AA245}
 	EndGlobalSection
 EndGlobal

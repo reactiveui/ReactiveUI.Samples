@@ -6,22 +6,25 @@ namespace HostedExample.Client.ViewModels
 {
     public class CounterViewModel : ReactiveObject
     {
-        private int currentCount;
+        private int _currentCount;
 
         public CounterViewModel()
         {
             Increment = ReactiveCommand.CreateFromTask(IncrementCount);
         }
 
-        public int CurrentCount => currentCount;
+        public int CurrentCount
+        {
+            get => _currentCount;
+            set => this.RaiseAndSetIfChanged(ref _currentCount, value);
+        }
         
-
-        public ReactiveCommand<Unit, Unit> Increment;
+        public ReactiveCommand<Unit, Unit> Increment { get; }
 
         private Task IncrementCount()
         {
-            currentCount++;
-            return Task.CompletedTask;
+            _currentCount++;
+            return Task.FromResult(_currentCount);
         }
     }
 }

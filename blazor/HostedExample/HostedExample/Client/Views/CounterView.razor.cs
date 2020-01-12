@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
 using ReactiveUI;
 using HostedExample.Client.ViewModels;
 
@@ -20,9 +22,9 @@ namespace HostedExample.Client.Views
             set => ViewModel = (CounterViewModel)value;
         }
 
-        private void IncrementCount()
+        private async Task IncrementCount()
         {
-            ViewModel.Increment.Execute().Subscribe();
+            await ViewModel.Increment.Execute().SubscribeOn(RxApp.MainThreadScheduler);
         }
     }
 }

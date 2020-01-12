@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive;
 using System.Threading.Tasks;
 using ReactiveUI;
@@ -10,21 +8,24 @@ namespace ServerSideExample.ViewModels
 {
     public class FetchDataViewModel : ReactiveObject
     {
+        private readonly ObservableAsPropertyHelper<WeatherForecast[]> _forecasts;
         private readonly WeatherForecastService _weatherForecastService;
 
         public FetchDataViewModel(WeatherForecastService weatherForecastService)
         {
             _weatherForecastService = weatherForecastService;
             LoadForecasts = ReactiveCommand.CreateFromTask(LoadWeatherForecastsAsync);
+
+            _forecasts = LoadForecasts.ToProperty(this, x => x.Forecasts, scheduler: RxApp.MainThreadScheduler);
         }
 
-        public ReactiveCommand<Unit, Unit>  LoadForecasts { get; }
+        public ReactiveCommand<Unit, WeatherForecast[]> LoadForecasts { get; }
 
-        public List<WeatherForecast> Forecasts { get; set; } = new List<WeatherForecast>();
+        public WeatherForecast[] Forecasts => _forecasts.Value;
 
-        private async Task LoadWeatherForecastsAsync()
+        private async Task<WeatherForecast[]> LoadWeatherForecastsAsync()
         {
-            Forecasts =  (await _weatherForecastService.GetForecastAsync(DateTime.Now)).ToList();
+            return await _weatherForecastService.GetForecastAsync(DateTime.Now);
         }
 
     }

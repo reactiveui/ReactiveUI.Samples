@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="ReactiveUI.Blazor" Version="11.1.6" />
-    <PackageReference Include="ReactiveUI.Fody" Version="11.1.6" />
   </ItemGroup>
 
 </Project>

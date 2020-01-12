@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reactive.Linq;
+﻿using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using ReactiveUI;
@@ -19,10 +18,9 @@ namespace ServerSideExample.Views
             set => ViewModel = (FetchDataViewModel)value;
         }
 
-        protected override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
-            ViewModel.LoadForecasts.Execute().SubscribeOn(RxApp.MainThreadScheduler).Subscribe();
-            return Task.CompletedTask;
+            await ViewModel.LoadForecasts.Execute().SubscribeOn(RxApp.MainThreadScheduler);
         }
 
     }

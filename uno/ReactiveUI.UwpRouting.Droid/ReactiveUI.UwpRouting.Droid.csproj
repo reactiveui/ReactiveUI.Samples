@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ReactiveUI.Uno">
-      <Version>11.1.6</Version>
+      <Version>11.1.12</Version>
     </PackageReference>
     <PackageReference Include="Uno.UI">
       <Version>2.0.530</Version>

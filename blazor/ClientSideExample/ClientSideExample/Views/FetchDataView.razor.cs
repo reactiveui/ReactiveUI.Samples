@@ -2,21 +2,18 @@
 using System.Threading.Tasks;
 using ClientSideExample.ViewModels;
 using Microsoft.AspNetCore.Components;
-using ReactiveUI;
 
 
 namespace ClientSideExample.Views
 {
-    public partial class FetchDataView : IViewFor<FetchDataViewModel>
+    public partial class FetchDataView 
     {
         [Inject]
-        public FetchDataViewModel ViewModel { get; set; }
-
-
-        object IViewFor.ViewModel
+        public FetchDataViewModel FetchViewModel
         {
             get => ViewModel;
-            set => ViewModel = (FetchDataViewModel)value;
+            set => ViewModel = value;
+            
         }
 
         protected override async Task OnInitializedAsync()

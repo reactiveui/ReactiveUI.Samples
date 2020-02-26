@@ -119,7 +119,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.2" />
     <PackageReference Include="ReactiveUI.Uno">
-      <Version>11.1.20</Version>
+      <Version>11.2.1</Version>
     </PackageReference>
     <PackageReference Include="Uno.UI">
       <Version>2.1.0-dev.872</Version>

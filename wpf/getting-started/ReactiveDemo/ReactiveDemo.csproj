@@ -71,13 +71,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NuGet.Client" Version="4.2.0" />
-    <PackageReference Include="NuGet.Protocol.Core.v3" Version="4.2.0" />
+    <PackageReference Include="NuGet.Protocol" Version="5.5.0" />
     <PackageReference Include="ReactiveUI.WPF" Version="11.1.12" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

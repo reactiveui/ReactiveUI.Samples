@@ -138,7 +138,7 @@
       <Version>6.2.8</Version>
     </PackageReference>
     <PackageReference Include="ReactiveUI.Uno">
-      <Version>11.2.3</Version>
+      <Version>11.3.7</Version>
     </PackageReference>
     <PackageReference Include="Uno.Core">
       <Version>1.29.0</Version>

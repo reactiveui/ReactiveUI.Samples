@@ -73,6 +73,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ReactiveUI.UwpRouting.Share
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		uno\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{21dcdcb0-6e10-4545-a451-3e1763735290}*SharedItemsImports = 5
 		uno\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{33577c59-4fa0-4d1b-9c25-dbce1a14a0e4}*SharedItemsImports = 4
 		uno\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{5fc57955-37fd-46b1-bc65-1afbc1f127fb}*SharedItemsImports = 4
 		uno\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13

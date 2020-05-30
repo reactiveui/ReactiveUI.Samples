@@ -83,8 +83,8 @@
     <AndroidResource Include="Resources\drawable\SplashScreenLogo" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Reactive" Version="4.3.2" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.0" />
+    <PackageReference Include="System.Reactive" Version="4.4.1" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.*" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.*" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.*" />
@@ -93,7 +93,7 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.*" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.*" />
     <PackageReference Include="System.Threading.Tasks.Extensions">
-      <Version>4.5.2</Version>
+      <Version>4.5.4</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

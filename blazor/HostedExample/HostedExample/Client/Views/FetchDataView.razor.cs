@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using HostedExample.Client.ViewModels;
 using Microsoft.AspNetCore.Components;
-using ReactiveUI;
 
 namespace HostedExample.Client.Views
 {

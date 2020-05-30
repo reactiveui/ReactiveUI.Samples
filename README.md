@@ -90,13 +90,15 @@ Blazor on the Server uses SignalR maintain client connections and is fully suppo
 
 2. [Client-Side](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/ClientSideExample)
 
-Blazor running in the browser via WASM is currently in Preview.  Release date is scheduled for May 2020.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
+Blazor running in the browser via WASM is now fully supported!  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
 
 3. [AspNetCore Hosted](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor/HostedExample)
 
-This is Blazor running in the browser via WASM and as such is currently in Preview.  The wasm-based SPA is hosted by an AspNetCore site.  Release date for Blazor-wasm is scheduled for May 2020.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
+This is Blazor running in the browser via WASM.  The wasm-based SPA is hosted by an AspNetCore site.  This sample implements ReactiveUI Viewmodels over the standard Microsoft template.
 
 You can follow the [Blazor tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-app?view=aspnetcore-3.1&tabs=visual-studio) on MSDN to get started. Heavily based on [@akourbat's work](https://github.com/akourbat/SampleRazorComponentsApp).
+
+All samples now work with VS and VS Code debugging, although please bear in mind for Client and Hosted - ie, `wasm`-based, you'll need to start the project in debug mode **before** adding your breakpoints!
 
 ## More Avalonia samples
 

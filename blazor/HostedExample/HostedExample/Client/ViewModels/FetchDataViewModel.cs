@@ -1,8 +1,8 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Reactive;
 using System.Threading.Tasks;
 using HostedExample.Shared;
-using Microsoft.AspNetCore.Components;
 using ReactiveUI;
 
 namespace HostedExample.Client.ViewModels
@@ -26,7 +26,7 @@ namespace HostedExample.Client.ViewModels
 
         private async Task<WeatherForecast[]> LoadWeatherForecastsAsync()
         {
-            return await _http.GetJsonAsync<WeatherForecast[]>("WeatherForecast");
+            return await _http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
         }
 
     }

@@ -16,7 +16,7 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Moq" Version="4.13.1" />
     <PackageReference Include="Microsoft.CodeCoverage" Version="16.5.0" />
-    <PackageReference Include="Microsoft.Reactive.Testing" Version="4.3.2" />
+    <PackageReference Include="Microsoft.Reactive.Testing" Version="4.4.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cinephile.Core\Cinephile.Core.csproj" />

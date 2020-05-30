@@ -98,7 +98,7 @@ This is Blazor running in the browser via WASM.  The wasm-based SPA is hosted by
 
 You can follow the [Blazor tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-app?view=aspnetcore-3.1&tabs=visual-studio) on MSDN to get started. Heavily based on [@akourbat's work](https://github.com/akourbat/SampleRazorComponentsApp).
 
-All samples now work with VS and VS Code debugging, although please bear in mind for CLient and Hosted - ie, `wasm`-based, you'll need to start the project in debug mode **before** adding your breakpoints!
+All samples now work with VS and VS Code debugging, although please bear in mind for Client and Hosted - ie, `wasm`-based, you'll need to start the project in debug mode **before** adding your breakpoints!
 
 ## More Avalonia samples
 

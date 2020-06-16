@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages:ContentViewBase xmlns="http://xamarin.com/schemas/2014/forms"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:packages="clr-namespace:Packages;assembly=Packages"
+                       x:Class="Packages.NuGetVersionViewCell"
+                       x:TypeArguments="packages:NuGetVersionViewModel">
+  <ContentView.Content>
+    <StackLayout Orientation="Horizontal" HeightRequest="24" Padding="16" >
+      <Label x:Name="PackageVersion" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+      <Label x:Name="DownloadCount" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+  </ContentView.Content>
+</packages:ContentViewBase>

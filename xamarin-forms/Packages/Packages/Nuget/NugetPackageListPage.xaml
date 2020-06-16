@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:packages="clr-namespace:Packages;assembly=Packages"
+                       x:TypeArguments="packages:NuGetPackageListViewModel"
+                       x:Class="Packages.NuGetPackageListPage"
+                       NavigationPage.HasBackButton="True">
+  <ContentPage.Content>
+    <StackLayout>
+      <SearchBar x:Name="SearchBar" />
+      <ListView x:Name="NuGetPackageListView"
+                HasUnevenRows="True"
+                RowHeight="80"
+                IsPullToRefreshEnabled="True">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <packages:NuGetViewCell />
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      <Label x:Name="Instructions" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+  </ContentPage.Content>
+</packages:ContentPageBase>

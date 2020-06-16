@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages:ContentViewBase xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:packages="clr-namespace:Packages;assembly=Packages"
+             x:TypeArguments="packages:NuGetViewModel"
+             x:Class="Packages.NuGetViewCell">
+  <ContentView.Content>
+  <Grid RowSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="20" />
+      <RowDefinition Height="20" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="54" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" VerticalOptions="Center" HeightRequest="36" WidthRequest="36">
+      <Image.Source>
+        <UriImageSource x:Name="IconUrl" />
+      </Image.Source>
+    </Image>
+    <Label x:Name="PackageName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Large" FontAttributes="Bold" Padding="0, 16" />
+    <Label x:Name="Authors" Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="2" />
+    <Label x:Name="DownloadCount" Grid.Row="2" Grid.Column="1" />
+    <Label x:Name="PackageVersion" Grid.Row="2" Grid.Column="2" />
+  </Grid>
+  </ContentView.Content>
+</packages:ContentViewBase>

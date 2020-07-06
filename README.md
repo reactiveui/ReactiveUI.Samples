@@ -7,24 +7,24 @@
 
 ### This repository contains ReactiveUI samples for various target frameworks.
 
-- ### [Avalonia](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/avalonia)
+- ### [Avalonia](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/avalonia)
 
-- ### [Blazor](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/blazor)
+- ### [Blazor](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/blazor)
 
-- ### [Testing](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/testing)
+- ### [Testing](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/testing)
 
-- ### [Uno](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/uno)
+- ### [Uno](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/uno)
 
-- ### [Universal Windows Platform](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/uwp)
+- ### [Universal Windows Platform](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/uwp)
 
-- ### [Windows Forms](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/winforms)
+- ### [Windows Forms](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/winforms)
 
-- ### [Windows Presentation Foundation](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/wpf)
+- ### [Windows Presentation Foundation](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/wpf)
 
-- ### [Xamarin Android](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/xamarin-android)
+- ### [Xamarin Android](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-android)
 
-- ### [Xamarin Forms](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/xamarin-forms)
+- ### [Xamarin Forms](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-forms)
 
-- ### [Xamarin iOS](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/xamarin-ios)
+- ### [Xamarin iOS](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-ios)
 
-- ### [Xamarin macOS](https://github.com/reactiveui/ReactiveUI.Samples/tree/master/xamarin-mac)
+- ### [Xamarin macOS](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-mac)

@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="11.*" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="11.*" />
-    <PackageReference Include="Xamarin.Forms" Version="4.3.*" />
+    <PackageReference Include="ReactiveUI" Version="11.5.35" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="11.5.35" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
   </ItemGroup>
 </Project>

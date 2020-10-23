@@ -72,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NuGet.Protocol" Version="5.5.0" />
-    <PackageReference Include="ReactiveUI.WPF" Version="11.5.35" />
+    <PackageReference Include="ReactiveUI.WPF" Version="12.1.1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />

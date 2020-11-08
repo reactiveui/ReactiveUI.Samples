@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="ReactiveUI" Version="12.*" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="11.*" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="12.*" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.*" />
   </ItemGroup>
 </Project>

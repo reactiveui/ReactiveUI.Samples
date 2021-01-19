@@ -4,9 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="12.*" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="12.*" />
-    <PackageReference Include="Xamarin.Forms" Version="4.3.*" />
+    <PackageReference Include="ReactiveUI" Version="13.0.38" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="13.0.38" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
   </ItemGroup>
 </Project>

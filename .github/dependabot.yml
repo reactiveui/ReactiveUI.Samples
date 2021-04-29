@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "00:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: Avalonia
+    versions:
+    - "> 0.8.1.pre.cibuild0003100.pre.beta, < 0.9"
+  - dependency-name: Avalonia.Desktop
+    versions:
+    - "> 0.8.1.pre.cibuild0003100.pre.beta, < 0.9"
+  - dependency-name: Avalonia.ReactiveUI
+    versions:
+    - "> 0.8.1.pre.cibuild0003100.pre.beta, < 0.9"
+  - dependency-name: ReactiveUI.WPF
+    versions:
+    - 13.1.1
+    - 13.2.10
+    - 13.2.2
+  - dependency-name: Microsoft.CodeCoverage
+    versions:
+    - 16.8.3
+    - 16.9.1
+  - dependency-name: Microsoft.NET.Test.Sdk
+    versions:
+    - 16.8.3
+    - 16.9.1
+  - dependency-name: Moq
+    versions:
+    - 4.16.0

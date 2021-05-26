@@ -39,9 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDetail", "xamarin-for
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{3DDE730B-1413-4A14-86E2-93FAB0940290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.Samples.Routing101", "wpf\ReactiveUI.Samples.Routing\ReactiveUI.Samples.Routing101.csproj", "{996C151B-7AAF-4C5C-A786-52DF9C251A73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveUI.Samples.Routing101", "wpf\ReactiveUI.Samples.Routing\ReactiveUI.Samples.Routing101.csproj", "{996C151B-7AAF-4C5C-A786-52DF9C251A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveDemo", "wpf\getting-started\ReactiveDemo\ReactiveDemo.csproj", "{9E5D9E5B-3109-4531-88E7-24763C4C1150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveDemo", "wpf\getting-started\ReactiveDemo\ReactiveDemo.csproj", "{9E5D9E5B-3109-4531-88E7-24763C4C1150}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{B78B452F-A57F-4968-9FBD-365F744D131C}"
 EndProject
@@ -77,11 +77,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveUI.UwpRouting.Wasm"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUI.UwpRouting", "uwp\routing\ReactiveUI.UwpRouting\ReactiveUI.UwpRouting.csproj", "{702CB6D2-A9E0-40A4-A64D-BAACC63893A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveUIDemo", "winforms\demo\ReactiveDemo\ReactiveUIDemo.csproj", "{6E814355-0A7D-4CAA-BA94-06A451E9EC68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveUIDemo", "winforms\demo\ReactiveDemo\ReactiveUIDemo.csproj", "{6E814355-0A7D-4CAA-BA94-06A451E9EC68}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		uno\routing\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{1d780b7d-f301-41a9-a104-a68030b6fa79}*SharedItemsImports = 5
 		uno\routing\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{33577c59-4fa0-4d1b-9c25-dbce1a14a0e4}*SharedItemsImports = 4
+		uno\routing\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{5fc57955-37fd-46b1-bc65-1afbc1f127fb}*SharedItemsImports = 4
 		uno\routing\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
 		uno\routing\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems*{c390dc24-d7dc-4384-8344-6a2b03a8bd34}*SharedItemsImports = 4
 	EndGlobalSection
@@ -1278,6 +1280,8 @@ Global
 		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.AppStore|x86.Build.0 = Debug|x86
 		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.AppStore|x86.Deploy.0 = Debug|x86
 		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.Debug|Any CPU.Build.0 = Debug|x86
+		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.Debug|ARM.ActiveCfg = Debug|ARM
 		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.Debug|ARM.Build.0 = Debug|ARM
 		{C390DC24-D7DC-4384-8344-6A2B03A8BD34}.Debug|ARM.Deploy.0 = Debug|ARM

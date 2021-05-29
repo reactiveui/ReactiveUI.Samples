@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="akavache" Version="7.*" />
-    <PackageReference Include="Refit" Version="5.*" />
+    <PackageReference Include="Refit" Version="6.*" />
     <PackageReference Include="Fusillade" Version="2.*" />
     <PackageReference Include="System.Reactive.Compatibility" Version="5.0.0" />
     <PackageReference Include="DynamicData" Version="7.1.16" />

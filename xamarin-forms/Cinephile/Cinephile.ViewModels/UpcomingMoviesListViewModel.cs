@@ -77,10 +77,11 @@ namespace Cinephile.ViewModels
                 .SelectMany(ex => ShowAlert.Handle(new AlertViewModel("Oops", ex.Message, "Ok")))
                 .Subscribe();
 
-            _isRefreshing =
-                LoadMovies
-                    .IsExecuting
-                    .ToProperty(this, x => x.IsRefreshing, true);
+            // TODO: Find out why ToProperty is at fault
+            //_isRefreshing =
+            //    LoadMovies
+            //        .IsExecuting
+            //        .ToProperty(this, x => x.IsRefreshing, true);
 
             this
                 .WhenAnyValue(x => x.ItemAppearing)

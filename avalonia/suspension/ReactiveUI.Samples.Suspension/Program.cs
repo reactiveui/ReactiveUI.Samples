@@ -1,10 +1,9 @@
-﻿using Avalonia.Logging.Serilog;
-using Avalonia.ReactiveUI;
+﻿using Avalonia.ReactiveUI;
 using Avalonia;
 
 namespace ReactiveUI.Samples.Suspension
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args) => BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
 
@@ -12,6 +11,6 @@ namespace ReactiveUI.Samples.Suspension
             => AppBuilder.Configure<App>()
                 .UseReactiveUI()
                 .UsePlatformDetect()
-                .LogToDebug();
+                .LogToTrace();
     }
 }

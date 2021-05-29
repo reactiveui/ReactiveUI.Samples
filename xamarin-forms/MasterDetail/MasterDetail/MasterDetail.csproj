@@ -11,8 +11,7 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="13.0.38" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="13.0.38" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+    <PackageReference Include="ReactiveUI" Version="13.3.2" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="13.3.2" />
   </ItemGroup>
 </Project>

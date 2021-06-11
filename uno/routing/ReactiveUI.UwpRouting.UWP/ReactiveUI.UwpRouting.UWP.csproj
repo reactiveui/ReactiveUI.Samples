@@ -141,7 +141,7 @@
       <Version>13.3.2</Version>
     </PackageReference>
     <PackageReference Include="Uno.UI">
-      <Version>3.7.4</Version>
+      <Version>3.8.6</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

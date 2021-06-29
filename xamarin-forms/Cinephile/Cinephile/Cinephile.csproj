@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="13.*" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="14.*" />
     <PackageReference Include="ReactiveUI.Events.XamForms" Version="13.*" />
   </ItemGroup>
   <ItemGroup>

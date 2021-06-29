@@ -62,7 +62,7 @@
 	<ItemGroup>
 		<PackageReference Include="ReactiveUI.Uno" Version="14.1.1" />
 		<PackageReference Include="Uno.UI" Version="3.7.4" />
-		<PackageReference Include="Uno.UI.RemoteControl" Version="3.7.4" Condition="'$(Configuration)'=='Debug'" />
+		<PackageReference Include="Uno.UI.RemoteControl" Version="3.8.11" Condition="'$(Configuration)'=='Debug'" />
 		<PackageReference Include="Uno.UniversalImageLoader" Version="1.9.33" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.2" />

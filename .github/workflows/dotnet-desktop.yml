@@ -7,6 +7,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches: [ main ]
+    
 env:
         configuration: Release
         productNamespacePrefix: "ReactiveUI"
@@ -40,6 +41,13 @@ jobs:
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
+      
+    - name: Update VS2019
+      shell: powershell
+      run: Start-Process -Wait -PassThru -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe" -ArgumentList "update --passive --norestart --installpath ""C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise"""
+
+    - name: Build
+      run: msbuild /t:build,pack /nowarn:MSB4011 /maxcpucount /p:NoPackageAnalysis=true /verbosity:minimal /p:Configuration=${{ env.configuration }}
 
     # Execute all unit tests in the solution
     - name: Execute unit tests

@@ -7,17 +7,16 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches: [ main ]
-
+env:
+        configuration: Release
+        productNamespacePrefix: "ReactiveUI"
+        
 jobs:
   build:
     runs-on: windows-latest
     strategy:
       matrix:
-        configuration: [Debug, Release]
-
-    env:
-        configuration: Release
-        productNamespacePrefix: "ReactiveUI"
+        configuration: [Release]
 
     steps:
     - name: Checkout
@@ -50,7 +49,7 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      run: msbuild $env:ReactiveUI.Samples.sln /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 

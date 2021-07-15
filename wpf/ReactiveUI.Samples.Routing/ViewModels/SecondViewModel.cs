@@ -19,6 +19,6 @@ namespace ReactiveUI.Samples.Routing.ViewModels
         public string UrlPathSegment => "Second";
         public IScreen HostScreen { get; }
 
-        public ReactiveCommand<Unit, Unit> Back { get; }
+        public ReactiveCommand<Unit, IRoutableViewModel> Back { get; }
     }
 }

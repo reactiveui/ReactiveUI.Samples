@@ -12,10 +12,10 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.6" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.6" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.6" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.6" />
+    <PackageReference Include="Avalonia" Version="0.10.*" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.*" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.*" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.*" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Splat.Serilog" Version="11.1.1" />
   </ItemGroup>

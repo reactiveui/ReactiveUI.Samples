@@ -34,10 +34,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
 
-    - name: Download NuGet Packages
-      uses: actions/download-artifact@v2
-      with:
-        name: nuget
+    - name: NuGet Restore
+      run: dotnet restore
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe

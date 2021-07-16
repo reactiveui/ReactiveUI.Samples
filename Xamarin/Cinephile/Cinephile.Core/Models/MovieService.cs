@@ -21,6 +21,7 @@ namespace Cinephile.Core.Models
     {
         private const string ApiKey = "1f54bd990f1cdfb230adb312546d765d";
         private readonly IApiService _movieApiService;
+
         private readonly ICache _movieCache;
         private readonly SourceCache<Movie, int> _internalSourceCache;
 
@@ -33,6 +34,7 @@ namespace Cinephile.Core.Models
         {
             _movieApiService = apiService ?? Locator.Current.GetService<IApiService>();
             _movieCache = cache ?? Locator.Current.GetService<ICache>();
+            _movieCache.Initialize("Cinephile");
             _internalSourceCache = new SourceCache<Movie, int>(o => o.Id);
         }
 

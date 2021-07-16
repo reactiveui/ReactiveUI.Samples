@@ -42,5 +42,5 @@ namespace Cinephile.Core.Rest
         /// <returns>An observable which signals with the genre.</returns>
         [Get("/genre/movie/list?api_key={apiKey}&language={language}")]
         IObservable<GenresDto> FetchGenres(string apiKey, string language);
-   }
+    }
 }

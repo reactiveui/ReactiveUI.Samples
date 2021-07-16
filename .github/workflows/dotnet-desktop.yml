@@ -65,15 +65,15 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
 
       - name: build iphone
-        if: "contains($BUILDTYPE, 'iphone')"
+        if: "contains(matrix.buildtype, 'iphone')"
         run: msbuild <csproj_file_path> /p:Configuration=Debug /p:Platform=iPhoneSimulator /t:Rebuild 
 
       - name: build android
-        if: "contains($BUILDTYPE, 'android')"
+        if: "contains(matrix.buildtype, 'android')"
         run: msbuild <csproj_file_path> /t:PackageForAndroid /p:Configuration=Debug
                 
       - name: build windows
-        if: "contains($BUILDTYPE, 'windows')"
+        if: "contains(matrix.buildtype, 'windows')"
         run: msbuild /t:build,pack /nowarn:MSB4011 /maxcpucount /p:NoPackageAnalysis=true /verbosity:minimal /p:Configuration=${{ env.configuration }}
         
     # Execute all unit tests in the solution

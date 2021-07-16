@@ -37,21 +37,21 @@ jobs:
 
             - os: windows-latest
               buildtype: "windows"
+            - name: Install .NET Core
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: 3.1.x
     runs-on: ${{ matrix.os }}
     steps:
       - name: Echo build details
         env:
-          SITE: ${{ matrix.buildtype }}
+          BUILDTYPE: ${{ matrix.buildtype }}
         run: echo $BUILDTYPE
 
       - name: Checkout
         uses: actions/checkout@v2
 
     # Install the .NET Core workload
-      - name: Install .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.x
       - name: Install .NET Core
         uses: actions/setup-dotnet@v1
         with:

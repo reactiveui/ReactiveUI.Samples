@@ -17,7 +17,7 @@ namespace MasterDetail
 
         public ReactiveCommand<Unit, Unit> NavigateToDummyPage { get; }
 
-        public ReactiveCommand<Unit, Unit> NavigateBack => HostScreen.Router.NavigateBack;
+        public ReactiveCommand<Unit, IRoutableViewModel> NavigateBack => HostScreen.Router.NavigateBack;
 
         public string UrlPathSegment => "Dummy Page";
 

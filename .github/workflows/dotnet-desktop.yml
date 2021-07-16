@@ -1,0 +1,82 @@
+name: BuildMain
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches: [ main ]
+    
+env:
+        configuration: Release
+        productNamespacePrefix: "ReactiveUI"
+        
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+        include:
+            - os: macos-latest
+              buildtype: "iphone"
+            - name: Set default Xamarin SDK versions
+              run: |
+                $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12 --ios=14.10
+            - name: Set default Xcode 12.3
+              run: |
+                XCODE_ROOT=/Applications/Xcode_12.3.0.app
+                echo "MD_APPLE_SDK_ROOT=$XCODE_ROOT" >> $GITHUB_ENV
+                sudo xcode-select -s $XCODE_ROOT
+
+            - os: macos-latest
+              buildtype: "android"
+            - name: Set default Xamarin SDK versions
+              run: |
+                $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
+
+            - os: windows-latest
+              buildtype: "windows"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Echo build details
+        env:
+          SITE: ${{ matrix.buildtype }}
+        run: echo $BUILDTYPE
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+    # Install the .NET Core workload
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: NuGet Restore
+        run: dotnet restore
+
+    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+      - name: Setup MSBuild.exe
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: build iphone
+        if: "contains($BUILDTYPE, 'iphone')"
+        run: msbuild <csproj_file_path> /p:Configuration=Debug /p:Platform=iPhoneSimulator /t:Rebuild 
+
+      - name: build android
+        if: "contains($BUILDTYPE, 'android')"
+        run: msbuild <csproj_file_path> /t:PackageForAndroid /p:Configuration=Debug
+                
+      - name: build windows
+        if: "contains($BUILDTYPE, 'windows')"
+        run: msbuild /t:build,pack /nowarn:MSB4011 /maxcpucount /p:NoPackageAnalysis=true /verbosity:minimal /p:Configuration=${{ env.configuration }}
+        
+    # Execute all unit tests in the solution
+      - name: Execute unit tests
+        run: dotnet test
+

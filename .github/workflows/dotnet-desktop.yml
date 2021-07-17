@@ -16,32 +16,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, windows-latest]
+        #os: [macos-latest, windows-latest]
+        os: [windows-latest]
         include:
             - os: macos-latest
               buildtype: "iphone"
-            - name: Set default Xamarin SDK versions
-              run: |
-                $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12 --ios=14.10
-            - name: Setup Xamarin versions iphone
-              uses: maxim-lobanov/setup-xamarin@v1
-              with:
-                mono-version: 6.6
-                xamarin-ios-version: 13
-                xamarin-mac-version: latest
-                xamarin-android-version: 10.x
-                xcode-version: 11.x
+              # Add any iphone specific config here
 
             - os: macos-latest
               buildtype: "android"
-            - name: Setup Xamarin versions android
-              uses: maxim-lobanov/setup-xamarin@v1
-              with:
-                mono-version: 6.6
-                xamarin-ios-version: 13
-                xamarin-mac-version: latest
-                xamarin-android-version: 10.x
-                xcode-version: 11.x
+              # Add any android specific config here
 
             - os: windows-latest
               buildtype: "windows"
@@ -49,6 +33,9 @@ jobs:
               uses: actions/setup-dotnet@v1.8.1
               with:
                 dotnet-version: 3.1.x
+            - name: Setup MSBuild.exe
+              uses: microsoft/setup-msbuild@v1.0.2
+              
     runs-on: ${{ matrix.os }}
     steps:
       - name: Echo build details
@@ -64,7 +51,7 @@ jobs:
         uses: actions/setup-dotnet@v1.8.1
         with:
           dotnet-version: 5.0.x
-
+    # Restore each platform
       - name: NuGet Restore iphone
         if: "contains(matrix.buildtype, 'iphone')"
         run: dotnet restore ReactiveUI.Samples.ios.sln
@@ -75,8 +62,8 @@ jobs:
         
       - name: NuGet Restore windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet restore ReactiveUI.Samples.Windows.sln
-
+        run: dotnet restore ReactiveUI.Samples.sln
+    # Build each platform
       - name: build iphone
         if: "contains(matrix.buildtype, 'iphone')"
         run: dotnet build ReactiveUI.Samples.ios.sln --configuration=${{ env.configuration }}
@@ -87,9 +74,18 @@ jobs:
                 
       - name: build windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet build ReactiveUI.Samples.Windows.sln --configuration ${{ env.configuration }}
+        run: msbuild ReactiveUI.Samples.sln /p:Configuration=${{ env.configuration }}
         
     # Execute all unit tests in the solution
-      - name: Execute unit tests
-        run: dotnet test --no-restore --verbosity normal
+      - name: Execute unit tests iphone
+        if: "contains(matrix.buildtype, 'iphone')"
+        run: dotnet test ReactiveUI.Samples.ios.sln --verbosity normal
+        
+      - name: Execute unit tests android
+        if: "contains(matrix.buildtype, 'android')"
+        run: dotnet test ReactiveUI.Samples.Android.sln --verbosity normal
+        
+      - name: Execute unit tests windows
+        if: "contains(matrix.buildtype, 'windows')"
+        run: dotnet test ReactiveUI.Samples.sln --verbosity normal
 

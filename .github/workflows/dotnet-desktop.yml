@@ -23,22 +23,30 @@ jobs:
             - name: Set default Xamarin SDK versions
               run: |
                 $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12 --ios=14.10
-            - name: Set default Xcode 12.3
-              run: |
-                XCODE_ROOT=/Applications/Xcode_12.3.0.app
-                echo "MD_APPLE_SDK_ROOT=$XCODE_ROOT" >> $GITHUB_ENV
-                sudo xcode-select -s $XCODE_ROOT
+            - name: Setup Xamarin versions iphone
+              uses: maxim-lobanov/setup-xamarin@v1
+              with:
+                mono-version: 6.6
+                xamarin-ios-version: 13
+                xamarin-mac-version: latest
+                xamarin-android-version: 10.x
+                xcode-version: 11.x
 
             - os: macos-latest
               buildtype: "android"
-            - name: Set default Xamarin SDK versions
-              run: |
-                $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
+            - name: Setup Xamarin versions android
+              uses: maxim-lobanov/setup-xamarin@v1
+              with:
+                mono-version: 6.6
+                xamarin-ios-version: 13
+                xamarin-mac-version: latest
+                xamarin-android-version: 10.x
+                xcode-version: 11.x
 
             - os: windows-latest
               buildtype: "windows"
             - name: Install .NET Core
-              uses: actions/setup-dotnet@v1.7.2
+              uses: actions/setup-dotnet@v1.8.1
               with:
                 dotnet-version: 3.1.x
     runs-on: ${{ matrix.os }}
@@ -53,12 +61,21 @@ jobs:
 
     # Install the .NET Core workload
       - name: Install .NET Core
-        uses: actions/setup-dotnet@v1.7.2
+        uses: actions/setup-dotnet@v1.8.1
         with:
           dotnet-version: 5.0.x
 
-      - name: NuGet Restore
-        run: dotnet restore
+      - name: NuGet Restore iphone
+        if: "contains(matrix.buildtype, 'iphone')"
+        run: dotnet restore ReactiveUI.Samples.ios.sln
+        
+      - name: NuGet Restore android
+        if: "contains(matrix.buildtype, 'android')"
+        run: dotnet restore ReactiveUI.Samples.Android.sln
+        
+      - name: NuGet Restore windows
+        if: "contains(matrix.buildtype, 'windows')"
+        run: dotnet restore ReactiveUI.Samples.Windows.sln
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
       - name: Setup MSBuild.exe
@@ -74,7 +91,7 @@ jobs:
                 
       - name: build windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet build ReactiveUI.Samples.Windows.sln --configuration ${{ env.configuration }} --no-restore
+        run: msbuild ReactiveUI.Samples.Windows.sln --configuration ${{ env.configuration }}
         
     # Execute all unit tests in the solution
       - name: Execute unit tests

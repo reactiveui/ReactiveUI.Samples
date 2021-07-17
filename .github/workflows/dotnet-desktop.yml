@@ -19,23 +19,14 @@ jobs:
         #os: [macos-latest, windows-latest]
         os: [windows-latest]
         include:
-            - os: macos-latest
-              buildtype: "iphone"
-              # Add any iphone specific config here
+            #- os: macos-latest
+            #  buildtype: "iphone"
 
-            - os: macos-latest
-              buildtype: "android"
-              # Add any android specific config here
+            #- os: macos-latest
+            #  buildtype: "android"
 
             - os: windows-latest
               buildtype: "windows"
-            - name: Install .NET Core
-              uses: actions/setup-dotnet@v1.8.1
-              with:
-                dotnet-version: 3.1.x
-            - name: Setup MSBuild.exe
-              uses: microsoft/setup-msbuild@v1.0.2
-              
     runs-on: ${{ matrix.os }}
     steps:
       - name: Echo build details
@@ -51,6 +42,17 @@ jobs:
         uses: actions/setup-dotnet@v1.8.1
         with:
           dotnet-version: 5.0.x
+          
+      - name: Install .NET Core
+        if: "contains(matrix.buildtype, 'windows')"
+        uses: actions/setup-dotnet@v1.8.1
+        with:
+          dotnet-version: 3.1.x
+          
+      - name: Setup MSBuild.exe
+        if: "contains(matrix.buildtype, 'windows')"
+        uses: microsoft/setup-msbuild@v1.0.2
+          
     # Restore each platform
       - name: NuGet Restore iphone
         if: "contains(matrix.buildtype, 'iphone')"

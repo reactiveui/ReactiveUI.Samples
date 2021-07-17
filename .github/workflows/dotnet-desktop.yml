@@ -66,15 +66,15 @@ jobs:
 
       - name: build iphone
         if: "contains(matrix.buildtype, 'iphone')"
-        run: msbuild <csproj_file_path> /p:Configuration=${{ env.configuration }} /p:Platform=iPhoneSimulator /t:Rebuild 
+        run: msbuild ReactiveUI.Samples.ios.sln /p:Configuration=${{ env.configuration }} /p:Platform=iPhoneSimulator /t:Rebuild 
 
       - name: build android
         if: "contains(matrix.buildtype, 'android')"
-        run: msbuild <csproj_file_path> /t:PackageForAndroid /p:Configuration=${{ env.configuration }}
+        run: msbuild ReactiveUI.Samples.Android.sln /t:PackageForAndroid /p:Configuration=${{ env.configuration }}
                 
       - name: build windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet build --configuration ${{ env.configuration }} --no-restore
+        run: dotnet build ReactiveUI.Samples.Windows.sln --configuration ${{ env.configuration }} --no-restore
         
     # Execute all unit tests in the solution
       - name: Execute unit tests

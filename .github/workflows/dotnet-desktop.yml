@@ -77,21 +77,17 @@ jobs:
         if: "contains(matrix.buildtype, 'windows')"
         run: dotnet restore ReactiveUI.Samples.Windows.sln
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-      - name: Setup MSBuild.exe
-        uses: microsoft/setup-msbuild@v1.0.2
-
       - name: build iphone
         if: "contains(matrix.buildtype, 'iphone')"
-        run: msbuild ReactiveUI.Samples.ios.sln /p:Configuration=${{ env.configuration }} /p:Platform=iPhoneSimulator /t:Rebuild 
+        run: dotnet build ReactiveUI.Samples.ios.sln --configuration=${{ env.configuration }}
 
       - name: build android
         if: "contains(matrix.buildtype, 'android')"
-        run: msbuild ReactiveUI.Samples.Android.sln /t:PackageForAndroid /p:Configuration=${{ env.configuration }}
+        run: dotnet build ReactiveUI.Samples.Android.sln --configuration=${{ env.configuration }}
                 
       - name: build windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: msbuild ReactiveUI.Samples.Windows.sln --configuration ${{ env.configuration }}
+        run: dotnet build ReactiveUI.Samples.Windows.sln --configuration ${{ env.configuration }}
         
     # Execute all unit tests in the solution
       - name: Execute unit tests

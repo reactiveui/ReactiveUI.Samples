@@ -20,14 +20,13 @@ jobs:
         include:
             - os: macos-latest
               buildtype: "iphone"
-              run: $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12 --ios=14.10
 
             - os: macos-latest
               buildtype: "android"
-              run: $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12 --android=10.2
 
             - os: windows-latest
               buildtype: "windows"
+              
     runs-on: ${{ matrix.os }}
     steps:
       - name: Echo build details
@@ -49,6 +48,26 @@ jobs:
         uses: actions/setup-dotnet@v1.8.1
         with:
           dotnet-version: 3.1.x
+          
+      - name: setup-xamarin iphone
+        if: "contains(matrix.buildtype, 'iphone')"
+        uses: maxim-lobanov/setup-xamarin@v1
+        with:
+          mono-version: '6.6' # specify version in '<major>.<minor>' format
+          xamarin-ios-version: latest # specify version in '<major>' format
+          xamarin-mac-version: latest # specify 'latest' keyword to pick up the latest available version
+          xamarin-android-version: latest # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
+          xcode-version: '11.x' # set the latest available Xcode 11
+          
+      - name: setup-xamarin android
+        if: "contains(matrix.buildtype, 'android')"
+        uses: maxim-lobanov/setup-xamarin@v1
+        with:
+          mono-version: '6.6' # specify version in '<major>.<minor>' format
+          xamarin-ios-version: latest # specify version in '<major>' format
+          xamarin-mac-version: latest # specify 'latest' keyword to pick up the latest available version
+          xamarin-android-version: latest # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
+          xcode-version: '11.x' # set the latest available Xcode 11
           
       #- name: Setup MSBuild.exe
       #  if: "contains(matrix.buildtype, 'windows')"

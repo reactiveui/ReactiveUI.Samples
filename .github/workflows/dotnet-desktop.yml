@@ -18,11 +18,11 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest]
         include:
-            - os: macos-latest
-              buildtype: "iphone"
+            #- os: macos-latest
+            #  buildtype: "iphone"
 
-            - os: macos-latest
-              buildtype: "android"
+            #- os: macos-latest
+            #  buildtype: "android"
 
             - os: windows-latest
               buildtype: "windows"

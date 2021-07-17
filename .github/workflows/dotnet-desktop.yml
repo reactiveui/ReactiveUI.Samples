@@ -16,14 +16,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #os: [macos-latest, windows-latest]
-        os: [windows-latest]
+        os: [macos-latest, windows-latest]
         include:
-            #- os: macos-latest
-            #  buildtype: "iphone"
+            - os: macos-latest
+              buildtype: "iphone"
+              run: $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12 --ios=14.10
 
-            #- os: macos-latest
-            #  buildtype: "android"
+            - os: macos-latest
+              buildtype: "android"
+              run: $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12 --android=10.2
 
             - os: windows-latest
               buildtype: "windows"
@@ -64,7 +65,7 @@ jobs:
         
       - name: NuGet Restore windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet restore ReactiveUI.Samples.sln
+        run: dotnet restore ReactiveUI.Samples.Windows.sln
         
     # Build each platform
       - name: build iphone
@@ -77,7 +78,7 @@ jobs:
                 
       - name: build windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet build ReactiveUI.Samples.sln --configuration=${{ env.configuration }}
+        run: dotnet build ReactiveUI.Samples.Windows.sln --configuration=${{ env.configuration }}
         
     # Execute all unit tests in the solution
       - name: Execute unit tests iphone
@@ -90,5 +91,5 @@ jobs:
         
       - name: Execute unit tests windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet test ReactiveUI.Samples.sln --verbosity normal
+        run: dotnet test ReactiveUI.Samples.Windows.sln --verbosity normal
 

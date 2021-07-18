@@ -13,18 +13,10 @@
 
 - ### [Testing](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/testing)
 
-- ### [Uno](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/uno)
-
-- ### [Universal Windows Platform](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/uwp)
+- ### [Uno - Andriod, iOS, macOS, Gtk, Tizen, Wpf, UWP, and Wasm](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/uno)
 
 - ### [Windows Forms](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/winforms)
 
-- ### [Windows Presentation Foundation](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/wpf)
+- ### [Windows Presentation Foundation - C#, F#](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/wpf)
 
-- ### [Xamarin Android](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-android)
-
-- ### [Xamarin Forms](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-forms)
-
-- ### [Xamarin iOS](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-ios)
-
-- ### [Xamarin macOS](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin-mac)
+- ### [Xamarin - Android, iOS, UWP](https://github.com/reactiveui/ReactiveUI.Samples/tree/main/xamarin)

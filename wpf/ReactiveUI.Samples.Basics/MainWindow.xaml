@@ -1,0 +1,52 @@
+﻿<Window
+    x:Class="ReactiveUI.Samples.Basics.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ReactiveUI.Samples.Basics"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <StackPanel>
+        <Expander Header="Simple Notification" IsExpanded="True">
+            <StackPanel>
+                <TextBlock Text="Ever changing property" />
+                <ProgressBar Height="50" Value="{Binding Progress}" />
+                <TextBlock Text="Slow changing property" />
+                <ProgressBar Height="50" Value="{Binding SlowProgress}" />
+                <TextBlock Text="Another Slow changing property" />
+                <ProgressBar Height="50" Value="{Binding SlowProgress2}" />
+            </StackPanel>
+        </Expander>
+        <Expander Header="Validation" IsExpanded="True">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Age: " />
+                    <TextBox
+                        Width="100"
+                        Height="30"
+                        Text="{Binding Person.Age, ValidatesOnExceptions=True, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+                <CheckBox
+                    Content="Is Valid Age?"
+                    IsChecked="{Binding Person.IsValid}"
+                    IsEnabled="False" />
+            </StackPanel>
+        </Expander>
+        <Expander Header="Memoizing MRU" IsExpanded="True">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Calculate (x) =&gt; (x * 10): " />
+                    <TextBox
+                        Width="100"
+                        Height="30"
+                        Text="{Binding Calculator.Number, ValidatesOnExceptions=True, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+                <Button Command="{Binding Calculator.CalculateCommand}" Content="Calculate" />
+                <TextBlock Text="{Binding Calculator.Result}" />
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Window>

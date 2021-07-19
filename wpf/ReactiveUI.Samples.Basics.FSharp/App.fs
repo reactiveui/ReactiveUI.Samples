@@ -1,10 +1,11 @@
 ﻿module Main
 
 open System
-open FsXaml
+open CP.FSharp.Core.Wpf
 
 type App = XAML<"App.xaml">
 
-[<EntryPoint;STAThread>]
+[<STAThread>]
+[<EntryPoint>]
 let main argv =
     App().Run()

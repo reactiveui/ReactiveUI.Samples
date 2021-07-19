@@ -1,26 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net48</TargetFramework>
-	</PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net48</TargetFramework>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
 
-	<ItemGroup>
-	  <PackageReference Include="FsXaml.Wpf" Version="3.1.6" />
-	  <PackageReference Update="FSharp.Core" Version="5.0.2" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Update="FSharp.Core" Version="5.0.2" />
+        <PackageReference Include="FSharp.Core.Wpf" Version="5.0.3" />
+    </ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj" />
-	</ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj" />
+    </ItemGroup>
 
-	<ItemGroup>
-      <Resource Include="App.xaml" />
-	  <Resource Include="MainWindow.xaml" />
-	  <Compile Include="ViewModels.fs" />
-        
-      <!--NOTE: App.fs MUST be the last included file in the project file-->
-	  <Compile Include="App.fs" />
-	</ItemGroup>
+    <ItemGroup>
+        <Resource Include="App.xaml" />
+        <Resource Include="MainWindow.xaml" />
+        <Compile Include="ViewModels.fs" />
+
+        <!--NOTE: App.fs MUST be the last included file in the project file-->
+        <Compile Include="App.fs" />
+    </ItemGroup>
 
 </Project>

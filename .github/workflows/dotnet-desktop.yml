@@ -49,12 +49,6 @@ jobs:
         with:
           dotnet-version: 3.1.x
           
-      - name: Install .NET 4.8
-        if: "contains(matrix.buildtype, 'windows')"
-        uses: actions/setup-dotnet@v1.8.1
-        with:
-          dotnet-version: 4.x
-          
       - name: setup-xamarin iphone
         if: "contains(matrix.buildtype, 'iphone')"
         uses: maxim-lobanov/setup-xamarin@v1
@@ -99,7 +93,7 @@ jobs:
 
       - name: build android
         if: "contains(matrix.buildtype, 'android')"
-        run: msbuild ReactiveUI.Samples.Android.sln /t:PackageForAndroid /p:Configuration=${{ env.configuration }}
+        run: msbuild ReactiveUI.Samples.Android.sln /p:Configuration=${{ env.configuration }}
                 
       - name: build windows
         if: "contains(matrix.buildtype, 'windows')"

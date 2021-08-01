@@ -21,7 +21,7 @@ jobs:
             #- os: macos-latest
             #  buildtype: "iphone"
 
-            - os: macos-latest
+            - os: windows-latest
               buildtype: "android"
 
             - os: windows-latest
@@ -49,6 +49,11 @@ jobs:
         with:
           dotnet-version: 3.1.x
           
+      # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+      - name: Setup MSBuild.exe
+        if: "contains(matrix.os, 'windows')"
+        uses: microsoft/setup-msbuild@v1.0.2
+          
       - name: setup-xamarin iphone
         if: "contains(matrix.buildtype, 'iphone')"
         uses: maxim-lobanov/setup-xamarin@v1
@@ -59,20 +64,16 @@ jobs:
           xamarin-android-version: latest # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
           xcode-version: '11.x' # set the latest available Xcode 11
           
-      - name: setup-xamarin android
-        if: "contains(matrix.buildtype, 'android')"
-        uses: maxim-lobanov/setup-xamarin@v1
-        with:
-          mono-version: '6.6' # specify version in '<major>.<minor>' format
-          xamarin-ios-version: latest # specify version in '<major>' format
-          xamarin-mac-version: latest # specify 'latest' keyword to pick up the latest available version
-          xamarin-android-version: latest # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
-          xcode-version: '11.x' # set the latest available Xcode 11
-          
-      #- name: Setup MSBuild.exe
-      #  if: "contains(matrix.buildtype, 'windows')"
-      #  uses: microsoft/setup-msbuild@v1.0.2
-          
+      #- name: setup-xamarin android
+      #  if: "contains(matrix.buildtype, 'android')"
+      #  uses: maxim-lobanov/setup-xamarin@v1
+      #  with:
+      #    mono-version: '6.6' # specify version in '<major>.<minor>' format
+      #    xamarin-ios-version: latest # specify version in '<major>' format
+      #    xamarin-mac-version: latest # specify 'latest' keyword to pick up the latest available version
+      #    xamarin-android-version: latest # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
+      #    xcode-version: '11.x' # set the latest available Xcode 11
+    
     # Restore each platform
       - name: NuGet Restore iphone
         if: "contains(matrix.buildtype, 'iphone')"

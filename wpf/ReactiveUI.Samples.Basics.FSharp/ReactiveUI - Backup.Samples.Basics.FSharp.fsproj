@@ -7,12 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FSharp.Core.Wpf" Version="5.0.3" />
         <PackageReference Update="FSharp.Core" Version="5.0.2" />
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\..\FSharp.Core.Wpf\src\CP.FSharp.Core.Wpf.TypeProvider\FSharp.Core.Wpf.fsproj" />
         <ProjectReference Include="..\ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="ref\*.dll">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>

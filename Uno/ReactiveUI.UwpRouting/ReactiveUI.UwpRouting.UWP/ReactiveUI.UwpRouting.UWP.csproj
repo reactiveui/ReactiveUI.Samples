@@ -12,10 +12,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml" Version="2.6.1" />
     <PackageReference Include="ReactiveUI.Uno">
-      <Version>14.1.1</Version>
+      <Version>14.*</Version>
     </PackageReference>
     <PackageReference Include="Uno.Core" Version="2.4.0" />
-    <PackageReference Include="Uno.UI" Version="3.8.13" />
+    <PackageReference Include="Uno.UI" Version="3.9.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0" />
   </ItemGroup>

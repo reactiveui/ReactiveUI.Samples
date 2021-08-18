@@ -46,18 +46,6 @@ jobs:
       - name: Setup MSBuild.exe
         uses: microsoft/setup-msbuild@v1.0.2
  
-      #- name: NuGet Restore android
-      #  run: dotnet restore ReactiveUI.Samples.Android.sln
-
-      #- name: build android
-      #  run: msbuild ReactiveUI.Samples.Android.sln /p:Configuration=${{ env.configuration }}
-                
-      #- name: Execute unit tests android
-      #  run: dotnet test ReactiveUI.Samples.Android.sln --verbosity normal
-
-      - name: NuGet Restore windows
-        run: dotnet restore ReactiveUI.Samples.Windows.sln
-            
       - name: build windows
         run: msbuild ReactiveUI.Samples.Windows.sln /t:restore,build /m /v:minimal /p:configuration=${{ env.configuration }}
 

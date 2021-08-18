@@ -1,5 +1,18 @@
 {
-    "msbuild-sdks": {
+    "sdk": {
+        "version": "5.0.300",
+        "rollForward": "minor"
+      },
+      "tools": {
+        "dotnet": "5.0.300",
+        "vs": {
+          "version": "16.8",
+          "components": [
+            "Microsoft.VisualStudio.Component.FSharp"
+          ]
+        }
+      },
+      "msbuild-sdks": {
         "MSBuild.Sdk.Extras": "3.0.23"
     }
 }

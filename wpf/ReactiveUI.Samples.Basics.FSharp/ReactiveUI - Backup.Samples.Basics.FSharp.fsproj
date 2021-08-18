@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net48</TargetFramework>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Update="FSharp.Core" Version="5.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\FSharp.Core.Wpf\src\CP.FSharp.Core.Wpf.TypeProvider\FSharp.Core.Wpf.fsproj" />
+        <ProjectReference Include="..\ReactiveUI.Samples.Basics\ReactiveUI.Samples.Basics.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="ref\*.dll">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="App.xaml" />
+        <Resource Include="MainWindow.xaml" />
+        <Compile Include="ViewModels.fs" />
+
+        <!--NOTE: App.fs MUST be the last included file in the project file-->
+        <Compile Include="App.fs" />
+    </ItemGroup>
+
+    <ItemGroup />
+
+</Project>

@@ -64,7 +64,7 @@ jobs:
       - name: build android
         run: msbuild ReactiveUI.Samples.Android.sln /t:restore,build /m /v:minimal /p:configuration=${{ env.configuration }}
 
-      - name: build android
+      - name: build iOS
         run: msbuild ReactiveUI.Samples.ios.sln /t:restore,build /m /v:minimal /p:configuration=${{ env.configuration }}
         
       - name: Execute unit tests windows

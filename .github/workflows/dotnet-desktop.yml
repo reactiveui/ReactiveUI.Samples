@@ -16,11 +16,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, windows-latest]
+        os: [windows-latest]
         include:
-            #- os: macos-latest
-            #  buildtype: "iphone"
-
             - os: windows-latest
               buildtype: "android"
 
@@ -44,40 +41,19 @@ jobs:
           dotnet-version: 5.0.x
           
       - name: Install .NET Core 3.1
-        if: "contains(matrix.buildtype, 'windows')"
         uses: actions/setup-dotnet@v1.8.1
         with:
           dotnet-version: 3.1.x
           
       # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
       - name: Setup MSBuild.exe
-        if: "contains(matrix.os, 'windows')"
         uses: microsoft/setup-msbuild@v1.0.2
           
-      - name: setup-xamarin iphone
-        if: "contains(matrix.buildtype, 'iphone')"
-        uses: maxim-lobanov/setup-xamarin@v1
-        with:
-          mono-version: '6.6' # specify version in '<major>.<minor>' format
-          xamarin-ios-version: latest # specify version in '<major>' format
-          xamarin-mac-version: latest # specify 'latest' keyword to pick up the latest available version
-          xamarin-android-version: latest # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
-          xcode-version: '11.x' # set the latest available Xcode 11
-          
-      #- name: setup-xamarin android
-      #  if: "contains(matrix.buildtype, 'android')"
-      #  uses: maxim-lobanov/setup-xamarin@v1
-      #  with:
-      #    mono-version: '6.6' # specify version in '<major>.<minor>' format
-      #    xamarin-ios-version: latest # specify version in '<major>' format
-      #    xamarin-mac-version: latest # specify 'latest' keyword to pick up the latest available version
-      #    xamarin-android-version: latest # specify full version; it is not recomended option because your pipeline can be broken suddenly in future
-      #    xcode-version: '11.x' # set the latest available Xcode 11
     
     # Restore each platform
-      - name: NuGet Restore iphone
-        if: "contains(matrix.buildtype, 'iphone')"
-        run: dotnet restore ReactiveUI.Samples.ios.sln
+      #- name: NuGet Restore iphone
+      #  if: "contains(matrix.buildtype, 'iphone')"
+      #  run: dotnet restore ReactiveUI.Samples.ios.sln
         
       - name: NuGet Restore android
         if: "contains(matrix.buildtype, 'android')"
@@ -88,9 +64,9 @@ jobs:
         run: dotnet restore ReactiveUI.Samples.Windows.sln
         
     # Build each platform
-      - name: build iphone
-        if: "contains(matrix.buildtype, 'iphone')"
-        run: msbuild ReactiveUI.Samples.ios.sln /p:Configuration=${{ env.configuration }} /p:Platform=iPhoneSimulator /t:Rebuild
+      #- name: build iphone
+      #  if: "contains(matrix.buildtype, 'iphone')"
+      #  run: msbuild ReactiveUI.Samples.ios.sln /p:Configuration=${{ env.configuration }}
 
       - name: build android
         if: "contains(matrix.buildtype, 'android')"
@@ -98,12 +74,12 @@ jobs:
                 
       - name: build windows
         if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet build ReactiveUI.Samples.Windows.sln --configuration=${{ env.configuration }}
+        run: msbuild ReactiveUI.Samples.Windows.sln /p:configuration=${{ env.configuration }}
         
     # Execute all unit tests in the solution
-      - name: Execute unit tests iphone
-        if: "contains(matrix.buildtype, 'iphone')"
-        run: dotnet test ReactiveUI.Samples.ios.sln --verbosity normal
+      #- name: Execute unit tests iphone
+      #  if: "contains(matrix.buildtype, 'iphone')"
+      #  run: dotnet test ReactiveUI.Samples.ios.sln --verbosity normal
         
       - name: Execute unit tests android
         if: "contains(matrix.buildtype, 'android')"

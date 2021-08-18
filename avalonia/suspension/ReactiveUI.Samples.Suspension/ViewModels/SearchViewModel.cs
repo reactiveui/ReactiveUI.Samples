@@ -13,29 +13,29 @@ namespace ReactiveUI.Samples.Suspension.ViewModels
     public class SearchViewModel : ReactiveObject, IRoutableViewModel
     {
         private readonly ReactiveCommand<Unit, Unit> _search;
-        private string _searchQuery;
+        private string? _searchQuery;
 
-        public SearchViewModel(IScreen screen = null) 
+        public SearchViewModel(IScreen? screen = null)
         {
             HostScreen = screen ?? Locator.Current.GetService<IScreen>();
-            
+
             var canSearch = this
                 .WhenAnyValue(x => x.SearchQuery)
                 .Select(query => !string.IsNullOrWhiteSpace(query));
-            
+
             _search = ReactiveCommand.CreateFromTask(
                 () => Task.Delay(1000),
                 canSearch);
         }
 
-        public IScreen HostScreen { get; }
+        public IScreen? HostScreen { get; }
 
         public string UrlPathSegment => "/search";
 
         public ICommand Search => _search;
-        
+
         [DataMember]
-        public string SearchQuery 
+        public string? SearchQuery
         {
             get => _searchQuery;
             set => this.RaiseAndSetIfChanged(ref _searchQuery, value);

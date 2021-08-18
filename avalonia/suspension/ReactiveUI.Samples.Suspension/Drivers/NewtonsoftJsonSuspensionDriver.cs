@@ -15,6 +15,7 @@ namespace ReactiveUI.Samples.Suspension.Drivers
     public sealed class NewtonsoftJsonSuspensionDriver : ISuspensionDriver
     {
         private readonly string _stateFilePath;
+
         private readonly JsonSerializerSettings _settings = new JsonSerializerSettings
         {
             TypeNameHandling = TypeNameHandling.All
@@ -24,7 +25,7 @@ namespace ReactiveUI.Samples.Suspension.Drivers
 
         public IObservable<Unit> InvalidateState()
         {
-            if (File.Exists(_stateFilePath)) 
+            if (File.Exists(_stateFilePath))
                 File.Delete(_stateFilePath);
             return Observable.Return(Unit.Default);
         }
@@ -33,7 +34,7 @@ namespace ReactiveUI.Samples.Suspension.Drivers
         {
             var lines = File.ReadAllText(_stateFilePath);
             var state = JsonConvert.DeserializeObject<object>(lines, _settings);
-            return Observable.Return(state);
+            return Observable.Return(state!);
         }
 
         public IObservable<Unit> SaveState(object state)

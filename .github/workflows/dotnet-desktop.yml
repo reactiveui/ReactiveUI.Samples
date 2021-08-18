@@ -59,10 +59,16 @@ jobs:
         run: dotnet restore ReactiveUI.Samples.Windows.sln
             
       - name: build windows
-        run: msbuild ReactiveUI.Samples.Windows.sln /p:configuration=${{ env.configuration }}
+        run: msbuild ReactiveUI.Samples.Windows.sln /t:restore,build /m /v:minimal /p:configuration=${{ env.configuration }}
+
+      - name: build android
+        run: msbuild ReactiveUI.Samples.Android.sln /t:restore,build /m /v:minimal /p:configuration=${{ env.configuration }}
+
+      - name: build android
+        run: msbuild ReactiveUI.Samples.ios.sln /t:restore,build /m /v:minimal /p:configuration=${{ env.configuration }}
         
       - name: Execute unit tests windows
-        run: dotnet test ReactiveUI.Samples.Windows.sln --verbosity normal
+        run: dotnet test ReactiveUI.Samples.Windows.sln --no-build --verbosity normal
   
     # Restore each platform
       #- name: NuGet Restore iphone

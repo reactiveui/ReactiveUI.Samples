@@ -19,9 +19,6 @@ jobs:
         os: [windows-latest]
         include:
             - os: windows-latest
-              buildtype: "android"
-
-            - os: windows-latest
               buildtype: "windows"
               
     runs-on: ${{ matrix.os }}
@@ -48,44 +45,39 @@ jobs:
       # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
       - name: Setup MSBuild.exe
         uses: microsoft/setup-msbuild@v1.0.2
-          
-    
+ 
+      - name: NuGet Restore android
+        run: dotnet restore ReactiveUI.Samples.Android.sln
+
+      - name: build android
+        run: msbuild ReactiveUI.Samples.Android.sln /p:Configuration=${{ env.configuration }}
+                
+      - name: Execute unit tests android
+        run: dotnet test ReactiveUI.Samples.Android.sln --verbosity normal
+
+      - name: NuGet Restore windows
+        run: dotnet restore ReactiveUI.Samples.Windows.sln
+            
+      - name: build windows
+        run: msbuild ReactiveUI.Samples.Windows.sln /p:configuration=${{ env.configuration }}
+        
+      - name: Execute unit tests windows
+        run: dotnet test ReactiveUI.Samples.Windows.sln --verbosity normal
+  
     # Restore each platform
       #- name: NuGet Restore iphone
       #  if: "contains(matrix.buildtype, 'iphone')"
       #  run: dotnet restore ReactiveUI.Samples.ios.sln
-        
-      - name: NuGet Restore android
-        if: "contains(matrix.buildtype, 'android')"
-        run: dotnet restore ReactiveUI.Samples.Android.sln
-        
-      - name: NuGet Restore windows
-        if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet restore ReactiveUI.Samples.Windows.sln
-        
+             
     # Build each platform
       #- name: build iphone
       #  if: "contains(matrix.buildtype, 'iphone')"
       #  run: msbuild ReactiveUI.Samples.ios.sln /p:Configuration=${{ env.configuration }}
-
-      - name: build android
-        if: "contains(matrix.buildtype, 'android')"
-        run: msbuild ReactiveUI.Samples.Android.sln /p:Configuration=${{ env.configuration }}
-                
-      - name: build windows
-        if: "contains(matrix.buildtype, 'windows')"
-        run: msbuild ReactiveUI.Samples.Windows.sln /p:configuration=${{ env.configuration }}
-        
+  
     # Execute all unit tests in the solution
       #- name: Execute unit tests iphone
       #  if: "contains(matrix.buildtype, 'iphone')"
       #  run: dotnet test ReactiveUI.Samples.ios.sln --verbosity normal
         
-      - name: Execute unit tests android
-        if: "contains(matrix.buildtype, 'android')"
-        run: dotnet test ReactiveUI.Samples.Android.sln --verbosity normal
-        
-      - name: Execute unit tests windows
-        if: "contains(matrix.buildtype, 'windows')"
-        run: dotnet test ReactiveUI.Samples.Windows.sln --verbosity normal
+
 

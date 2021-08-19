@@ -55,7 +55,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="1.2.4" />
-		<PackageReference Include="Xamarin.AndroidX.Palette" Version="1.0.0.7" />
+		<PackageReference Include="Xamarin.AndroidX.Palette" Version="1.0.0.8" />
 		<PackageReference Include="Xamarin.AndroidX.AppCompat.Resources" Version="1.1.0" />
 		<PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.*" />
 		<PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="28.*" />

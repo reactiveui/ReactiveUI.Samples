@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Caliburn.Micro" Version="4.0.173" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
-    <PackageReference Include="ReactiveUI.WPF" Version="14.*" />
+    <PackageReference Include="ReactiveUI.WPF" Version="15.*" />
   </ItemGroup>
   
 </Project>

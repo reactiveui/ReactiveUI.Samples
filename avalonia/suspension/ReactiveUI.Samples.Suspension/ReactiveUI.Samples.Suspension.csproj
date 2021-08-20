@@ -16,7 +16,7 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.*" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.*" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Splat.Serilog" Version="12.*" />
+    <PackageReference Include="Splat.Serilog" Version="13.*" />
   </ItemGroup>
   
   <ItemGroup>

@@ -60,7 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.Uno" Version="14.*" />
+    <PackageReference Include="ReactiveUI.Uno" Version="15.*" />
     <PackageReference Include="Uno.UI" Version="3.9.7" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="3.9.7" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Uno.UniversalImageLoader" Version="1.9.35" />

@@ -113,7 +113,7 @@
     <BundleResource Include="Resources\Fonts\uno-fluentui-assets.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.Uno" Version="14.*" />
+    <PackageReference Include="ReactiveUI.Uno" Version="15.*" />
     <PackageReference Include="Uno.UI" Version="3.9.7" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="3.9.7" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />

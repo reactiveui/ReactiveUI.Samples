@@ -27,7 +27,7 @@
     <PackageReference Include="ReactiveUI.Uno" Version="16.*" />
     <PackageReference Include="SkiaSharp.Views" Version="2.80.3" />
     <PackageReference Include="Uno.UI.Skia.Tizen" Version="3.10.7" />
-    <PackageReference Include="Uno.UI.RemoteControl" Version="3.10.0-dev.593" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="3.10.7" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <Import Project="..\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems" Label="Shared" />
 </Project>

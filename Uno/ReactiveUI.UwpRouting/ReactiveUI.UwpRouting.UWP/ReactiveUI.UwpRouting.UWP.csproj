@@ -10,7 +10,7 @@
 			-->
       <Version>6.2.12</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.UI.Xaml" Version="2.6.2" />
+    <PackageReference Include="Microsoft.UI.Xaml" Version="2.7.0" />
     <PackageReference Include="ReactiveUI.Uno" Version="16.*" />
     <PackageReference Include="Uno.Core" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />

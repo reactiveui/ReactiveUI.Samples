@@ -7,6 +7,6 @@
     <PackageReference Include="Refit" Version="6.*" />
     <PackageReference Include="Fusillade" Version="2.*" />
     <PackageReference Include="System.Reactive.Compatibility" Version="5.0.0" />
-    <PackageReference Include="DynamicData" Version="7.3.1" />
+    <PackageReference Include="DynamicData" Version="7.4.1" />
   </ItemGroup>
 </Project>

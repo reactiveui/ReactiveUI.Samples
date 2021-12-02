@@ -13,8 +13,7 @@
   </ItemGroup>
   <ItemGroup>
     <!--<PackageReference Include="stylecop.analyzers" Version="1.2.0-beta.333" PrivateAssets="all" />-->
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3" PrivateAssets="all" />
-    <PackageReference Include="Roslynator.Analyzers" Version="3.2.2" PrivateAssets="All" />
+    <PackageReference Include="Roslynator.Analyzers" Version="3.3.0" PrivateAssets="All" />
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 </Project>

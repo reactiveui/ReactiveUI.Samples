@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net461</TargetFrameworks>
+    <TargetFrameworks>net6.0;net462</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.Testing" Version="16.*" />
+    <PackageReference Include="ReactiveUI.Testing" Version="17.*" />
     <PackageReference Include="xunit" Version="2.4.1" />
   </ItemGroup>
   <ItemGroup>

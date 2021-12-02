@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net5.0-windows</TargetFramework>
+		<TargetFramework>net6.0-windows</TargetFramework>
 		<OutputType>WinExe</OutputType>
 		<LangVersion>latest</LangVersion>
 		<UseWindowsForms>true</UseWindowsForms>
@@ -10,6 +10,6 @@
   <ItemGroup>
     <PackageReference Include="nuget.client" Version="4.2.0" />
     <PackageReference Include="nuget.protocol.core.v3" Version="4.2.0" />
-    <PackageReference Include="ReactiveUI.WinForms" Version="16.*" />
+    <PackageReference Include="ReactiveUI.WinForms" Version="17.*" />
   </ItemGroup>
 </Project>

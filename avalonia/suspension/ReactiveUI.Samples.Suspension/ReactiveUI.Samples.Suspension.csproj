@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -16,7 +16,7 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.*" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.*" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Splat.Serilog" Version="13.*" />
+    <PackageReference Include="Splat.Serilog" Version="14.*" />
   </ItemGroup>
   
   <ItemGroup>

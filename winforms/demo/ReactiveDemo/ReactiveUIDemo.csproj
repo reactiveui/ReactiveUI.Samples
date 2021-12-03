@@ -10,6 +10,6 @@
   <ItemGroup>
     <PackageReference Include="nuget.client" Version="4.2.0" />
     <PackageReference Include="nuget.protocol.core.v3" Version="4.2.0" />
-    <PackageReference Include="ReactiveUI.WinForms" Version="16.*" />
+    <PackageReference Include="ReactiveUI.WinForms" Version="17.*" />
   </ItemGroup>
 </Project>

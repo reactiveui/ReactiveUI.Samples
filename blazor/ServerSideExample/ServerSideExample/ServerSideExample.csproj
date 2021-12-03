@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.Blazor" Version="16.*" />
+    <PackageReference Include="ReactiveUI.Blazor" Version="17.*" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Tizen.NET.Sdk/1.1.6">
+<Project Sdk="Tizen.NET.Sdk/1.1.7">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>tizen50</TargetFramework>
+    <TargetFramework>tizen80</TargetFramework>
     <OutputType>Exe</OutputType>
     <DefineConstants>$(DefineConstants);__TIZEN__;</DefineConstants>
   </PropertyGroup>
@@ -26,8 +26,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
     <PackageReference Include="ReactiveUI.Uno" Version="17.*" />
     <PackageReference Include="SkiaSharp.Views" Version="2.80.3" />
-    <PackageReference Include="Uno.UI.Skia.Tizen" Version="4.0.8" />
-    <PackageReference Include="Uno.UI.RemoteControl" Version="4.0.8" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.Skia.Tizen" Version="4.0.9" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="4.0.9" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <Import Project="..\ReactiveUI.UwpRouting.Shared\ReactiveUI.UwpRouting.Shared.projitems" Label="Shared" />
 </Project>

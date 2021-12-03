@@ -9,6 +9,6 @@
   
   <ItemGroup>
     <PackageReference Include="NuGet.Protocol" Version="6.0.0" />
-    <PackageReference Include="ReactiveUI.WPF" Version="16.*" />
+    <PackageReference Include="ReactiveUI.WPF" Version="17.*" />
   </ItemGroup>
 </Project>

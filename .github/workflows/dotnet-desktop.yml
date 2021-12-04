@@ -19,3 +19,4 @@ jobs:
       useMauiCheckDotNetTool: false
       solutionFile: "ReactiveUI.Samples.Windows.sln"
       srcFolder: ""
+      performTests: false

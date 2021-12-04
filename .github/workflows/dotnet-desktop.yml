@@ -18,3 +18,4 @@ jobs:
       useVisualStudioPreview: false
       useMauiCheckDotNetTool: false
       solutionFile: "ReactiveUI.Samples.Windows.sln"
+      srcFolder: ""

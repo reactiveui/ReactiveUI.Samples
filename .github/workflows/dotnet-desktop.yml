@@ -20,3 +20,5 @@ jobs:
       solutionFile: "ReactiveUI.Samples.Windows.sln"
       srcFolder: ""
       performTests: false
+      useNBGV: false
+      createArtifacts: false

@@ -6,7 +6,7 @@ namespace ReactiveDemo
     // MainWindow class derives off ReactiveWindow which implements the IViewFor<TViewModel>
     // interface using a WPF DependencyProperty. We need this to use WhenActivated extension
     // method that helps us handling View and ViewModel activation and deactivation.
-    public partial class MainWindow : ReactiveWindow<AppViewModel>
+    public partial class MainWindow
     {
         public MainWindow()
         {

@@ -13,8 +13,10 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
         [Fact]
         public void TestTypingStringGetsError()
         {
-            var fixture = new CalculatorViewModel();
-            fixture.InputText = "hi";
+            CalculatorViewModel fixture = new()
+            {
+                InputText = "hi"
+            };
             Assert.Equal("Error", fixture.ErrorText);
             Assert.Equal("", fixture.ResultText);
         }
@@ -22,8 +24,10 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
         [Fact]
         public void TestTypingInteger()
         {
-            var fixture = new CalculatorViewModel();
-            fixture.InputText = "50";
+            CalculatorViewModel fixture = new()
+            {
+                InputText = "50"
+            };
             Assert.Equal("", fixture.ErrorText);
             Assert.Equal("100", fixture.ResultText);
         }

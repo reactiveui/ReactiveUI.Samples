@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Reactive;
 
 namespace ReactiveUI.Samples.Basics.ViewModels
 {
@@ -13,7 +10,7 @@ namespace ReactiveUI.Samples.Basics.ViewModels
 
         public MainViewModel()
         {
-            RxApp.MainThreadScheduler = new DispatcherScheduler(Application.Current.Dispatcher);
+            ////RxApp.MainThreadScheduler = new DispatcherScheduler(Application.Current.Dispatcher);
             Task.Factory.StartNew(() =>
             {
                 while (true)

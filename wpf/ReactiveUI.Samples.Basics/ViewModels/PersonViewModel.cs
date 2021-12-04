@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Reactive;
-using ReactiveUI;
 
 namespace ReactiveUI.Samples.Basics.ViewModels
 {

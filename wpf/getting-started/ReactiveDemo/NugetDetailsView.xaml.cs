@@ -8,7 +8,7 @@ namespace ReactiveDemo
     // In our MainWindow when we register the ListBox with the collection of 
     // NugetDetailsViewModels if no ItemTemplate has been declared it will search for 
     // a class derived off IViewFor<NugetDetailsViewModel> and show that for the item.
-    public partial class NugetDetailsView : ReactiveUserControl<NugetDetailsViewModel>
+    public partial class NugetDetailsView
     {
         public NugetDetailsView()
         {

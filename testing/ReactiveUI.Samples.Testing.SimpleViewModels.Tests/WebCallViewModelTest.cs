@@ -23,8 +23,10 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
             // Run a test scheduler to put time under our control.
             new TestScheduler().With(s =>
             {
-                var fixture = new WebCallViewModel(new immediateWebService());
-                fixture.InputText = "hi";
+                WebCallViewModel fixture = new(new immediateWebService())
+                {
+                    InputText = "hi"
+                };
 
                 // Run the clock forward to 800 ms. At that point, nothing should have happened.
                 s.AdvanceToMs(799);
@@ -45,8 +47,10 @@ namespace ReactiveUI.Samples.Testing.SimpleViewModelsUnitTests
             // Run a test scheduler to put time under our control.
             new TestScheduler().With(s =>
             {
-                var fixture = new WebCallViewModel(new immediateWebService());
-                fixture.InputText = "hi";
+                WebCallViewModel fixture = new(new immediateWebService())
+                {
+                    InputText = "hi"
+                };
 
                 // Run the clock forward 300 ms, where they type again.
                 s.AdvanceToMs(300);

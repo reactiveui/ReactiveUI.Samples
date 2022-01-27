@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="ReactiveUI.XamForms" Version="17.*" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
   </ItemGroup>
 
   <ItemGroup>

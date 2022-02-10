@@ -1,52 +1,47 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DynamicData.Binding;
 using ReactiveUI;
 using ReactiveUI.Winforms;
 
-namespace ReactiveDemo
+namespace ReactiveUIDemo;
+
+public class ListBoxItemConverter : IBindingTypeConverter
 {
-    public class ListBoxItemConverter : IBindingTypeConverter
+    public int GetAffinityForObjects(Type fromType, Type toType)
     {
-        public int GetAffinityForObjects(Type fromType, Type toType)
+        if (toType != typeof(Control.ControlCollection))
         {
-            if (toType != typeof(Control.ControlCollection))
-            {
-                return 0;
-            }
-
-            if (fromType.GetInterface("IEnumerable") == null)
-            {
-                return 0;
-            }
-
-            return 10;
+            return 0;
         }
 
-        public bool TryConvert(object @from, Type toType, object conversionHint, out object result)
+        if (fromType.GetInterface("IEnumerable") == null)
         {
-            var enumerable = (IEnumerable)from;
+            return 0;
+        }
 
-            if (enumerable == null)
-            {
-                result = null;
-                return false;
-            }
+        return 10;
+    }
 
-            var viewModelControlHosts = new List<ViewModelControlHost>();
+    public bool TryConvert(object @from, Type toType, object conversionHint, out object result)
+    {
+        var enumerable = (IEnumerable)from;
 
-            foreach (var viewModel in enumerable)
-            {
-                viewModelControlHosts.Add(new ViewModelControlHost { ViewModel = viewModel, Dock = DockStyle.Top });
-            }
+        if (enumerable == null)
+        {
+            result = null;
+            return false;
+        }
+
+        var viewModelControlHosts = new List<ViewModelControlHost>();
+
+        foreach (var viewModel in enumerable)
+        {
+            viewModelControlHosts.Add(new ViewModelControlHost { ViewModel = viewModel, Dock = DockStyle.Top });
+        }
             
-            result = viewModelControlHosts;
-            return true;
-        }
+        result = viewModelControlHosts;
+        return true;
     }
 }

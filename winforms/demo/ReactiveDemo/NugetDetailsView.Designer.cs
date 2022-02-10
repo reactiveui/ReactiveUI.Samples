@@ -1,4 +1,4 @@
-﻿namespace ReactiveDemo
+﻿namespace ReactiveUIDemo
 {
     partial class NugetDetailsView
     {

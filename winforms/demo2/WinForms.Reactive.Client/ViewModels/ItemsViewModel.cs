@@ -47,7 +47,7 @@ public class ItemsViewModel : ReactiveObject, IRoutableViewModel
 	public IScreen HostScreen { get; protected set; } = null!;
 
 	// Commands
-	public ReactiveCommand<Unit, IEnumerable<ItemDto>> LoadItemsCommand { get; }
+	public ReactiveCommand<Unit, IList<ItemDto>> LoadItemsCommand { get; }
 	public ReactiveCommand<Unit, Unit> ShowDetailsCommand { get; }
 
 	// Input
@@ -56,9 +56,9 @@ public class ItemsViewModel : ReactiveObject, IRoutableViewModel
 	[Reactive] public (Guid? tagId, int index) SelectedItem { get; set; }
 
 	// Output - OAPH must be initialized via `initialValue` parameter in .ToPropertyEx(...)
-	[ObservableAsProperty] public IEnumerable<ItemDto> Items { get; }
-	[ObservableAsProperty] public IEnumerable<ItemDto> ItemsFiltered { get; } 
-	[ObservableAsProperty] public IEnumerable<ItemTagDto> SelectedItemTags { get; } 
+	[ObservableAsProperty] public IList<ItemDto> Items { get; }
+	[ObservableAsProperty] public IList<ItemDto> ItemsFiltered { get; } 
+	[ObservableAsProperty] public IList<ItemTagDto> SelectedItemTags { get; } 
 	[ObservableAsProperty] public bool IsLoading { get; } 
 	[ObservableAsProperty] public bool HasItems { get; } 
 	[ObservableAsProperty] public bool HasItemSelection { get; } 
@@ -85,7 +85,7 @@ public class ItemsViewModel : ReactiveObject, IRoutableViewModel
 		//LoadItemsCommand.ThrownExceptions.Subscribe(error => { /* Handle errors here */ });
 		LoadItemsCommand
 			.ObserveOn(mainThreadScheduler)
-			.ToPropertyEx(this, x => x.Items, initialValue: Enumerable.Empty<ItemDto>());
+			.ToPropertyEx(this, x => x.Items, initialValue: new List<ItemDto>());
 
 		var interval = TimeSpan.FromMinutes(5);
 		Observable.Timer(interval, interval, mainThreadScheduler)
@@ -124,9 +124,9 @@ public class ItemsViewModel : ReactiveObject, IRoutableViewModel
 					.ToList();
 				return r;
 			})
-			.Catch(Observable.Return(Enumerable.Empty<ItemDto>()))
+			.Catch(Observable.Return(Enumerable.Empty<ItemDto>().ToList()))
 			.ObserveOn(mainThreadScheduler)
-			.ToPropertyEx(this, x => x.ItemsFiltered, initialValue: Enumerable.Empty<ItemDto>());
+			.ToPropertyEx(this, x => x.ItemsFiltered, initialValue: new List<ItemDto>());
 
 		this
 			.WhenAnyValue(x => x.Items)
@@ -149,7 +149,7 @@ public class ItemsViewModel : ReactiveObject, IRoutableViewModel
 			.Select(x => x.tagId!.Value)
 			.SelectMany(FetchDetailAsync)
 			.ObserveOn(mainThreadScheduler)
-			.ToPropertyEx(this, x => x.SelectedItemTags, initialValue: Enumerable.Empty<ItemTagDto>());
+			.ToPropertyEx(this, x => x.SelectedItemTags, initialValue: new List<ItemTagDto>());
 	}
 
 	private async Task<Unit> ShowDetails(CancellationToken token)
@@ -172,13 +172,13 @@ public class ItemsViewModel : ReactiveObject, IRoutableViewModel
 		return await Task.FromResult(Unit.Default);
 	}
 
-	private async Task<IEnumerable<ItemDto>> LoadItems()
+	private async Task<IList<ItemDto>> LoadItems()
 	{
 		var items = await _itemsService.GetAll();
-		return items;
+		return items.ToList();
 	}
 
-	private async Task<IEnumerable<ItemTagDto>> FetchDetailAsync(Guid id, CancellationToken token)
+	private async Task<IList<ItemTagDto>> FetchDetailAsync(Guid id, CancellationToken token)
 	{
 		var tags = this.Items.Where(x => x.ItemId == id).SelectMany(x => x.Tags).ToList();
 		return await Task.FromResult(tags);

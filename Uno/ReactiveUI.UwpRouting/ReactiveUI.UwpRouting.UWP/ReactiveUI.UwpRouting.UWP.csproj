@@ -12,7 +12,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml" Version="2.7.0" />
     <PackageReference Include="ReactiveUI.Uno" Version="17.*" />
-    <PackageReference Include="ReactiveUI.Uwp" Version="17.*" />
+    <PackageReference Include="ReactiveUI.Uwp" Version="18.*" />
     <PackageReference Include="Uno.Core" Version="4.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="6.0.0" />

@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ReactiveUI.Uwp">
-      <Version>17.*</Version>
+      <Version>18.*</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401+905-sha.aeec18668-azdo.5950840" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.13" />

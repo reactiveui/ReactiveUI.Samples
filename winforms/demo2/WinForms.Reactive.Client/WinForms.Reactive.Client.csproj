@@ -16,7 +16,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="ReactiveUI" Version="17.1.50" />
+		<PackageReference Include="ReactiveUI" Version="18.0.10" />
 		<PackageReference Include="ReactiveUI.Fody" Version="17.1.50" />
 		<PackageReference Include="ReactiveUI.WinForms" Version="17.1.50" />
 		<PackageReference Include="Splat" Version="14.2.8" />

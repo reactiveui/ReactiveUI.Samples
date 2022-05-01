@@ -26,7 +26,7 @@
 		</PackageReference>
 		<PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.1.45" />
 		<PackageReference Include="Splat.Microsoft.Extensions.Logging" Version="14.1.45" />
-		<PackageReference Include="Splat.Serilog" Version="14.1.45" />
+		<PackageReference Include="Splat.Serilog" Version="14.2.8" />
 	</ItemGroup>
 
 </Project>

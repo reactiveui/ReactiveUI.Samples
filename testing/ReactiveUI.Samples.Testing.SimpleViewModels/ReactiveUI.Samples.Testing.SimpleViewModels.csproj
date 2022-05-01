@@ -4,6 +4,6 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="17.*" />
+    <PackageReference Include="ReactiveUI" Version="18.*" />
   </ItemGroup>
 </Project>

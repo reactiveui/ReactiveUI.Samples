@@ -18,7 +18,7 @@
 		</PackageReference>
 		<PackageReference Include="ReactiveUI" Version="18.0.10" />
 		<PackageReference Include="ReactiveUI.Fody" Version="17.1.50" />
-		<PackageReference Include="ReactiveUI.WinForms" Version="17.1.50" />
+		<PackageReference Include="ReactiveUI.WinForms" Version="18.0.10" />
 		<PackageReference Include="Splat" Version="14.2.8" />
 		<PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.33">
 			<PrivateAssets>all</PrivateAssets>

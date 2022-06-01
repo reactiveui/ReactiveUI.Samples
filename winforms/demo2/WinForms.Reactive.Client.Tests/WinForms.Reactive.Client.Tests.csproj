@@ -9,7 +9,7 @@
 
   <ItemGroup>
 	  <PackageReference Include="DynamicData.ReactiveUI" Version="6.11.0.2613" />
-	  <PackageReference Include="FluentAssertions" Version="6.6.0" />
+	  <PackageReference Include="FluentAssertions" Version="6.7.0" />
 	  <PackageReference Include="ReactiveMarbles.ObservableEvents.SourceGenerator" Version="1.1.4">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -7,7 +7,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
     <PackageReference Include="ReactiveUI.Uno" Version="17.*" />
-    <PackageReference Include="Uno.UI.Skia.Wpf" Version="4.3.6" />
+    <PackageReference Include="Uno.UI.Skia.Wpf" Version="4.4.13" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="4.4.13" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <ItemGroup>

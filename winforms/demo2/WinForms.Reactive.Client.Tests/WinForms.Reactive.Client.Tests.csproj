@@ -26,7 +26,7 @@
 	  <PackageReference Include="ReactiveUI.Testing" Version="18.0.10" />
 	  <PackageReference Include="ReactiveUI.WinForms" Version="18.0.10" />
 	  <PackageReference Include="Splat" Version="14.2.8" />
-	  <PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.33">
+	  <PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.69">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>

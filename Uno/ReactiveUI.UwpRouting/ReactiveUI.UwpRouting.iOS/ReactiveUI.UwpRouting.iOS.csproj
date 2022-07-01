@@ -115,7 +115,7 @@
   <ItemGroup>
     <PackageReference Include="ReactiveUI.Uno" Version="17.*" />
     <PackageReference Include="Uno.UI">
-      <Version>4.3.6</Version>
+      <Version>4.4.13</Version>
     </PackageReference>
     <PackageReference Include="Uno.UI.RemoteControl" Version="4.4.13" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />

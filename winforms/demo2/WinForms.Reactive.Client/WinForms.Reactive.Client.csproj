@@ -17,7 +17,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="ReactiveUI" Version="18.2.5" />
-		<PackageReference Include="ReactiveUI.Fody" Version="18.0.10" />
+		<PackageReference Include="ReactiveUI.Fody" Version="18.2.5" />
 		<PackageReference Include="ReactiveUI.WinForms" Version="18.2.5" />
 		<PackageReference Include="Splat" Version="14.3.4" />
 		<PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.69">

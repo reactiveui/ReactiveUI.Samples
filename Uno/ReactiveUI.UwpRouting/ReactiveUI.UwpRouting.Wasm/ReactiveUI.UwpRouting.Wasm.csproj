@@ -41,7 +41,7 @@
     <PackageReference Include="ReactiveUI.Uno" Version="17.*" />
     <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.4.0" />
     <PackageReference Include="Uno.UI.WebAssembly" Version="4.4.13" />
-    <PackageReference Include="Uno.UI.RemoteControl" Version="4.3.6" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="4.4.13" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Uno.Wasm.Bootstrap" Version="3.3.1" />
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="3.3.1" />
   </ItemGroup>

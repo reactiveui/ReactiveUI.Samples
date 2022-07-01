@@ -8,7 +8,7 @@
 
     <ItemGroup>
         <PackageReference Include="FSharp.Core.Wpf" Version="5.0.3" />
-        <PackageReference Update="FSharp.Core" Version="6.0.4" />
+        <PackageReference Update="FSharp.Core" Version="6.0.5" />
     </ItemGroup>
 
     <ItemGroup>

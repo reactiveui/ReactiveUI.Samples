@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ReactiveUI.UnoRouting.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

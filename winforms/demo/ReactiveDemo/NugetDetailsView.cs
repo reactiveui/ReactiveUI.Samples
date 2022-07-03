@@ -14,13 +14,13 @@ public partial class NugetDetailsView : UserControl, IViewFor<NugetDetailsViewMo
     [Description("The ViewModel.")]
     [Bindable(true)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public NugetDetailsViewModel? ViewModel { get; set; }
+    public NugetDetailsViewModel ViewModel { get; set; }
 
     /// <inheritdoc/>
-    object? IViewFor.ViewModel
+    object IViewFor.ViewModel
     {
         get => ViewModel;
-        set => ViewModel = (NugetDetailsViewModel?)value;
+        set => ViewModel = (NugetDetailsViewModel)value;
     }
 
     public NugetDetailsView()

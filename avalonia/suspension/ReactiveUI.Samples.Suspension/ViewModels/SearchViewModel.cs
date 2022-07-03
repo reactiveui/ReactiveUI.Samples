@@ -17,7 +17,7 @@ namespace ReactiveUI.Samples.Suspension.ViewModels
 
         public SearchViewModel(IScreen? screen = null)
         {
-            HostScreen = screen ?? Locator.Current.GetService<IScreen>();
+            HostScreen = screen ?? Locator.Current.GetService<IScreen>()!;
 
             var canSearch = this
                 .WhenAnyValue(x => x.SearchQuery)
@@ -28,7 +28,7 @@ namespace ReactiveUI.Samples.Suspension.ViewModels
                 canSearch);
         }
 
-        public IScreen? HostScreen { get; }
+        public IScreen HostScreen { get; }
 
         public string UrlPathSegment => "/search";
 

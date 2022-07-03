@@ -21,7 +21,7 @@ namespace ReactiveUI.Samples.Suspension
 
         public override void OnFrameworkInitializationCompleted()
         {
-            var suspension = new AutoSuspendHelper(ApplicationLifetime);
+            var suspension = new AutoSuspendHelper(ApplicationLifetime!);
             RxApp.SuspensionHost.CreateNewAppState = () => new MainViewModel();
             RxApp.SuspensionHost.SetupDefaultSuspendResume(new NewtonsoftJsonSuspensionDriver("appstate.json"));
             suspension.OnFrameworkInitializationCompleted();

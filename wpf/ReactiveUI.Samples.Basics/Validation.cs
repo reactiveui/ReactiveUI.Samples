@@ -55,10 +55,10 @@ namespace ReactiveUI.Samples.Basics
         }
 
         /// <summary>
-        /// Gets the <see cref="System.String"/> with the specified column name.
+        /// Gets the <see cref="string"/> with the specified column name.
         /// </summary>
         /// <value>
-        /// The <see cref="System.String"/>.
+        /// The <see cref="string"/>.
         /// </value>
         /// <param name="columnName">Name of the column.</param>
         /// <returns></returns>
@@ -285,7 +285,7 @@ namespace ReactiveUI.Samples.Basics
                 return false;
 
             string s = value as string;
-            return !(s != null && !AllowBlanks && String.IsNullOrWhiteSpace(s));
+            return !(s != null && !AllowBlanks && string.IsNullOrWhiteSpace(s));
         }
 
         /// <summary>
@@ -299,7 +299,7 @@ namespace ReactiveUI.Samples.Basics
             if (isValidViaNullOrBlank(value))
                 return null;
 
-            return new ValidationResult(String.Format("{0} is blank",
+            return new ValidationResult(string.Format("{0} is blank",
                 ctx.DisplayName ?? "The value"));
         }
 
@@ -311,13 +311,14 @@ namespace ReactiveUI.Samples.Basics
         protected virtual ValidationResult getStandardMessage(ValidationContext ctx)
         {
             return new ValidationResult(ErrorMessage ??
-                String.Format("{0} is incorrect", ctx.DisplayName ?? "The value"));
+                string.Format("{0} is incorrect", ctx.DisplayName ?? "The value"));
         }
     }
 
     /// <summary>
     /// Validates Via Method Attribute.
     /// </summary>
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
     public class ValidatesViaMethodAttribute : ValidationBase
     {
         /// <summary>
@@ -339,7 +340,7 @@ namespace ReactiveUI.Samples.Basics
             if (is_blank != null)
                 return is_blank;
 
-            string func = Name ?? String.Format("Is{0}Valid", validationContext.MemberName);
+            string func = Name ?? string.Format("Is{0}Valid", validationContext.MemberName);
             var mi = validationContext.ObjectType.GetMethod(func, BindingFlags.Public | BindingFlags.Instance);
             bool result = (bool)mi.Invoke(validationContext.ObjectInstance, new[] { value });
 

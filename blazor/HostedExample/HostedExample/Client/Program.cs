@@ -7,7 +7,7 @@ using HostedExample.Client.ViewModels;
 
 namespace HostedExample.Client
 {
-    public class Program
+    public static class Program
     {
         public static async Task Main(string[] args)
         {

@@ -46,7 +46,7 @@
                     Header="Simple Command">
                     <StackPanel>
                         <TextBox
-                            x:Name="Name" />
+                            x:Name="TextName" />
                         <Button
                             x:Name="Display"                            
                             Content="Display" />

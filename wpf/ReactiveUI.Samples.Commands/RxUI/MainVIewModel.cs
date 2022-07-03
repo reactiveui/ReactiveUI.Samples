@@ -10,8 +10,8 @@ namespace ReactiveUI.Samples.Commands.RxUI
     {
         public MainViewModel()
         {
-            DisplayCommand = ReactiveCommand.Create(() => this.WhenAny(x => x.Name, x => !string.IsNullOrEmpty(x.Value)));
-            DisplayCommand.Subscribe(_ => MessageBox.Show("You clicked on DisplayCommand: Name is " + Name));
+            DisplayCommand = ReactiveCommand.Create(() => this.WhenAny(x => x.TextName, x => !string.IsNullOrEmpty(x.Value)));
+            DisplayCommand.Subscribe(_ => MessageBox.Show("You clicked on DisplayCommand: Name is " + TextName));
 
             StartAsyncCommand = ReactiveCommand.CreateFromTask(() =>
             {
@@ -29,12 +29,12 @@ namespace ReactiveUI.Samples.Commands.RxUI
             });
         }
 
-        private string _Name;
+        private string _TextName;
 
-        public string Name
+        public string TextName
         {
-            get { return _Name; }
-            set { this.RaiseAndSetIfChanged(ref _Name, value); }
+            get { return _TextName; }
+            set { this.RaiseAndSetIfChanged(ref _TextName, value); }
         }
 
         public ReactiveCommand<Unit, IObservable<bool>> DisplayCommand { get; protected set; }

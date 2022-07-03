@@ -9,6 +9,7 @@ using System.Reactive.Disposables;
 using System.Windows.Input;
 using Cinephile.ViewModels;
 using ReactiveUI;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Cinephile.Views
@@ -32,7 +33,7 @@ namespace Cinephile.Views
 
         private void OpenBrowserWithUrl(string url)
         {
-            Device.OpenUri(new Uri(url));
+            Launcher.OpenAsync(new Uri(url));
         }
     }
 }

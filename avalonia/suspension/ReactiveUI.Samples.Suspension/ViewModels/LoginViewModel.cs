@@ -18,7 +18,7 @@ namespace ReactiveUI.Samples.Suspension.ViewModels
 
         public LoginViewModel(IScreen? screen = null)
         {
-            HostScreen = Locator.Current.GetService<IScreen>();
+            HostScreen = Locator.Current.GetService<IScreen>()!;
 
             var canLogin = this
                 .WhenAnyValue(
@@ -32,7 +32,7 @@ namespace ReactiveUI.Samples.Suspension.ViewModels
                 canLogin);
         }
 
-        public IScreen? HostScreen { get; }
+        public IScreen HostScreen { get; }
 
         public string UrlPathSegment => "/login";
 

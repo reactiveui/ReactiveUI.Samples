@@ -12,7 +12,7 @@
 	<ItemGroup>
 		<!--<PackageReference Include="DynamicData.ReactiveUI" Version="6.11.0.2613" />-->
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
-		<PackageReference Include="ReactiveMarbles.ObservableEvents.SourceGenerator" Version="1.1.4">
+		<PackageReference Include="ReactiveMarbles.ObservableEvents.SourceGenerator" Version="1.2.3">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

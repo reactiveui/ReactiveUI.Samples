@@ -23,7 +23,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.4.1" />
-		<PackageReference Include="Splat.Microsoft.Extensions.Logging" Version="14.3.4" />
+		<PackageReference Include="Splat.Microsoft.Extensions.Logging" Version="14.4.1" />
 		<PackageReference Include="Splat.Serilog" Version="14.4.1" />
 	</ItemGroup>
 

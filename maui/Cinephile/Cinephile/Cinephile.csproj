@@ -15,7 +15,7 @@
 		<ApplicationTitle>Cinephile</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.cinephile</ApplicationId>
+		<ApplicationId>com.giusepe.cinephile.cinephile</ApplicationId>
 		<ApplicationIdGuid>f7b95017-cec2-42ed-be09-72913c113277</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -46,6 +46,15 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+	  <PackageReference Include="ReactiveUI.Maui" Version="18.4.20" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\Xamarin\Cinephile\Cinephile.ViewModels\Cinephile.ViewModels.csproj" />
 	</ItemGroup>
 
 </Project>

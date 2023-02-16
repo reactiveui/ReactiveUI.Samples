@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reactive.Disposables;
 using Cinephile.ViewModels;
 using ReactiveUI;
-using ReactiveUI.XamForms;
+using ReactiveUI.Maui;
 
 namespace Cinephile.Views
 {

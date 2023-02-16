@@ -7,7 +7,6 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Cinephile.ViewModels;
 using ReactiveUI;
-using Xamarin.Forms;
 
 namespace Cinephile.Views
 {

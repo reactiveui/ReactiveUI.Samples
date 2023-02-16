@@ -9,9 +9,8 @@ using Cinephile.Core.Rest;
 using Cinephile.ViewModels;
 using Cinephile.Views;
 using ReactiveUI;
-using ReactiveUI.XamForms;
+using ReactiveUI.Maui;
 using Splat;
-using Xamarin.Forms;
 
 namespace Cinephile
 {

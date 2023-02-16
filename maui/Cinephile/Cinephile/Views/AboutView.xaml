@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms" 
+<ui:ContentPageBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                     x:Class="Cinephile.Views.AboutView"
                     xmlns:ui="clr-namespace:Cinephile.Views"
@@ -7,7 +7,7 @@
                     x:TypeArguments="vms:AboutViewModel">
     <ContentPage.Content>
         <StackLayout Margin="10">
-            <Label Text="This a simple sample app used to show and teach the basics of ReactiveUI + Xamarin.Forms." />
+            <Label Text="This a simple sample app used to show and teach the basics of ReactiveUI + MAUI." />
        
             <Label Text="Design vector created by freepik - www.freepik.com" TextColor="Blue" TextDecorations="Underline">
                 <Span.GestureRecognizers>

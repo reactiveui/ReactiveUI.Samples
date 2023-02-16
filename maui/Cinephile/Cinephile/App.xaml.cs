@@ -1,5 +1,4 @@
-﻿using Xamarin.Forms;
-using System.Net.Http;
+﻿using System.Net.Http;
 using FFImageLoading;
 using FFImageLoading.Config;
 using Fusillade;

@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Cinephile.Core.Rest.Dtos.Movies
 {
@@ -18,7 +18,7 @@ namespace Cinephile.Core.Rest.Dtos.Movies
         /// <summary>
         /// Gets or sets the poster path.
         /// </summary>
-        [JsonProperty("poster_path")]
+        [JsonPropertyName("poster_path")]
         public string PosterPath { get; set; }
 
         /// <summary>
@@ -34,13 +34,13 @@ namespace Cinephile.Core.Rest.Dtos.Movies
         /// <summary>
         /// Gets or sets the release date of the movie.
         /// </summary>
-        [JsonProperty("release_date")]
+        [JsonPropertyName("release_date")]
         public string ReleaseDate { get; set; }
 
         /// <summary>
         /// Gets or sets a list of genre id that are associated with the movie.
         /// </summary>
-        [JsonProperty("genre_ids")]
+        [JsonPropertyName("genre_ids")]
         [SuppressMessage("Design", "CA2227: Change to be read-only by removing the property setter.", Justification = "Used in DTO object.")]
         public IList<int> GenreIds { get; set; }
 

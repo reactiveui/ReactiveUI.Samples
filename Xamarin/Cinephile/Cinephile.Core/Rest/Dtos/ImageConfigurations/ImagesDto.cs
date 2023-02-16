@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Cinephile.Core.Rest.Dtos.ImageConfigurations
 {
@@ -19,43 +19,43 @@ namespace Cinephile.Core.Rest.Dtos.ImageConfigurations
         /// <summary>
         /// Gets or sets the base url to the image.
         /// </summary>
-        [JsonProperty(PropertyName = "base_url")]
+        [JsonPropertyName("base_url")]
         public string BaseUrl { get; set; }
 
         /// <summary>
         /// Gets or sets the url to the secure image location.
         /// </summary>
-        [JsonProperty(PropertyName = "secure_base_url")]
+        [JsonPropertyName("secure_base_url")]
         public string SecureBaseUrl { get; set; }
 
         /// <summary>
         /// Gets or sets the backdrop sizes.
         /// </summary>
-        [JsonProperty(PropertyName = "backdrop_sizes")]
+        [JsonPropertyName("backdrop_sizes")]
         public IList<string> BackdropSizes { get; set; }
 
         /// <summary>
         /// Gets or sets the logo sizes.
         /// </summary>
-        [JsonProperty(PropertyName = "logo_sizes")]
+        [JsonPropertyName("logo_sizes")]
         public IList<string> LogoSizes { get; set; }
 
         /// <summary>
         /// Gets or sets the poster sizes.
         /// </summary>
-        [JsonProperty(PropertyName = "poster_sizes")]
+        [JsonPropertyName("poster_sizes")]
         public IList<string> PosterSizes { get; set; }
 
         /// <summary>
         /// Gets or sets the profile sizes.
         /// </summary>
-        [JsonProperty(PropertyName = "profile_sizes")]
+        [JsonPropertyName("profile_sizes")]
         public IList<string> ProfileSizes { get; set; }
 
         /// <summary>
         /// Gets or sets the still sizes.
         /// </summary>
-        [JsonProperty(PropertyName = "still_sizes")]
+        [JsonPropertyName("still_sizes")]
         public IList<string> StillSizes { get; set; }
     }
 }

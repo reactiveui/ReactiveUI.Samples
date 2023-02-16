@@ -64,6 +64,18 @@
     <Compile Update="Resources\Styles\GlobalStyles.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-  </ItemGroup>
+    <Compile Update="Views\AboutView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MovieDetailView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UpcomingMoviesCellView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UpcomingMoviesListView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+	</ItemGroup>
 
 </Project>

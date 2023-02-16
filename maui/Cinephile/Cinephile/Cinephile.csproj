@@ -57,4 +57,13 @@
 	  <ProjectReference Include="..\..\..\Xamarin\Cinephile\Cinephile.ViewModels\Cinephile.ViewModels.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+    <Compile Update="Resources\Styles\Colors.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Styles\GlobalStyles.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

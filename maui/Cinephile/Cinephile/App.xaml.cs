@@ -1,20 +1,10 @@
-﻿using System.Net.Http;
-using FFImageLoading;
-using FFImageLoading.Config;
-using Fusillade;
-
-namespace Cinephile
+﻿namespace Cinephile
 {
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
-
-            ImageService.Instance.Initialize(new Configuration
-            {
-                HttpClient = new HttpClient(new RateLimitedHttpMessageHandler(new HttpClientHandler(), Priority.Background))
-            });
 
             new AppBootstrapper();
             MainPage = AppBootstrapper.CreateMainPage();

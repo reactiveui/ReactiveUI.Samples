@@ -2,7 +2,6 @@
 <rxui:ReactiveViewCell x:Class="Cinephile.Views.UpcomingMoviesCellView"
                        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                       xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
                        xmlns:rxui="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
                        xmlns:ui="clr-namespace:Cinephile.Views"
                        xmlns:vms="clr-namespace:Cinephile.ViewModels;assembly=Cinephile.ViewModels"
@@ -16,13 +15,11 @@
             <ColumnDefinition Width="0.3*" />
             <ColumnDefinition Width="0.7*" />
         </Grid.ColumnDefinitions>
-        <ffimageloading:CachedImage x:Name="Poster"
-                                    Margin="10"
-                                    VerticalOptions="FillAndExpand"
-                                    Aspect="AspectFill"
-                                    AutomationId="DocumentView_Thumbnail"
-                                    BitmapOptimizations="true"
-                                    DownsampleUseDipUnits="true" />
+        <Image x:Name="Poster"
+               Margin="10"
+               VerticalOptions="FillAndExpand"
+               Aspect="AspectFill"
+               AutomationId="DocumentView_Thumbnail" />
 
         <StackLayout Grid.Row="0" Grid.Column="1">
             <Label x:Name="Title" FontSize="16" />

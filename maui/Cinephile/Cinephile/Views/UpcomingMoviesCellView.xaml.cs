@@ -53,7 +53,7 @@ namespace Cinephile.Views
                 return;
             }
 
-            Poster.Source = item.PosterPath;
+            Poster.Source = item.PosterPath.Replace("http:", "https:");
         }
     }
 }

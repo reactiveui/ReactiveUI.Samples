@@ -30,9 +30,10 @@ namespace Cinephile.Views
                 this.Bind(ViewModel, x => x.SelectedItem, x => x.UpcomingMoviesList.SelectedItem).DisposeWith(disposables);
                 this.OneWayBind(ViewModel, vm => vm.OpenAboutView, view => view.About.Command).DisposeWith(disposables);
 
-                UpcomingMoviesList
-                    .Events()
-                    .ItemAppearing
+                Observable.FromEventPattern<ItemVisibilityEventArgs>(
+                    handler => UpcomingMoviesList.ItemAppearing += handler,
+                    handler => UpcomingMoviesList.ItemAppearing -= handler)
+                    .Select(p => p.EventArgs)
                     .Select((e) => e.Item as UpcomingMoviesCellViewModel)
                     .BindTo(this, x => x.ViewModel.ItemAppearing)
                     .DisposeWith(disposables);

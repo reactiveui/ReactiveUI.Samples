@@ -58,12 +58,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <Compile Update="Resources\Styles\Colors.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Resources\Styles\GlobalStyles.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
     <Compile Update="Views\AboutView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

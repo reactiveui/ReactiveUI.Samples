@@ -6,7 +6,6 @@
         {
             InitializeComponent();
 
-            new AppBootstrapper();
             MainPage = AppBootstrapper.CreateMainPage();
         }
 

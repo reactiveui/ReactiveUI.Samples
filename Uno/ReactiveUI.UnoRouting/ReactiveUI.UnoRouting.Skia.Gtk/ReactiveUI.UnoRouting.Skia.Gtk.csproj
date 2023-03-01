@@ -14,7 +14,7 @@
 		<UpToDateCheckInput Include="..\ReactiveUI.UnoRouting.Shared\**\*.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="18.1.2" />
+		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="18.3.7" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
 		<PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.5.12" />

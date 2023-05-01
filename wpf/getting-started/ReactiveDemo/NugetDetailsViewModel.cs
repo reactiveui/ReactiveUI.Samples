@@ -17,7 +17,14 @@ namespace ReactiveDemo
         {
             _metadata = metadata;
             _defaultUrl = new Uri("https://git.io/fAlfh");
-            OpenPage = ReactiveCommand.Create(() => { Process.Start(ProjectUrl.ToString()); });
+            OpenPage = ReactiveCommand.Create(() =>
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    UseShellExecute = true,
+                    FileName = ProjectUrl.ToString()
+                });
+            });
         }
 
         public Uri IconUrl => _metadata.IconUrl ?? _defaultUrl;

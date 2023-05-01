@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -10,21 +10,20 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<!--<PackageReference Include="DynamicData.ReactiveUI" Version="6.11.0.2613" />-->
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
 		<PackageReference Include="ReactiveMarbles.ObservableEvents.SourceGenerator" Version="1.2.3">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="ReactiveUI.Fody" Version="18.3.1" />
-		<PackageReference Include="ReactiveUI.WinForms" Version="18.3.1" />
-		<PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.69">
+		<PackageReference Include="ReactiveUI.Fody" Version="18.*" />
+		<PackageReference Include="ReactiveUI.WinForms" Version="18.*" />
+		<PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.93">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.4.1" />
-		<PackageReference Include="Splat.Microsoft.Extensions.Logging" Version="14.4.1" />
-		<PackageReference Include="Splat.Serilog" Version="14.4.1" />
+		<PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.6.8" />
+		<PackageReference Include="Splat.Microsoft.Extensions.Logging" Version="14.6.8" />
+		<PackageReference Include="Splat.Serilog" Version="14.6.8" />
 	</ItemGroup>
 
 </Project>

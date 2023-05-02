@@ -19,12 +19,11 @@ public class NugetDetailsViewModel : ReactiveObject
         _defaultUrl = new Uri("https://git.io/fAlfh");
         OpenPage = ReactiveCommand.Create(() =>
         {
-            var psi = new ProcessStartInfo
+            Process.Start(new ProcessStartInfo
             {
                 UseShellExecute = true,
                 FileName = ProjectUrl.ToString()
-            };
-            Process.Start(psi);
+            });
         });
     }
 

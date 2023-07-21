@@ -7,7 +7,7 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="18.*" />
+		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="19.*" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
 		<PackageReference Include="Uno.WinUI.Skia.Wpf" Version="4.9.20" />

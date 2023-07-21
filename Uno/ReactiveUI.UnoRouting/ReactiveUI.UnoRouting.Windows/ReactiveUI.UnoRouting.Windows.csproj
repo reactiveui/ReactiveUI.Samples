@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="18.*" />
+		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="19.*" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
 		<PackageReference Include="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" />
 

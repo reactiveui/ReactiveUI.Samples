@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
@@ -21,7 +21,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
 	  <PackageReference Include="ReactiveUI.Fody" Version="18.*" />
-	  <PackageReference Include="ReactiveUI.Testing" Version="18.*" />
+	  <PackageReference Include="ReactiveUI.Testing" Version="19.*" />
 	  <PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.93">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Logging.Serilog;
 using Avalonia.ReactiveUI;
 
 namespace ReactiveAvalonia.HelloWorld {
@@ -16,7 +15,7 @@ namespace ReactiveAvalonia.HelloWorld {
                 .Configure<App>()
                 .UseReactiveUI()
                 .UsePlatformDetect()
-                .LogToDebug();
+                .LogToTrace();
         }
 
         private static void AppMain(Application app, string[] args) {

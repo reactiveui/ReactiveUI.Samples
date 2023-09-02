@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Cinephile.Core.Rest.Dtos.ImageConfigurations
 {
@@ -18,13 +18,13 @@ namespace Cinephile.Core.Rest.Dtos.ImageConfigurations
         /// <summary>
         /// Gets or sets the image data.
         /// </summary>
-        [JsonProperty(PropertyName ="images")]
+        [JsonPropertyName("images")]
         public ImagesDto Images { get; set; }
 
         /// <summary>
         /// Gets or sets the change keys.
         /// </summary>
-        [JsonProperty(PropertyName = "change_keys")]
+        [JsonPropertyName("change_keys")]
         [SuppressMessage("Design", "CA2227: Change to be read-only by removing the property setter.", Justification = "Used in DTO object.")]
         public IList<string> ChangeKeys { get; set; }
     }

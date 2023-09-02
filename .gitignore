@@ -251,3 +251,5 @@ src/*.Tests/**/ApiApprovalTests*.received.txt
 
 # Fody Weavers (for tests)
 src/Tools/
+/hooks
+/lfs/objects

@@ -14,14 +14,8 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.4" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.4" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.4" />
+    <PackageReference Include="Avalonia" Version="11.0.4" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.4" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.4" />
-    <PackageReference Include="Serilog" Version="3.0.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Update="Roslynator.Analyzers" Version="4.4.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.4" />
   </ItemGroup>
 </Project>

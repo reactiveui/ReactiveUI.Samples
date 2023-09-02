@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.WPF" Version="18.*" />
+    <PackageReference Include="ReactiveUI.WPF" Version="$(ReactiveUIVersion)" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <!--<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />-->
   </ItemGroup>

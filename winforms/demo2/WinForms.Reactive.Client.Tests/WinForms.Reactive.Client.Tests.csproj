@@ -1,27 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
+    <TargetFramework>net7.0-windows10.0.17763.0</TargetFramework>
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-	  <PackageReference Include="FluentAssertions" Version="6.11.0" />
+	  <PackageReference Include="FluentAssertions" Version="6.12.0" />
 	  <PackageReference Include="ReactiveMarbles.ObservableEvents.SourceGenerator" Version="1.2.3">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
-	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
-    <PackageReference Include="coverlet.collector" Version="3.2.0">
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-	  <PackageReference Include="ReactiveUI.Fody" Version="18.*" />
-	  <PackageReference Include="ReactiveUI.Testing" Version="18.*" />
+	  <PackageReference Include="ReactiveUI.Fody" Version="$(ReactiveUIVersion)" />
+	  <PackageReference Include="ReactiveUI.Testing" Version="$(ReactiveUIVersion)" />
 	  <PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.93">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

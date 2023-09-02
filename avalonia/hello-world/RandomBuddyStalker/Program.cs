@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Logging.Serilog;
 using Avalonia.ReactiveUI;
 
 namespace ReactiveAvalonia.RandomBuddyStalker {
@@ -14,7 +13,7 @@ namespace ReactiveAvalonia.RandomBuddyStalker {
                 .Configure<App>()
                 .UseReactiveUI()
                 .UsePlatformDetect()
-                .LogToDebug();
+                .LogToTrace();
         }
 
         private static void AppMain(Application app, string[] args) {

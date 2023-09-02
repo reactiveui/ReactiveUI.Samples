@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -12,16 +12,22 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.*" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.*" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.*" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.4" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.4" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.4" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.4" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Splat.Serilog" Version="14.6.8" />
+    <PackageReference Include="Splat.Serilog" Version="14.7.1" />
   </ItemGroup>
   
   <ItemGroup>
     <None Update="appstate.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Update="Roslynator.Analyzers" Version="4.4.0" />
   </ItemGroup>
 </Project>

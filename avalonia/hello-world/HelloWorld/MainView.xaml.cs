@@ -19,7 +19,8 @@ namespace ReactiveAvalonia.HelloWorld {
             this
                 .WhenActivated(
                     disposables => {
-                        // Jut log the View's activation
+
+                        // Just log the View's activation
                         Console.WriteLine(
                             $"[v  {Thread.CurrentThread.ManagedThreadId}]: " +
                             "View activated\n");

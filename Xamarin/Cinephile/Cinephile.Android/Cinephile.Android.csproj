@@ -51,10 +51,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.AndroidX" Version="18.*" />
+    <PackageReference Include="ReactiveUI.AndroidX" Version="$(ReactiveUIVersion)" />
     <PackageReference Include="Xamarin.AndroidX.Palette" Version="[1.0.0.11]" />
     <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="[1.2.5.3]" />
     <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="[2.3.1.1]" />

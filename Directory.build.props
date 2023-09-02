@@ -7,6 +7,7 @@
     <LangVersion>latest</LangVersion>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
+    <ReactiveUIVersion>19.*</ReactiveUIVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SolutionDir Condition="'$(SolutionDir)' == ''">$(MSBuildThisFileDirectory)</SolutionDir>
@@ -16,7 +17,7 @@
   </ItemGroup>
   <ItemGroup>
     <!--<PackageReference Include="stylecop.analyzers" Version="1.2.0-beta.333" PrivateAssets="all" />-->
-    <PackageReference Include="Roslynator.Analyzers" Version="4.3.0" PrivateAssets="All" />
+    <PackageReference Include="Roslynator.Analyzers" Version="4.5.0" PrivateAssets="All" />
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 </Project>

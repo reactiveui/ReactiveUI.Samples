@@ -15,15 +15,15 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="ReactiveUI.Fody" Version="18.*" />
-		<PackageReference Include="ReactiveUI.WinForms" Version="18.*" />
+		<PackageReference Include="ReactiveUI.Fody" Version="$(ReactiveUIVersion)" />
+		<PackageReference Include="ReactiveUI.WinForms" Version="$(ReactiveUIVersion)" />
 		<PackageReference Include="Splat.DependencyInjection.SourceGenerator" Version="1.1.93">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.6.8" />
-		<PackageReference Include="Splat.Microsoft.Extensions.Logging" Version="14.6.8" />
-		<PackageReference Include="Splat.Serilog" Version="14.6.8" />
+		<PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.7.1" />
+		<PackageReference Include="Splat.Microsoft.Extensions.Logging" Version="14.7.1" />
+		<PackageReference Include="Splat.Serilog" Version="14.7.1" />
 	</ItemGroup>
 
 </Project>

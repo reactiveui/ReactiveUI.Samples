@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
 		<OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 	<ItemGroup Condition="exists('..\ReactiveUI.UwpRouting.Windows')">
@@ -14,12 +14,12 @@
 		<UpToDateCheckInput Include="..\ReactiveUI.UnoRouting.Shared\**\*.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="19.*" />
+		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="$(ReactiveUIVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
-		<PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.8.24" />
-		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.9.26" Condition="'$(Configuration)'=='Debug'" />
-		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.20" />
+		<PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.9.45" />
+		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.9.45" Condition="'$(Configuration)'=='Debug'" />
+		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.45" />
 	</ItemGroup>
 	<Import Project="..\ReactiveUI.UnoRouting.Shared\ReactiveUI.UnoRouting.Shared.projitems" Label="Shared" />
 </Project>

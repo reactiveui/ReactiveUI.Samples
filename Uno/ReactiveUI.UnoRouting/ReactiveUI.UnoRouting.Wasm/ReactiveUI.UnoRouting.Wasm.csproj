@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net6.0</TargetFramework>
@@ -40,14 +40,14 @@
 		<None Include="wwwroot\web.config" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.1" />
-		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="18.*" />
+		<PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.3" />
+		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="19.*" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
 		<PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.4.0" />
-		<PackageReference Include="Uno.WinUI.WebAssembly" Version="4.8.24" />
-		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.8.24" Condition="'$(Configuration)'=='Debug'" />
-		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.8.24" />
-		<PackageReference Include="Uno.Wasm.Bootstrap" Version="7.0.20" />
+		<PackageReference Include="Uno.WinUI.WebAssembly" Version="4.9.20" />
+		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.9.26" Condition="'$(Configuration)'=='Debug'" />
+		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.20" />
+		<PackageReference Include="Uno.Wasm.Bootstrap" Version="7.0.24" />
 		<PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="7.0.20" />
 	</ItemGroup>
 	<Import Project="..\ReactiveUI.UnoRouting.Shared\ReactiveUI.UnoRouting.Shared.projitems" Label="Shared" Condition="Exists('..\ReactiveUI.UnoRouting.Shared\ReactiveUI.UnoRouting.Shared.projitems')" />

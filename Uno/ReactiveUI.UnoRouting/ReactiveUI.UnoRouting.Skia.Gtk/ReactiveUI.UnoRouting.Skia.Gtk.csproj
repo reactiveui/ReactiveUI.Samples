@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
 		<OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
@@ -17,7 +17,7 @@
 		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="$(ReactiveUIVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
-		<PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.9.45" />
+		<PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.10.26" />
 		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.9.45" Condition="'$(Configuration)'=='Debug'" />
 		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.45" />
 	</ItemGroup>

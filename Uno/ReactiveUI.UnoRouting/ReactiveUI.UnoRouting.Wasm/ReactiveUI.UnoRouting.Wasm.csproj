@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net7.0</TargetFramework>
@@ -44,7 +44,7 @@
 		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="$(ReactiveUIVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
 		<PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.6.0" />
-		<PackageReference Include="Uno.WinUI.WebAssembly" Version="4.9.45" />
+		<PackageReference Include="Uno.WinUI.WebAssembly" Version="4.10.26" />
 		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.9.45" Condition="'$(Configuration)'=='Debug'" />
 		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.45" />
 		<PackageReference Include="Uno.Wasm.Bootstrap" Version="7.0.29" />

@@ -46,7 +46,7 @@
 		<PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.6.0" />
 		<PackageReference Include="Uno.WinUI.WebAssembly" Version="4.10.26" />
 		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.10.26" Condition="'$(Configuration)'=='Debug'" />
-		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.45" />
+		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.0.48" />
 		<PackageReference Include="Uno.Wasm.Bootstrap" Version="7.0.31" />
 		<PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="7.0.29" />
 	</ItemGroup>

@@ -28,6 +28,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Update="Roslynator.Analyzers" Version="4.4.0" />
+    <PackageReference Update="Roslynator.Analyzers" Version="4.7.0" />
   </ItemGroup>
 </Project>

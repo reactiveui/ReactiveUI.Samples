@@ -20,7 +20,7 @@
 	<ItemGroup>
 		<PackageReference Include="ReactiveUI.Uno.WinUI" Version="$(ReactiveUIVersion)" />
 		<PackageReference Include="Uno.Extensions.Logging.OSLog" Version="1.6.0" />
-		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.10.37" Condition="'$(Configuration)'=='Debug'" />
+		<PackageReference Include="Uno.WinUI.RemoteControl" Version="4.10.39" Condition="'$(Configuration)'=='Debug'" />
 		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.0.48" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />

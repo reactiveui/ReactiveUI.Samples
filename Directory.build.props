@@ -7,7 +7,7 @@
     <LangVersion>latest</LangVersion>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
-    <ReactiveUIVersion>19.*</ReactiveUIVersion>
+    <ReactiveUIVersion>20.*</ReactiveUIVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SolutionDir Condition="'$(SolutionDir)' == ''">$(MSBuildThisFileDirectory)</SolutionDir>

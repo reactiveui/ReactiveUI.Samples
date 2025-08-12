@@ -15,10 +15,9 @@ jobs:
     with:
       configuration: Release
       productNamespacePrefix: "ReactiveUI"
-      useVisualStudioPreview: false
-      useMauiCheckDotNetTool: false
       solutionFile: "ReactiveUI.Samples.Windows.sln"
       srcFolder: ""
       performTests: false
       useNBGV: false
       createArtifacts: false
+      installWorkflows: true

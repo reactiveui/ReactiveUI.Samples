@@ -1,24 +1,21 @@
-﻿using System.Reactive.Threading.Tasks;
+﻿using System.Reactive.Linq;
 using System.Threading.Tasks;
 using ClientSideExample.ViewModels;
 using Microsoft.AspNetCore.Components;
 
+namespace ClientSideExample.Views;
 
-namespace ClientSideExample.Views
+public partial class FetchDataView
 {
-    public partial class FetchDataView 
+    [Inject]
+    public FetchDataViewModel FetchViewModel
     {
-        [Inject]
-        public FetchDataViewModel FetchViewModel
-        {
-            get => ViewModel;
-            set => ViewModel = value;
-            
-        }
+        get => ViewModel;
+        set => ViewModel = value;
+    }
 
-        protected override async Task OnInitializedAsync()
-        {
-            await ViewModel.LoadForecasts.Execute().ToTask();
-        }
+    protected override async Task OnInitializedAsync()
+    {
+        await ViewModel!.LoadForecasts.Execute();
     }
 }

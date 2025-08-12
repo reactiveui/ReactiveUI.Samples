@@ -17,7 +17,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v12.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v13.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
@@ -53,13 +53,15 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.AndroidX" Version="$(ReactiveUIVersion)" />
-    <PackageReference Include="Xamarin.AndroidX.Palette" Version="[1.0.0.11]" />
-    <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="[1.2.5.3]" />
-    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="[2.3.1.1]" />
-    <PackageReference Include="Xamarin.Google.Android.Material" Version="[1.5.0]" />
-    <PackageReference Include="Xamarin.AndroidX.Core" Version="[1.8.0]" />
-    <PackageReference Include="Xamarin.AndroidX.Preference" Version="[1.2.0]" />
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>5.0.0.2622</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LinkerPreserve.cs" />

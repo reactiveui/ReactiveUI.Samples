@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DynamicData">
-      <Version>6.12.10</Version>
+      <Version>6.17.14</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>

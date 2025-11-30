@@ -52,7 +52,7 @@
     <Reference Include="netstandard" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DynamicData" Version="6.9.1.2588" />
+    <PackageReference Include="DynamicData" Version="6.17.14" />
     <PackageReference Include="ReactiveUI" Version="9.16.6" />
     <PackageReference Include="ReactiveUI.Events" Version="9.16.6" />
     <PackageReference Include="Splat" Version="7.2.1" />

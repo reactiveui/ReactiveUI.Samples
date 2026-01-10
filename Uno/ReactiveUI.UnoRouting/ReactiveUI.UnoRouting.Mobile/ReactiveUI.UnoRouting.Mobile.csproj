@@ -28,7 +28,7 @@
 	<Choose>
 		<When Condition="'$(TargetFramework)'=='net9.0-android'">
 			<ItemGroup>
-				<PackageReference Include="Xamarin.Google.Android.Material" Version="[1.5.0]" />
+				<PackageReference Include="Xamarin.Google.Android.Material" Version="[1.13.0.1]" />
 				<PackageReference Include="Uno.UniversalImageLoader" Version="1.9.37" />
 			</ItemGroup>
 			<ItemGroup>

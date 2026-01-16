@@ -12,11 +12,11 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.11" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.11" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.11" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.11" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.11" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.11" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.3.11" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.11" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.8" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.11" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Splat.Serilog" Version="14.8.12" />
   </ItemGroup>

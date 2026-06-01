@@ -56,7 +56,7 @@
     <PackageReference Include="ReactiveUI" Version="9.16.6" />
     <PackageReference Include="ReactiveUI.Events" Version="9.16.6" />
     <PackageReference Include="Splat" Version="7.2.1" />
-    <PackageReference Include="System.Reactive" Version="4.1.5" />
+    <PackageReference Include="System.Reactive" Version="4.4.1" />
     <PackageReference Include="System.Runtime.InteropServices.WindowsRuntime" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.2" />
   </ItemGroup>

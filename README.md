@@ -1,6 +1,9 @@
 
 # ReactiveUI.Samples
 
+> [!WARNING]
+> This repository is deprecated and archived. Samples live in each project's own repository, such as [reactiveui/ReactiveUI](https://github.com/reactiveui/ReactiveUI), [reactiveui/Primitives](https://github.com/reactiveui/Primitives) and [reactiveui/ReactiveUI.Avalonia](https://github.com/reactiveui/ReactiveUI.Avalonia).
+
 <a href="https://github.com/reactiveui/reactiveui">
   <img width="90" heigth="90" src="https://raw.githubusercontent.com/reactiveui/styleguide/master/logo/main.png">
 </a>
